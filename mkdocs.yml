@@ -1,0 +1,81 @@
+site_name: 'GA4GH Beacon Genomic Variation Query Standards'
+site_description: 'Development Site of the GA4GH Beacon community'
+site_author: Michael Baudis
+copyright: '&copy; Copyright 2024 GA4GH and Beacon Contributors'
+repo-name: variant-query-types
+repo_url: https://github.com/ga4gh-beacon/variant-query-types
+edit_uri: edit/main/docs/
+schemas_path: /blob/main/schemas/
+
+###############################################################################
+
+nav:
+  - 'Home': variant-scouts-home
+  - Variation Types: variant-types
+  - Request Parameters: query-types/variantRequestParameters
+  - Query Types: query-types
+  - Use Cases: use-case-examples
+  - Query Schema Source Files: https://github.com/ga4gh-beacon/variant-query-types/tree/main/schemas
+
+#<--------------------------- / Navigation ----------------------------------->#
+
+extra_css: [css/theme_overrides.css]
+
+markdown_extensions:
+    - toc:
+        toc_depth: 2-3
+        permalink: true
+    - admonition
+    - attr_list
+    - footnotes
+    - md_in_html
+    - pymdownx.critic
+    - pymdownx.caret
+    - pymdownx.details
+    - pymdownx.keys
+    - pymdownx.mark
+    - pymdownx.tilde
+    - pymdownx.saneheaders
+    - pymdownx.superfences
+    - pymdownx.magiclink:
+        hide_protocol: true
+    - pymdownx.tabbed:
+        alternate_style: true
+    - pymdownx.tasklist:
+        custom_checkbox: true
+    - tables
+    - mdx_gh_links:
+        user: ga4gh-beacon
+        repo: beacon-v2
+    - pymdownx.emoji:
+          emoji_index: !!python/name:materialx.emoji.twemoji
+          emoji_generator: !!python/name:materialx.emoji.to_svg
+    - pymdownx.superfences:
+        custom_fences:
+            - name: mermaid
+              class: mermaid
+              format: !!python/name:mermaid2.fence_mermaid   
+
+theme:
+  name: material
+  palette:
+      primary: teal
+  logo: img/GA-logo.png
+  favicon: img/ga4gh_circle.ico
+  icon:
+    repo: fontawesome/brands/github-alt 
+  features:
+    - content.tabs.link
+    - search.highlight
+    - search.share
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    # - toc.integrate
+
+plugins:
+  - search
+  - macros
+
+extra:
+  excerpt_separator: <!--more-->

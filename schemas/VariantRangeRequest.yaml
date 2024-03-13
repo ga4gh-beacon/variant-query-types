@@ -1,0 +1,35 @@
+"$schema": http://json-schema.org/draft-07/schema#
+"$id": https://beacon-project.io/schemas/beacon/BeaconRangeRequest/v1.1.0
+title: VariantRangeRequest
+description: >-
+  A request for matching variants in a genomic range.
+type: object
+required:
+  - referenceName
+  - start
+  - end
+
+properties:
+  referenceName:
+    $ref: variantRequestParameters.yaml#/definitions/referenceName
+
+  start:
+    $ref: variantRequestParameters.yaml#/definitions/start
+
+  end:
+    $ref: variantRequestParameters.yaml#/definitions/end
+
+  alternateBases:
+    $ref: variantRequestParameters.yaml#/definitions/alternateBases
+
+  variantType:
+    $ref: variantRequestParameters.yaml#/definitions/variantType
+
+  assemblyId:
+    $ref: variantRequestParameters.yaml#/definitions/assemblyId
+
+examples:
+  - referenceName: 17
+    assemblyId: GRCh38
+    start: [7572826]
+    end: [7579005]

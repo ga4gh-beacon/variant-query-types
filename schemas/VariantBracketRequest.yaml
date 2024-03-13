@@ -1,0 +1,50 @@
+"$schema": http://json-schema.org/draft-07/schema#
+"$id": https://beacon-project.io/schemas/beacon/BeaconRangeRequest/v1.1.0
+title: VariantBracketRequest
+description: >-
+  A request for matching variants by position, with start and end positions falling
+  into specified genomic ranges. The typical use case here is the query for similar
+  structural variations - particularly CNVs - affecting a genomic region but potentially
+  differing in their exact base extents.
+type: object
+required:
+  - referenceName
+  - start
+  - end
+additionalProperties: false
+
+properties:
+  referenceName:
+    $ref: variantRequestParameters.yaml#/definitions/referenceName
+
+  start:
+    description: >-
+      An array of exact 2 sorted integers for base positions bracketing the
+      genomic range in which the start of the matched variants has to fall. For
+      base exact matches this woyld mean `start[1] = start[0] + 1`.
+      TODO: Formal schema for range positions?
+    $ref: variantRequestParameters.yaml#/definitions/start
+
+  end:
+    description: >-
+      An array of exact 2 sorted integers for base positions bracketing the
+      genomic range in which the end of the matched variants has to fall. For
+      base exact matches this woyld mean `end[1] = end[0] + 1`.
+      TODO: Formal schema for range positions?
+    $ref: variantRequestParameters.yaml#/definitions/end
+
+  variantType:
+    $ref: variantRequestParameters.yaml#/definitions/variantType
+
+  assemblyId:
+    $ref: variantRequestParameters.yaml#/definitions/assemblyId
+
+examples:
+  - referenceName: refseq:NC_000017.11
+    start:
+      - 5000000
+      - 7676592
+    end:
+      - 7669607
+      - 10000000
+    variantType: EFO:0030067
