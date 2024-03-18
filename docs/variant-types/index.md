@@ -1,4 +1,9 @@
-# Variant Types
+# Genomic Variation Types
+
+The specific meaning of variation terms varies between different terminologies, file
+standards and biomedical domains. Here we address such ambiguities through the documentation
+of overarching concepts (e.g. "genomic deletions") and the different flavours of their
+manifestations.
 
 !!! info "Under Construction"
 
@@ -6,8 +11,38 @@
 
 ## Implemented
 
+### Allelic Sequence Variations
+
 ==TBD==
 
+### Genomic Deletions
+
+#### Sequence-defined deletions
+
+==TBD==
+
+#### Copy Number Variations (CNVs)
+
+==TBD==
+
+### Genomic Duplications
+
+==TBD==
+
+#### Copy Number Variations (CNVs)
+
+==TBD==
+
+#### Tandem Duplications
+
+==TBD==
+
+### Genomic Fusions
+
+
+
 ## For Consideration
+
+### Cytogenetic fusions and translocations
 
 ==TBD==
