@@ -6,6 +6,11 @@ TODO:
 * GET vs. POST examples
 -->
 
+!!! bug "Beacon Scouts To Do"
+
+	Please extend the examples...
+
+
 ## Any deletion(s) involving the TP53 gene locus
 
 ??? tip "Using `VariantRangeRequest`"
@@ -69,4 +74,3 @@ TODO:
 	?referenceName=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&variantType=SO:0001742
 	```
 
-==TBD==

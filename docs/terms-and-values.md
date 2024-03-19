@@ -12,4 +12,9 @@ The main examples relevant to variation queries here are `referenceName` and
 	to promote flexibility (e.g. non-human use cases) and simple adoption (e.g. reusing
 	VCF terms).
 
+!!! bug "Beacon Scouts To Do"
+
+	We will add and document recommended termionologies and use case examples during
+	the _2024 Beacon Variation Scouts_ process.
+
 ==TBD==

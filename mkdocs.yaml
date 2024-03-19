@@ -65,7 +65,9 @@ theme:
   logo: img/GA-logo.png
   favicon: img/ga4gh_circle.ico
   icon:
-    repo: fontawesome/brands/github-alt 
+    repo: fontawesome/brands/github-alt
+    admonition:
+      bug: fontawesome/regular/hourglass-half
   features:
     - content.tabs.link
     - search.highlight
