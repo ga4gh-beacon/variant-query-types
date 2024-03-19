@@ -45,4 +45,11 @@ manifestations.
 
 ### Cytogenetic fusions and translocations
 
-==TBD==
+### Variants by effect or annotation
+
+### Quantitative parameters related to regions and elements
+
+* expression
+* methylation
+
+... ==TBD==
