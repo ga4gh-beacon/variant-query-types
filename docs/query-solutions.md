@@ -10,8 +10,9 @@ TODO:
 
 	Please extend the examples...
 
+## Mature, working examples
 
-## Any deletion(s) involving the TP53 gene locus
+### Any deletion(s) involving the TP53 gene locus
 
 ??? tip "Using `VariantRangeRequest`"
 
@@ -39,7 +40,7 @@ TODO:
 	```
 
 
-## Insertion event in gene TP53 (17:7669607-7676593) or in close proximity (±~5000bp)
+### Insertion event in gene TP53 (17:7669607-7676593) or in close proximity (±~5000bp)
 
 ??? tip "Using `VariantRangeRequest`"
 
@@ -55,7 +56,7 @@ TODO:
 	?referenceName=refseq:NC_000017.11&start=7664000&end=7682000&variantType=SO:0000667
 	```
 
-## Copy number gains involving the _whole_ locus _chr2:54,700,000-63,900,000_
+### Copy number gains involving the _whole_ locus _chr2:54,700,000-63,900,000_
 
 ??? tip "Using `VariantBracketRequest`"
 
@@ -74,3 +75,5 @@ TODO:
 	?referenceName=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&variantType=SO:0001742
 	```
 
+
+## Work in Progress
