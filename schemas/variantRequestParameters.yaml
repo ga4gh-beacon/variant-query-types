@@ -6,7 +6,7 @@ description: >-
   TODO: Variant Scouts => revise (e.g. name & PascalCasing of definitions ...)
 type: object
 
-definitions:
+$defs:
   assemblyId:
     description: >-
       Genomic assembly accession and version as RefSqeq assembly accession
@@ -47,7 +47,7 @@ definitions:
       - "9"
       - NC_012920.1
 
-  start:
+  basePositions:
     description: >-
       Precise or fuzzy start coordinate position(s), allele locus
       (0-based, inclusive).
@@ -81,23 +81,33 @@ definitions:
     minItems: 1
     maxItems: 2
 
-  end:
-    description: >-
-      Precise or bracketing the end of the variants of interest:
-      * (0-based, exclusive) - see `start`
-      * for bracket queries, provide 2 values (e.g. [111,222])."
-      TODO: Variant Scouts => revise (e.g. move documentation to query types) 
+  sequencePosition:
+    description:
+      This is an explicit 1-value version of the `basePositions` generic, for use
+      in e.g. `VariantRangeRequest` or allele requests.
     type: array
     items:
       type: integer
       format: int64
-      minimum: 1
-    minItems: 0
+      minimum: 0
+    minItems: 1
+    maxItems: 1
+
+  sequenceBracket:
+    description:
+      This is an explicit 2-values version of the `basePositions` generic, for use
+      in e.g. `VariantBracketRequest`.
+    type: array
+    items:
+      type: integer
+      format: int64
+      minimum: 0
+    minItems: 2
     maxItems: 2
 
-  alternateBases:
+  sequence:
     description: >-
-      Sequence of bases for this variation (starting from `start`).
+      Sequence of bases for a variation (starting from `start`).
       * Accepted values: [ACGTN]
       * N is a wildcard, that denotes the position of any base and can be used as
         a standalone base of any type or within a partially known sequence. As example,
@@ -105,12 +115,6 @@ definitions:
         `ANNT`, `ACNT`, `ACCT`, `ACGT` ... and so forth.
       * an _empty value_ is used in the case of deletions with the maximally
         trimmed, deleted sequence being indicated in `ReferenceBases`
-    type: string
-    pattern: ^([ACGTUNRYSWKMBDHV\-\.]*)$
-
-  referenceBases: >-
-      Sequence of bases which have been replaced by the variation (from `start`).
-      The use of characters is equivalent to the `alternateBases` parameter
     type: string
     pattern: ^([ACGTUNRYSWKMBDHV\-\.]*)$
 

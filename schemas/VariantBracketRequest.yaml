@@ -1,11 +1,18 @@
-"$schema": http://json-schema.org/draft-07/schema#
-"$id": https://beacon-project.io/schemas/beacon/BeaconRangeRequest/v1.1.0
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://genomebeacons.org/schemas/beacon/BeaconRangeRequest/v2.0
 title: VariantBracketRequest
 description: >-
   A request for matching variants by position, with start and end positions falling
   into specified genomic ranges. The typical use case here is the query for similar
   structural variations - particularly CNVs - affecting a genomic region but potentially
   differing in their exact base extents.
+  Beacon version: v2.0
+  Future considerations: There are some inherited ambiguities
+  * `assemblyId` and `referenceName` should be deprectated in favour of a versioned
+    `sequenceId`
+  * the shared use of the `start` and `end` parameters for both base positions and
+    bracket positions is not ideal - here addressed by the `sequenceBracket` type
+    but still existing in parameters
 type: object
 required:
   - referenceName
@@ -15,29 +22,29 @@ additionalProperties: false
 
 properties:
   referenceName:
-    $ref: variantRequestParameters.yaml#/definitions/referenceName
+    $ref: variantRequestParameters.yaml#/$defs/referenceName
 
   start:
     description: >-
-      An array of exact 2 sorted integers for base positions bracketing the
+      An array of exactly 2 sorted integers for base positions bracketing the
       genomic range in which the start of the matched variants has to fall. For
       base exact matches this woyld mean `start[1] = start[0] + 1`.
       TODO: Formal schema for range positions?
-    $ref: variantRequestParameters.yaml#/definitions/start
+    $ref: variantRequestParameters.yaml#/$defs/sequenceBracket
 
   end:
     description: >-
-      An array of exact 2 sorted integers for base positions bracketing the
+      An array of exactly 2 sorted integers for base positions bracketing the
       genomic range in which the end of the matched variants has to fall. For
       base exact matches this woyld mean `end[1] = end[0] + 1`.
       TODO: Formal schema for range positions?
-    $ref: variantRequestParameters.yaml#/definitions/end
+    $ref: variantRequestParameters.yaml#/$defs/sequenceBracket
 
   variantType:
-    $ref: variantRequestParameters.yaml#/definitions/variantType
+    $ref: variantRequestParameters.yaml#/$defs/variantType
 
   assemblyId:
-    $ref: variantRequestParameters.yaml#/definitions/assemblyId
+    $ref: variantRequestParameters.yaml#/$defs/assemblyId
 
 examples:
   - referenceName: refseq:NC_000017.11
