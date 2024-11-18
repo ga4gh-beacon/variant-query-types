@@ -7,27 +7,32 @@ description: >-
   define the base range with which variants should be associated. The exact way
   of variant association (e.g. complete or partial overlap or even proximity) is 
   being left to the individual implementations and use cases.
-  Beacon version: v2.n
-  There are some inherited ambiguities
-  * referenceName` should be deprectated in favour of a versioned
+  Beacon version: v2.0
+  Future considerations: There are some inherited ambiguities
+  * `assemblyId` and `referenceName` should be deprectated in favour of a versioned
     `sequenceId`
   * the shared use of the `start` and `end` parameters for both base positions and
     bracket positions is not ideal - here addressed by the `sequencePosition` type
     but still existing in parameters
 type: object
 required:
-  - sequenceId
-  - sequenceInterval
+  - referenceName
+  - start
+  - end
 
 properties:
-  sequenceId:
+  referenceName:
     $ref: variantRequestParameters.yaml#/$defs/referenceName
-  sequenceInterval:
-    $ref: variantRequestParameters.yaml#/$defs/sequenceInterval
-  sequence:
+  start:
+    $ref: variantRequestParameters.yaml#/$defs/sequencePosition
+  end:
+    $ref: variantRequestParameters.yaml#/$defs/sequencePosition
+  alternateBases:
     $ref: variantRequestParameters.yaml#/$defs/alternateBases
   variantType:
     $ref: variantRequestParameters.yaml#/$defs/variantType
+  assemblyId:
+    $ref: variantRequestParameters.yaml#/$defs/assemblyId
 
 examples:
   - referenceName: 17

@@ -93,7 +93,7 @@ $defs:
     minItems: 1
     maxItems: 1
 
-  sequenceBracket:
+  sequenceInterval:
     description:
       This is an explicit 2-values version of the `basePositions` generic, for use
       in e.g. `VariantBracketRequest`.
