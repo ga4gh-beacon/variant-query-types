@@ -8,10 +8,10 @@ Here sequence variants (insertions or deletions) involving a specific region on 
 ### Request 
 **assemblyId:** `GRCh38`    
 **referenceName:** `17`    
-**start:** 
-* `43045703`
+**start:**     
+* `43045703    `
 * `43045709`        
-**end:** 
-* `43045715`
+**end:**     
+* `43045715    `
 * `43045720`        
 **variantType:** `INDEL`    

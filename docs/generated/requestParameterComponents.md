@@ -13,16 +13,16 @@ A GA4GH RefGet identifier for the __adjacent__ sequence in adjacency/fusion scen
 
 #### description
 Start position or range (_i.e._ in case of a fuzzy breakpoint) on an adjacent sequence in case of a sequence adjecency Status: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification    
-**oneOf:** 
-* `integer`
+**oneOf:**     
+* `integer    `
 * `{'$ref': '#/$defs/Range'}`        
 
 ### `AdjacencyEnd` 
 
 #### description
 End position or range (_i.e._ in case of a fuzzy breakpoint) on an adjacent sequence in case of a sequence adjecency Status: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification    
-**oneOf:** 
-* `integer`
+**oneOf:**     
+* `integer    `
 * `{'$ref': '#/$defs/Range'}`        
 
 ### `AminoacidChange` 
@@ -30,8 +30,8 @@ End position or range (_i.e._ in case of a fuzzy breakpoint) on an adjacent sequ
 #### description
 Aminoacid alteration of interest. Format 1 letter Origin: Beacon v2.0    
 **type:** `string`    
-**examples:** 
-* `V600E`
+**examples:**     
+* `V600E    `
 * `M734V`        
 
 ### `CopyChange` 
@@ -57,14 +57,14 @@ MUST use a primaryCode representing one of:
 ```
 Origin: Beacon v2.n, based on VRS v1.3+    
 **type:** `string`    
-**enum:** 
-* `EFO:0030069`
-* `EFO:0020073`
-* `EFO:0030068`
-* `EFO:0030067`
-* `EFO:0030064`
-* `EFO:0030070`
-* `EFO:0030071`
+**enum:**     
+* `EFO:0030069    `
+* `EFO:0020073    `
+* `EFO:0030068    `
+* `EFO:0030067    `
+* `EFO:0030064    `
+* `EFO:0030070    `
+* `EFO:0030071    `
 * `EFO:0030072`        
 
 ### `GeneId` 
@@ -76,8 +76,8 @@ Origin: Beacon v2.n, based on VRS v1.3+
   the HGNC (https://www.genenames.org) nomenclature.
 Origin: Beacon v2.0    
 **type:** `string`    
-**examples:** 
-* `BRAF`
+**examples:**     
+* `BRAF    `
 * `SCN5A`        
 
 ### `GenomicAlleleShortForm` 
@@ -85,7 +85,7 @@ Origin: Beacon v2.0
 #### description
 HGVSId descriptor Origin: Beacon v2.0    
 **type:** `string`    
-**examples:** 
+**examples:**     
 * `NM_004006.2:c.4375C>T`        
 
 ### `Range` 
@@ -104,16 +104,16 @@ An array of 2 integer values. If referring to sequence positions the "0-based, i
 #### description
 A GA4GH RefGet identifier for the reference sequence, _i.e._ either a computed GA4GH checksum or other unique namespaced identifier supported by the server. It replaces the `referenceName` and `assemblyId` parameters according to the VRS v2 definition. Origin: VRS v2 Reference: [GA4GH RefGet](http://samtools.github.io/hts-specs/refget.html)    
 **type:** `string`    
-**examples:** 
-* `refseq:NC_000009.12`
+**examples:**     
+* `refseq:NC_000009.12    `
 * `ga4gh:SQ.S_KjnFVz-FE7M0W6yoaUDgYxLPc1jyWU`        
 
 ### `RepeatSubunitLength` 
 
 #### description
 The number of residues in a repeat subunit. In contrast to the VRS model we allow for range queries (e.g. all repeats with subunits of 1 or 2). Origin: VRS v2    
-**oneOf:** 
-* `integer`
+**oneOf:**     
+* `integer    `
 * `{'$ref': '#/$defs/Range'}`        
 
 ### `RequestProfileId` 
@@ -139,24 +139,24 @@ Origin: VRS v1.n TODO: Review use of base characters.
 
 #### description
 The sequence length when querying the conceptual representation of a sequence according to a VRS `ReferenceLengthExpression` class. Origin: VRS v2    
-**oneOf:** 
-* `integer`
+**oneOf:**     
+* `integer    `
 * `{'$ref': '#/$defs/Range'}`        
 
 ### `SequenceStart` 
 
 #### description
 Start position or range (_i.e._ in case of a fuzzy breakpoint) on a sequence. Status: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification    
-**oneOf:** 
-* `integer`
+**oneOf:**     
+* `integer    `
 * `{'$ref': '#/$defs/Range'}`        
 
 ### `SequenceEnd` 
 
 #### description
 End position or range (_i.e._ in case of a fuzzy breakpoint) on a sequence. Status: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification    
-**oneOf:** 
-* `integer`
+**oneOf:**     
+* `integer    `
 * `{'$ref': '#/$defs/Range'}`        
 
 ### `VariantId` 
@@ -171,8 +171,8 @@ End position or range (_i.e._ in case of a fuzzy breakpoint) on a sequence. Stat
   identifiers as well.
 Status: PROPOSED FOR BEACON v2.n    
 **type:** `string`    
-**examples:** 
-* `ClinGen:CA152954`
+**examples:**     
+* `ClinGen:CA152954    `
 * `dbSNP:rs587780345`        
 
 ### `VariantMinLength` 
@@ -210,9 +210,9 @@ Origin: Beacon v2.0
 #### description
 Genomic assembly accession and version as RefSqeq assembly accession (e.g. "GCF_000001405.39") or a versioned assembly name or synonym such as UCSC Genome Browser assembly (e.g. "hg38") or Genome Reference Consortium Human (e.g. "GRCh38.p13") names. DEPRECATION NOTE: The use of a assembly specific sequence identifier obviates this parameter. Not part of VRS v2 aligned model versions.    
 **type:** `string`    
-**example:** 
-* `GCF_000001405.39`
-* `hg38`
+**example:**     
+* `GCF_000001405.39    `
+* `hg38    `
 * `GRCh38.p13`        
 
 ### `RefSeqId` 
@@ -220,9 +220,9 @@ Genomic assembly accession and version as RefSqeq assembly accession (e.g. "GCF_
 #### description
 Reference sequence id for genomic reference sequence in which variant coordinates are given, e.g. "refseq:NC_000009.12" for human chromosome 9 in the GRCh38 assembly. The use of the assembly specific RefSeqId is recommended although alternatively names, synonymous or aliases e.g. "chr9" could be used in conjunction with an `Assembly` parameter. DEPRECATION NOTE: To be replaced with the `RefgetAccession` from VRS v2.    
 **type:** `string`    
-**example:** 
-* `refseq:NC_000009.12`
-* `chr9`
+**example:**     
+* `refseq:NC_000009.12    `
+* `chr9    `
 * `NC_012920.1`        
 
 ### `ReferenceBases` 
@@ -252,10 +252,10 @@ The `variantType` is used to query variants which are not defined through a sequ
       concepts so far have not been covered and might warrant use of an
       additional parameter (`variantClass`?).    
 **type:** `string`    
-**examples:** 
-* `EFO:0030070`
-* `DUP`
-* `DEL`
+**examples:**     
+* `EFO:0030070    `
+* `DUP    `
+* `DEL    `
 * `EFO:0030069`        
 
 ### `Start` 

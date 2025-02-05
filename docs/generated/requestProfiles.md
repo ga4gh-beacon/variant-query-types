@@ -55,9 +55,9 @@ This represents the generic collection of variant parameters supported in Beacon
     - `start`: `'$ref': './common/requestParameterComponents.yaml#/$defs/Start'`      
     - `referenceBases`: `'$ref': './common/requestParameterComponents.yaml#/$defs/ReferenceBases'`      
     - `alternateBases`: `'$ref': './common/requestParameterComponents.yaml#/$defs/AlternateBases'`    
-**required:** 
-* `referenceName`
-* `start`
+**required:**     
+* `referenceName    `
+* `start    `
 * `alternateBases`        
 
 ### `BV2bracketRequest` 
@@ -74,10 +74,10 @@ A typical Beacon v2 request for matching variations where start and end fall in 
     - `variantType`: `'$ref': './common/requestParameterComponents.yaml#/$defs/VariantType'`      
     - `variantMinLength`: `'$ref': './common/requestParameterComponents.yaml#/$defs/VariantMinLength'`      
     - `variantMaxLength`: `'$ref': './common/requestParameterComponents.yaml#/$defs/VariantMaxLength'`    
-**required:** 
-* `referenceName`
-* `start`
-* `end`
+**required:**     
+* `referenceName    `
+* `start    `
+* `end    `
 * `variantType`        
 
 ### `BV2rangeRequest` 
@@ -94,9 +94,9 @@ Beacon Range Queries are supposed to return matches of any variant with at least
     - `variantType`: `'$ref': './common/requestParameterComponents.yaml#/$defs/VariantType'`      
     - `variantMinLength`: `'$ref': './common/requestParameterComponents.yaml#/$defs/VariantMinLength'`      
     - `variantMaxLength`: `'$ref': './common/requestParameterComponents.yaml#/$defs/VariantMaxLength'`    
-**required:** 
-* `referenceName`
-* `start`
+**required:**     
+* `referenceName    `
+* `start    `
 * `end`        
 
 ### `BV2variantIdRequest` 
@@ -111,7 +111,7 @@ Beacon Range Queries are supposed to return matches of any variant with at least
     - `requestProfileId`: `'const': 'BV2aminoacidChangeRequest'`      
     - `aminoacidChange`: `'$ref': './common/requestParameterComponents.yaml#/$defs/AminoacidChange'`      
     - `geneId`: `'$ref': './common/requestParameterComponents.yaml#/$defs/GeneId'`    
-**required:** 
+**required:**     
 * `aminoacidChange`        
 
 ### `BV2genomicAlleleShortFormRequest` 
@@ -131,7 +131,7 @@ A typical Beacon v2.n request for gene queries, e.g. for the retrieval of all va
     - `variantType`: `'$ref': './common/requestParameterComponents.yaml#/$defs/VariantType'`      
     - `variantMinLength`: `'$ref': './common/requestParameterComponents.yaml#/$defs/VariantMinLength'`      
     - `variantMaxLength`: `'$ref': './common/requestParameterComponents.yaml#/$defs/VariantMaxLength'`    
-**required:** 
+**required:**     
 * `geneId`        
 
 ### `VQSsequenceRequest` 
@@ -142,9 +142,9 @@ A typical Beacon v2.n request for gene queries, e.g. for the retrieval of all va
     - `start`: `'$ref': './common/requestParameterComponents.yaml#/$defs/SequenceStart'`      
     - `end`: `'$ref': './common/requestParameterComponents.yaml#/$defs/SequenceEnd'`      
     - `sequence`: `'$ref': './common/requestParameterComponents.yaml#/$defs/Sequence'`    
-**required:** 
-* `referenceAccession`
-* `start`
+**required:**     
+* `referenceAccession    `
+* `start    `
 * `sequence`        
 
 ### `VQScopyChangeRequest` 
@@ -160,10 +160,10 @@ A typical Beacon v2.n request for copy number variations (CNVs) queries approxim
     - `copyChange`: `'$ref': './common/requestParameterComponents.yaml#/$defs/CopyChange'`      
     - `variantMinLength`: `'$ref': './common/requestParameterComponents.yaml#/$defs/VariantMinLength'`      
     - `variantMaxLength`: `'$ref': './common/requestParameterComponents.yaml#/$defs/VariantMaxLength'`    
-**required:** 
-* `referenceAccession`
-* `start`
-* `end`
+**required:**     
+* `referenceAccession    `
+* `start    `
+* `end    `
 * `copyChange`        
 
 ### `VQSadjacencyRequest` 
@@ -194,7 +194,7 @@ A typical Beacon v2.n request for gene queries, e.g. for the retrieval of all va
     - `variantMaxLength`: `'$ref': './common/requestParameterComponents.yaml#/$defs/VariantMaxLength'`      
     - `molecularEffect`: `'$ref': './common/requestParameterComponents.yaml#/$defs/molecularEffect'`      
     - `clinicalRelevance`: `'$ref': './common/requestParameterComponents.yaml#/$defs/clinicalRelevance'`    
-**required:** 
+**required:**     
 * `geneId`        
 
 ### `BV2multivarsRequest` 

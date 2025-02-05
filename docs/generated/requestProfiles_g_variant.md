@@ -8,11 +8,11 @@ Here sequence variants (insertions or deletions) involving a specific region on 
 ### Request 
 **assemblyId:** `GRCh38`    
 **referenceName:** `17`    
-**start:** 
-* `43045703`
+**start:**     
+* `43045703    `
 * `43045709`        
-**end:** 
-* `43045715`
+**end:**     
+* `43045715    `
 * `43045720`        
 **variantType:** `INDEL`    
 
@@ -24,9 +24,9 @@ CAVE: Since no variant type is indicated such a query can potentially match a la
 ### Request 
 **assemblyId:** `GRCh38`    
 **referenceName:** `17`    
-**start:** 
+**start:**     
 * `345675`        
-**end:** 
+**end:**     
 * `345681`        
 
 
@@ -35,9 +35,9 @@ CAVE: Since no variant type is indicated such a query can potentially match a la
 Query for a deletion involving TP53 using the maximum extent of the gene's coding region (known from somewhere...). The deletion to be found are expected to have an overlap with the queried range; however, the extent of the overlap is not pre-defined (most endpoints woul respond to a **recommended** "any" overlap but this is not a strict requirement imposed by the schema). Here positions refer to chromosome 17 on GRCh38 as indicated by the referenceName RefSeq ID.
 ### Request 
 **referenceName:** `refseq:NC_0000017.11`    
-**start:** 
+**start:**     
 * `7669608`        
-**end:** 
+**end:**     
 * `7676593`        
 **variantType:** `DEL`    
 
@@ -48,9 +48,9 @@ For this query the mapping position of TP53 (17:7669607-7676593) has to be known
 The "insertion" type is here provided through the Sequence Ontology term `SO:0000667` and for the chromosome the full, prefixed RefSeq term is being used.
 ### Request 
 **referenceName:** `refseq:NC_0000017.11`    
-**start:** 
+**start:**     
 * `7664000`        
-**end:** 
+**end:**     
 * `7682000`        
 **variantType:** `SO:0000667`    
 

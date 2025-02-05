@@ -1,23 +1,15 @@
 # Use Case Examples
 
-!!! tip "Auto-generated Examples"
+!!! bug "Auto-generated Examples"
 
 	We are moving to a system where examples are auto-generated from the YAML
 	example files in the source tree instead of maintaining separate descriptions.
+	The examples below (though correct) will be replaced with the new system soon.
 
 	The current version of query examples for the Beacon v2 parameters (_i.e._ not
 	using additional parameters beyond the specification) can be found in 
 	**[Beacon v2 Examples](../generated/requestProfiles_g_variant)**.
 
-<!--
-TODO:
-* more examples
-* GET vs. POST examples
--->
-
-!!! bug "Beacon Scouts To Do"
-
-	Please extend the examples...
 
 ## Mature, working examples
 
