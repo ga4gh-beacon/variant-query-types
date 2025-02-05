@@ -1,0 +1,2 @@
+# Request Pattern: `VQSsequenceRequest`
+
