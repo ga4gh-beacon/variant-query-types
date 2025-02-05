@@ -38,9 +38,11 @@ This represents the generic collection of variant parameters supported in Beacon
     - `adjacencyAccession`: `'$ref': './common/requestParameterComponents.yaml#/$defs/AdjacencyAccession'`      
     - `adjacencyStart`: `'$ref': './common/requestParameterComponents.yaml#/$defs/AdjacencyStart'`      
     - `adjacencyEnd`: `'$ref': './common/requestParameterComponents.yaml#/$defs/AdjacencyEnd'`      
+    - `repeatSubunitLength`: `'$ref': './common/requestParameterComponents.yaml#/$defs/RepeatSubunitLength'`      
     - `geneId`: `'$ref': './common/requestParameterComponents.yaml#/$defs/GeneId'`      
     - `aminoacidChange`: `'$ref': './common/requestParameterComponents.yaml#/$defs/AminoacidChange'`      
     - `genomicAlleleShortForm`: `'$ref': './common/requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm'`      
+    - `sequenceLength`: `'$ref': './common/requestParameterComponents.yaml#/$defs/SequenceLength'`      
     - `variantMinLength`: `'$ref': './common/requestParameterComponents.yaml#/$defs/VariantMinLength'`      
     - `variantMaxLength`: `'$ref': './common/requestParameterComponents.yaml#/$defs/VariantMaxLength'`    
 

@@ -91,7 +91,7 @@ HGVSId descriptor Origin: Beacon v2.0
 ### `Range` 
 
 #### description
-An array of 2 integer sequence positions (0-based, inclusive).    
+An array of 2 integer values. If referring to sequence positions the "0-based, inclusive" format is used.    
 **type:** `array`    
 **items:**  
     - `type`: `integer`      
@@ -107,6 +107,14 @@ A GA4GH RefGet identifier for the reference sequence, _i.e._ either a computed G
 **examples:** 
 * `refseq:NC_000009.12`
 * `ga4gh:SQ.S_KjnFVz-FE7M0W6yoaUDgYxLPc1jyWU`        
+
+### `RepeatSubunitLength` 
+
+#### description
+The number of residues in a repeat subunit. In contrast to the VRS model we allow for range queries (e.g. all repeats with subunits of 1 or 2). Origin: VRS v2    
+**oneOf:** 
+* `integer`
+* `{'$ref': '#/$defs/Range'}`        
 
 ### `RequestProfileId` 
 
@@ -126,6 +134,14 @@ DNA bases.
   and will match `ANNT`, `ACNT`, `ACCT`, `ACGT` ... and so forth.
 Origin: VRS v1.n TODO: Review use of base characters.    
 **type:** `string`    
+
+### `SequenceLength` 
+
+#### description
+The sequence length when querying the conceptual representation of a sequence according to a VRS `ReferenceLengthExpression` class. Origin: VRS v2    
+**oneOf:** 
+* `integer`
+* `{'$ref': '#/$defs/Range'}`        
 
 ### `SequenceStart` 
 
