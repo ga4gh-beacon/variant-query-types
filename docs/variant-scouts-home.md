@@ -14,6 +14,20 @@ The Beacon Varians Scouts work will focus on:
 
 The outcome of this scout would be a document summarising points 1-3, and building on the previous Genomic variants document. It could, for example, take the form of a submitted article. Importantly, we envision that the group - in coordination with other standards groups from GA4GH and beyond - will provide solid "variant query standard blocks" - not necessarily limited to Beacon implementations; thereby providing an overarching harmonization of federated variant discovery tools and implementations.
 
+## VRSification
+
+From ongoing Beacon Scouts work and coordination with the Genomic Knowledge Standards
+work stream we have come to the overall agreement that future Beacon variant standards
+and queries will adopt the VRS v2+ standard to the largest extent possible. In reality
+this (probably) translates into 
+
+* Beacon v2+ inlining or referencing VRS schemas
+* variant queries using VRS terms and structures or referring to them (since query
+  parameters might require different structures from definition parameters)
+
+We've started to refer to the developing VRSified query options as "*VQS*" (*V*ariation
+*Q*uery *S*tandard).
+
 ## Material & References
 
 * Beacon v2 [Variant Queries documentation](http://docs.genomebeacons.org/variant-queries/#genomic-variant-queries)

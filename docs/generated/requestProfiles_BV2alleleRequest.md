@@ -1,2 +1,2 @@
-# Request Pattern: `BV2alleleRequest`
+# Request Profile: `BV2alleleRequest`
 

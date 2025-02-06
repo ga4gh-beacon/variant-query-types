@@ -1,2 +1,2 @@
-# Request Pattern: `BV2genomicAlleleShortFormRequest`
+# Request Profile: `BV2genomicAlleleShortFormRequest`
 
