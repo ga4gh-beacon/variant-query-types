@@ -1,6 +1,66 @@
-# Beacon VQS Request Examples
+# Beacon VQS Requests
 
 This represents the generic collection of variant parameters supported in Beacon v2+ requests.
+
+* `assemblyId`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/Assembly`    
+* `referenceName`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/RefSeqId`    
+* `referenceBases`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/ReferenceBases`    
+* `alternateBases`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/AlternateBases`    
+* `variantType`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/VariantType`    
+* `start`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/Start`    
+* `end`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/End`    
+* `geneId`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/GeneId`    
+* `aminoacidChange`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/AminoacidChange`    
+* `genomicAlleleShortForm`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm`    
+* `variantMinLength`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/VariantMinLength`    
+* `variantMaxLength`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/VariantMaxLength`    
+* `requestProfileId`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/RequestProfileId`    
+* `referenceAccession`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/RefgetAccession`    
+* `start`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/SequenceStart`    
+* `end`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/SequenceEnd`    
+* `sequence`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/Sequence`    
+* `copyChange`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/CopyChange`    
+* `adjacencyAccession`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/AdjacencyAccession`    
+* `adjacencyStart`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/AdjacencyStart`    
+* `adjacencyEnd`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/AdjacencyEnd`    
+* `repeatSubunitLength`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/RepeatSubunitLength`    
+* `geneId`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/GeneId`    
+* `aminoacidChange`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/AminoacidChange`    
+* `genomicAlleleShortForm`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm`    
+* `sequenceLength`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/SequenceLength`    
+* `variantMinLength`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/VariantMinLength`    
+* `variantMaxLength`:    
+    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/VariantMaxLength`    
+
+
+## Beacon v2+/VQS "VRSified" Request Examples
 
 
 

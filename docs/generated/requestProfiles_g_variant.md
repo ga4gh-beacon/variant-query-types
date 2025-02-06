@@ -32,8 +32,6 @@ This represents the generic collection of variant parameters allowed in Beacon v
 
 ## Beacon v2 Request Examples
 
-This represents the generic collection of variant parameters allowed in Beacon v2 requests.
-
 
 
 ### Find small, _variable_ sequence insertions/deletions at an approximate position
