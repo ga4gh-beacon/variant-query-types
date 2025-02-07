@@ -21,9 +21,11 @@ The example uses `"copyChange": "EFO:0030070"` for `copy number gain` as specifi
     - `242193529`        
     
 * `copyChange`: `EFO:0030070`    
+    
+* `vrsType`: `copyChange`    
 
 ##### GET query string
-```requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&copyChange=EFO:0030070```
+```requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&copyChange=EFO:0030070&vrsType=copyChange```
 
 ##### POST query component 
 ```{
@@ -37,7 +39,8 @@ The example uses `"copyChange": "EFO:0030070"` for `copy number gain` as specifi
     "start": [
         0,
         54700000
-    ]
+    ],
+    "vrsType": "copyChange"
 }```
 
 
@@ -60,9 +63,11 @@ The query uses `"copyChange": "EFO:0020073"` for `high-level copy number loss` a
     - `23000000`        
     
 * `copyChange`: `EFO:0020073`    
+    
+* `vrsType`: `copyChange`    
 
 ##### GET query string
-```requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=21000001,21975098&end=21967753,23000000&copyChange=EFO:0020073```
+```requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=21000001,21975098&end=21967753,23000000&copyChange=EFO:0020073&vrsType=copyChange```
 
 ##### POST query component 
 ```{
@@ -76,5 +81,6 @@ The query uses `"copyChange": "EFO:0020073"` for `high-level copy number loss` a
     "start": [
         21000001,
         21975098
-    ]
+    ],
+    "vrsType": "copyChange"
 }```

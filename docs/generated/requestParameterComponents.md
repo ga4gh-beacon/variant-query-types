@@ -284,6 +284,24 @@ Origin: Beacon v2.0
     
 * `minimum`: `1`    
 
+## `VRStype` 
+
+#### Description
+Type of the variation according to the VRS model. Examples are here e.g. `Adjacency` or `Allele`. Origin: VRS v2    
+
+#### Definitions
+    
+* `type`: `string`    
+    
+* `enum`:     
+    - `Adjacency`    
+    - `Allele`    
+    - `CisPhasedBlock`    
+    - `CopyNumberChange`    
+    - `CopyNumberCount`    
+    - `DerivativeMolecule`    
+    - `Terminus`        
+
 ## `Assembly` 
 
 #### Description

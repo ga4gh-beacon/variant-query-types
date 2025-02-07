@@ -7,55 +7,20 @@ manifestations.
 
 !!! info "Under Construction"
 
-	For a start please see the previous [Beacon Scouts: Genomic Variants Use Cases & Examples](https://docs.google.com/document/d/1cwwRQ2PtlN1dBffCugdkbSHWCPmLgLkADd-5mu-rVAw/edit).
+	This page is currently under construction and will be updated with the types
+	of variants supported in teh different Beacon flavours.
 
-!!! bug "Beacon Scouts To Do"
+	Currently (February 2025, towards GA4GH Connect 2025) there is rapid development
+	which is reflected in the version specific pages:
 
-	We will add and document the variation concepts during the 2024 Beacon Variation
+	- [Beacon v2 Query Solutions](generated/requestProfiles_g_variant) for demonstrating options provided by Beacon v2
+	- [Beacon v2+ Query Proposals](generated/requestProfiles_VQSrequest) for proposed parameters and solutions in a Beacon v2+ "Variant Query Standard" **VQS**
+
+
+	For additional background see the previous [Beacon Scouts: Genomic Variants Use Cases & Examples](https://docs.google.com/document/d/1cwwRQ2PtlN1dBffCugdkbSHWCPmLgLkADd-5mu-rVAw/edit).
+
+<!-- !!! bug "Beacon Scouts To Do"
+
+	We will add and document the variation concepts during the 2024/25 Beacon Variation
 	Scouts process.
-
-
-## Implemented
-
-### Allelic Sequence Variations
-
-==TBD==
-
-### Genomic Deletions
-
-#### Sequence-defined deletions
-
-==TBD==
-
-#### Copy Number Variations (CNVs)
-
-==TBD==
-
-### Genomic Duplications
-
-==TBD==
-
-#### Copy Number Variations (CNVs)
-
-==TBD==
-
-#### Tandem Duplications
-
-==TBD==
-
-### Genomic Fusions
-
-
-
-## For Consideration
-
-### Cytogenetic fusions and translocations
-
-### Variants by effect or annotation
-
-### Quantitative parameters related to regions and elements
-
-* expression
-* methylation
-
-... ==TBD==
+ -->

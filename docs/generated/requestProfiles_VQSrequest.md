@@ -41,6 +41,8 @@ For the parameter definitions please see the [`requestParameterComponents` page.
     - `$ref`: `./requestParameterComponents.yaml#/$defs/VariantMinLength`    
 * `variantMaxLength`:    
     - `$ref`: `./requestParameterComponents.yaml#/$defs/VariantMaxLength`    
+* `vrsType`:    
+    - `$ref`: `./requestParameterComponents.yaml#/$defs/VRStype`    
 
 
 ## Beacon v2+/VQS "VRSified" Request Examples
@@ -66,9 +68,11 @@ The example uses `"copyChange": "EFO:0030070"` for `copy number gain` as specifi
     - `242193529`        
     
 * `copyChange`: `EFO:0030070`    
+    
+* `vrsType`: `copyChange`    
 
 ##### GET query string
-```requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&copyChange=EFO:0030070```
+```requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&copyChange=EFO:0030070&vrsType=copyChange```
 
 ##### POST query component 
 ```{
@@ -82,7 +86,8 @@ The example uses `"copyChange": "EFO:0030070"` for `copy number gain` as specifi
     "start": [
         0,
         54700000
-    ]
+    ],
+    "vrsType": "copyChange"
 }```
 
 
@@ -105,9 +110,11 @@ The query uses `"copyChange": "EFO:0020073"` for `high-level copy number loss` a
     - `23000000`        
     
 * `copyChange`: `EFO:0020073`    
+    
+* `vrsType`: `copyChange`    
 
 ##### GET query string
-```requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=21000001,21975098&end=21967753,23000000&copyChange=EFO:0020073```
+```requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=21000001,21975098&end=21967753,23000000&copyChange=EFO:0020073&vrsType=copyChange```
 
 ##### POST query component 
 ```{
@@ -121,7 +128,52 @@ The query uses `"copyChange": "EFO:0020073"` for `high-level copy number loss` a
     "start": [
         21000001,
         21975098
-    ]
+    ],
+    "vrsType": "copyChange"
+}```
+
+
+### Find  t(8;14)(q24;q32) translocations
+#### Solution for `VQSrequest` using genomic ranges (`VQSadjacencyRequest`)
+This is a query for translocations between the MYC and IgH loci, where the breakpoints are loosely defined through there well known cytogenetic bands. The query here follows the VRS adjacency model. In contrast to the VRS representational model, here:    
+
+- VRS uses an array of 2 genomic locations while Beacon names the location
+  parameters individually (using "adjacency..." for the second partner)    
+- VRS explicitely encodes directionality by using either `start` or `end`
+  position parameters (integers or ranges) while this query example creates
+  non-directional ranges on both sides since directionality might not be known,
+  the storage system might not encode this or all options could be of interest    
+#### Request 
+    
+* `requestProfileId`: `VQSadjacencyRequest`    
+    
+* `referenceAccession`: `refseq:NC_000008.11`    
+    
+* `start`: `116700000`    
+    
+* `end`: `145138636`    
+    
+* `adjacencyAccession`: `refseq:NC_000014.9`    
+    
+* `adjacencyStart`: `89300000`    
+    
+* `adjacencyEnd`: `107043718`    
+    
+* `vrsType`: `Adjacency`    
+
+##### GET query string
+```requestProfileId=VQSadjacencyRequest&referenceAccession=refseq:NC_000008.11&start=116700000&end=145138636&adjacencyAccession=refseq:NC_000014.9&adjacencyStart=89300000&adjacencyEnd=107043718&vrsType=Adjacency```
+
+##### POST query component 
+```{
+    "adjacencyAccession": "refseq:NC_000014.9",
+    "adjacencyEnd": 107043718,
+    "adjacencyStart": 89300000,
+    "end": 145138636,
+    "referenceAccession": "refseq:NC_000008.11",
+    "requestProfileId": "VQSadjacencyRequest",
+    "start": 116700000,
+    "vrsType": "Adjacency"
 }```
 
 
@@ -139,9 +191,11 @@ Query for a deletion involving TP53 by using the HUGO name to specify the gene. 
 * `variantMinLength`: `1000`    
     
 * `variantMaxLength`: `3000000`    
+    
+* `vrsType`: `copyChange`    
 
 ##### GET query string
-```requestType=VQSgeneIdRequest&geneId=TP53&copyChange=EFO:0030067&variantMinLength=1000&variantMaxLength=3000000```
+```requestType=VQSgeneIdRequest&geneId=TP53&copyChange=EFO:0030067&variantMinLength=1000&variantMaxLength=3000000&vrsType=copyChange```
 
 ##### POST query component 
 ```{
@@ -149,5 +203,6 @@ Query for a deletion involving TP53 by using the HUGO name to specify the gene. 
     "geneId": "TP53",
     "requestType": "VQSgeneIdRequest",
     "variantMaxLength": 3000000,
-    "variantMinLength": 1000
+    "variantMinLength": 1000,
+    "vrsType": "copyChange"
 }```

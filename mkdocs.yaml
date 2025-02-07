@@ -13,9 +13,9 @@ nav:
   - Introduction: variant-scouts-home
   - Variation Types: variant-types
   - Beacon v2 Query Solutions: generated/requestProfiles_g_variant
-  - Beacon v2+ Query Proposals: generated/requestProfiles_VQSrequest
+  - Beacon v2+ VQS Proposals: generated/requestProfiles_VQSrequest
   - Parameter Definitions: generated/requestParameterComponents
-  - Query Types: query-types
+  # - Query Types: query-types
   - Genomic Coordinates: genomic-coordinates-mappings
   - Recommended Terms: terms-and-values
   - Query Schema Source Files: https://github.com/ga4gh-beacon/variant-query-types/tree/main/schemas

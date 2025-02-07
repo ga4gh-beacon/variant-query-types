@@ -49,7 +49,8 @@ This represents the generic collection of variant parameters supported in Beacon
     - `genomicAlleleShortForm`: `'$ref': './requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm'`      
     - `sequenceLength`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceLength'`      
     - `variantMinLength`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantMinLength'`      
-    - `variantMaxLength`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantMaxLength'`    
+    - `variantMaxLength`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantMaxLength'`      
+    - `vrsType`: `'$ref': './requestParameterComponents.yaml#/$defs/VRStype'`    
 
 ## `BV2alleleRequest` 
     
@@ -167,7 +168,7 @@ A typical Beacon v2.n request for gene queries, e.g. for the retrieval of all va
 * `required`:     
     - `geneId`        
 
-## `VQSsequenceRequest` 
+## `VQSalleleRequest` 
 
 #### Description
 A Beacon v2+ sequence query. It is in its scope similar to the Beacon v1/v2 allele requests but replaces the original parameters with VRS v2 concepts.    
@@ -176,11 +177,12 @@ A Beacon v2+ sequence query. It is in its scope similar to the Beacon v1/v2 alle
     
 * `type`: `object`    
 * `properties`:    
-    - `requestProfileId`: `'const': 'VQSsequenceRequest'`      
+    - `requestProfileId`: `'const': 'VQSalleleRequest'`      
     - `referenceAccession`: `'$ref': './requestParameterComponents.yaml#/$defs/RefgetAccession'`      
     - `start`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceStart'`      
     - `end`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceEnd'`      
-    - `sequence`: `'$ref': './requestParameterComponents.yaml#/$defs/Sequence'`    
+    - `sequence`: `'$ref': './requestParameterComponents.yaml#/$defs/Sequence'`      
+    - `vrsType`: `'const': 'Allele'`    
     
 * `required`:     
     - `referenceAccession`    
@@ -202,7 +204,8 @@ A typical Beacon v2.n request for copy number variations (CNVs) queries approxim
     - `end`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceEnd'`      
     - `copyChange`: `'$ref': './requestParameterComponents.yaml#/$defs/CopyChange'`      
     - `variantMinLength`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantMinLength'`      
-    - `variantMaxLength`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantMaxLength'`    
+    - `variantMaxLength`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantMaxLength'`      
+    - `vrsType`: `'const': 'CopyNumberChange'`    
     
 * `required`:     
     - `referenceAccession`    
@@ -225,7 +228,8 @@ A typical Beacon v2.n request for sequence adjacency queries, e.g. for the retri
     - `end`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceEnd'`      
     - `adjacencyAccession`: `'$ref': './requestParameterComponents.yaml#/$defs/AdjacencyAccession'`      
     - `adjacencyStart`: `'$ref': './requestParameterComponents.yaml#/$defs/AdjacencyStart'`      
-    - `adjacencyEnd`: `'$ref': './requestParameterComponents.yaml#/$defs/AdjacencyEnd'`    
+    - `adjacencyEnd`: `'$ref': './requestParameterComponents.yaml#/$defs/AdjacencyEnd'`      
+    - `vrsType`: `'const': 'Adjacency'`    
 
 ## `VQSsequenceRepeatRequest` 
 
@@ -288,4 +292,4 @@ This multi variant query is a collection of individual variant queries based on 
 * `properties`:    
     - `requestProfileId`: `'const': 'VQSmultivarRequest'`      
     - `variantLogic`: `'type': 'string', 'enum': ['AND', 'OR'], 'default': 'AND'`      
-    - `queries`: `'type': 'array', 'items': 'anyOf': ['$ref': '#/$defs/VQSsequenceRequest', '$ref': '#/$defs/VQScopyChangeRequest', '$ref': '#/$defs/VQSadjacencyRequest', '$ref': '#/$defs/VQSgeneIdRequest', '$ref': '#/$defs/BV2variantIdRequest', '$ref': '#/$defs/BV2aminoacidChangeRequest', '$ref': '#/$defs/BV2genomicAlleleShortFormRequest']`    
+    - `queries`: `'type': 'array', 'items': 'anyOf': ['$ref': '#/$defs/VQSalleleRequest', '$ref': '#/$defs/VQScopyChangeRequest', '$ref': '#/$defs/VQSadjacencyRequest', '$ref': '#/$defs/VQSgeneIdRequest', '$ref': '#/$defs/BV2variantIdRequest', '$ref': '#/$defs/BV2aminoacidChangeRequest', '$ref': '#/$defs/BV2genomicAlleleShortFormRequest']`    

@@ -64,6 +64,15 @@ as well as a dedicated vocabulary derived from EFO terminology.
 
 * for CNV queries use the EFO terms for relative copy number changes for either
   `copyChange` or `variantType` parameters, depending on the Beacon version
+* in Beacon v2+ the `copyChange` parameter MUST use a primaryCode representing one of:
+    - EFO:0030069: complete genomic loss    
+    - EFO:0020073: high-level loss    
+    - EFO:0030068: low-level loss    
+    - EFO:0030067: loss    
+    - EFO:0030064: regional base ploidy    
+    - EFO:0030070: gain    
+    - EFO:0030071: low-level gain    
+    - EFO:0030072: high-level gain    
 * for other types of variations `variantType` according to query documentation and
   emerging examples
 * `variantType` might be replaced during future development

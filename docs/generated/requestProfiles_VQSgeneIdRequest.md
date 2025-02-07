@@ -17,9 +17,11 @@ Query for a deletion involving TP53 by using the HUGO name to specify the gene. 
 * `variantMinLength`: `1000`    
     
 * `variantMaxLength`: `3000000`    
+    
+* `vrsType`: `copyChange`    
 
 ##### GET query string
-```requestType=VQSgeneIdRequest&geneId=TP53&copyChange=EFO:0030067&variantMinLength=1000&variantMaxLength=3000000```
+```requestType=VQSgeneIdRequest&geneId=TP53&copyChange=EFO:0030067&variantMinLength=1000&variantMaxLength=3000000&vrsType=copyChange```
 
 ##### POST query component 
 ```{
@@ -27,5 +29,6 @@ Query for a deletion involving TP53 by using the HUGO name to specify the gene. 
     "geneId": "TP53",
     "requestType": "VQSgeneIdRequest",
     "variantMaxLength": 3000000,
-    "variantMinLength": 1000
+    "variantMinLength": 1000,
+    "vrsType": "copyChange"
 }```
