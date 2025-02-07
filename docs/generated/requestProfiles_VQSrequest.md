@@ -2,74 +2,152 @@
 
 This represents the generic collection of variant parameters supported in Beacon v2+ requests.
 
-* `assemblyId`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/Assembly`    
-* `referenceName`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/RefSeqId`    
-* `referenceBases`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/ReferenceBases`    
-* `alternateBases`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/AlternateBases`    
-* `variantType`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/VariantType`    
-* `start`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/Start`    
-* `end`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/End`    
-* `geneId`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/GeneId`    
-* `aminoacidChange`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/AminoacidChange`    
-* `genomicAlleleShortForm`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm`    
-* `variantMinLength`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/VariantMinLength`    
-* `variantMaxLength`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/VariantMaxLength`    
+
+For the parameter definitions please see the [`requestParameterComponents` page.](../requestParameterComponents/)
+
+## VQSrequest Parameters
+
 * `requestProfileId`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/RequestProfileId`    
+    - `$ref`: `./requestParameterComponents.yaml#/$defs/RequestProfileId`    
 * `referenceAccession`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/RefgetAccession`    
+    - `$ref`: `./requestParameterComponents.yaml#/$defs/RefgetAccession`    
 * `start`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/SequenceStart`    
+    - `$ref`: `./requestParameterComponents.yaml#/$defs/SequenceStart`    
 * `end`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/SequenceEnd`    
+    - `$ref`: `./requestParameterComponents.yaml#/$defs/SequenceEnd`    
 * `sequence`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/Sequence`    
+    - `$ref`: `./requestParameterComponents.yaml#/$defs/Sequence`    
 * `copyChange`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/CopyChange`    
+    - `$ref`: `./requestParameterComponents.yaml#/$defs/CopyChange`    
 * `adjacencyAccession`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/AdjacencyAccession`    
+    - `$ref`: `./requestParameterComponents.yaml#/$defs/AdjacencyAccession`    
 * `adjacencyStart`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/AdjacencyStart`    
+    - `$ref`: `./requestParameterComponents.yaml#/$defs/AdjacencyStart`    
 * `adjacencyEnd`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/AdjacencyEnd`    
+    - `$ref`: `./requestParameterComponents.yaml#/$defs/AdjacencyEnd`    
+* `repeatSubunitCount`:    
+    - `$ref`: `./requestParameterComponents.yaml#/$defs/RepeatSubunitCount`    
 * `repeatSubunitLength`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/RepeatSubunitLength`    
+    - `$ref`: `./requestParameterComponents.yaml#/$defs/RepeatSubunitLength`    
 * `geneId`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/GeneId`    
+    - `$ref`: `./requestParameterComponents.yaml#/$defs/GeneId`    
 * `aminoacidChange`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/AminoacidChange`    
+    - `$ref`: `./requestParameterComponents.yaml#/$defs/AminoacidChange`    
 * `genomicAlleleShortForm`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm`    
+    - `$ref`: `./requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm`    
 * `sequenceLength`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/SequenceLength`    
+    - `$ref`: `./requestParameterComponents.yaml#/$defs/SequenceLength`    
 * `variantMinLength`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/VariantMinLength`    
+    - `$ref`: `./requestParameterComponents.yaml#/$defs/VariantMinLength`    
 * `variantMaxLength`:    
-    - `$ref`: `./common/requestParameterComponents.yaml#/$defs/VariantMaxLength`    
+    - `$ref`: `./requestParameterComponents.yaml#/$defs/VariantMaxLength`    
 
 
 ## Beacon v2+/VQS "VRSified" Request Examples
 
 
 
+### Copy number gains involving the _whole_ locus _chr2:54,700,000-63,900,000_
+#### Solution for `VQSrequest` using `start` and `end` ranges (`VQScopyChangeRequest`)
+The query has to indicate the involved genomic region by positions as well as the type of change. Here, matched duplication events start 5\` of the region and end 3\` of it. For capturing any event upt to the complete chromosome duplication this requires knowledge about the maximum value (_i.e._ chromosome base length; using a random very large number might fail depending on the implementation).
+The example uses `"copyChange": "EFO:0030070"` for `copy number gain` as specified in the [VRS definitions](https://vrs.ga4gh.org/en/latest/terms_and_model.html#systemic-variation).
+#### Request 
+    
+* `requestProfileId`: `VQScopyChangeRequest`    
+    
+* `referenceAccession`: `refseq:NC_000002.12`    
+    
+* `start`:     
+    - `0`    
+    - `54700000`        
+    
+* `end`:     
+    - `63900000`    
+    - `242193529`        
+    
+* `copyChange`: `EFO:0030070`    
+
+##### GET query string
+```requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&copyChange=EFO:0030070```
+
+##### POST query component 
+```{
+    "copyChange": "EFO:0030070",
+    "end": [
+        63900000,
+        242193529
+    ],
+    "referenceAccession": "refseq:NC_000002.12",
+    "requestProfileId": "VQScopyChangeRequest",
+    "start": [
+        0,
+        54700000
+    ]
+}```
+
+
+### Focal high-level deletion involving the _CDKN2A_ locus
+#### Solution for `VQSrequest` using `start` and `end` ranges (`VQScopyChangeRequest`)
+To match deletion variants overlapping the CDKN2A gene's coding region (CDR) with at least a single base, but limited to "focal" hits (here i.e. <= ~2Mbp in size) a bracket query is constructed where the `start` range goes  from ~1Mb 5\' of the CDKN2A CDR until the end of the CDR and the `end` range goes from the start of the CDR to ~1Mb 3\' of the gene. 
+The query uses `"copyChange": "EFO:0020073"` for `high-level copy number loss` as specified in the [VRS definitions](https://vrs.ga4gh.org/en/latest/terms_and_model.html#systemic-variation). With hierarchical expansion of this term explicit complete genomic deletions (`EFO:0030069`) should be retrieved too.
+#### Request 
+    
+* `requestProfileId`: `VQScopyChangeRequest`    
+    
+* `referenceAccession`: `refseq:NC_000002.12`    
+    
+* `start`:     
+    - `21000001`    
+    - `21975098`        
+    
+* `end`:     
+    - `21967753`    
+    - `23000000`        
+    
+* `copyChange`: `EFO:0020073`    
+
+##### GET query string
+```requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=21000001,21975098&end=21967753,23000000&copyChange=EFO:0020073```
+
+##### POST query component 
+```{
+    "copyChange": "EFO:0020073",
+    "end": [
+        21967753,
+        23000000
+    ],
+    "referenceAccession": "refseq:NC_000002.12",
+    "requestProfileId": "VQScopyChangeRequest",
+    "start": [
+        21000001,
+        21975098
+    ]
+}```
+
+
 ### Query for a focal deletion involving TP53
 #### Solution using `VQSgeneIdRequest` with `geneId`
 Query for a deletion involving TP53 by using the HUGO name to specify the gene. This request does not provide coordinates so on the server side matching has to be performed from annotated variants or by retrieving the gene's coordinates and creating internally a type of range request. Here we're also  limiting the size of the CNV to a typical "focal deletion" with a lower minimum size of 1kb (to avoid noise and non-structural variants) and an upper limit of 3Mb (to avoid large chromosomal deletions).
 #### Request 
+    
 * `requestType`: `VQSgeneIdRequest`    
+    
 * `geneId`: `TP53`    
+    
 * `copyChange`: `EFO:0030067`    
+    
 * `variantMinLength`: `1000`    
+    
 * `variantMaxLength`: `3000000`    
+
+##### GET query string
+```requestType=VQSgeneIdRequest&geneId=TP53&copyChange=EFO:0030067&variantMinLength=1000&variantMaxLength=3000000```
+
+##### POST query component 
+```{
+    "copyChange": "EFO:0030067",
+    "geneId": "TP53",
+    "requestType": "VQSgeneIdRequest",
+    "variantMaxLength": 3000000,
+    "variantMinLength": 1000
+}```

@@ -73,7 +73,7 @@
 	[VRS definitions](https://vrs.ga4gh.org/en/latest/terms_and_model.html#systemic-variation).
 
 	```
-	?referenceName=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&variantType=SO:0001742
+	?referenceName=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&variantType=EFO:0030070
 	```
 
 

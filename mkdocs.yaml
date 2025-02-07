@@ -12,11 +12,12 @@ schemas_path: /blob/main/schemas/
 nav:
   - Introduction: variant-scouts-home
   - Variation Types: variant-types
-  - Request Parameters: query-types/variantRequestParameters
+  - Beacon v2 Query Solutions: generated/requestProfiles_g_variant
+  - Beacon v2+ Query Proposals: generated/requestProfiles_VQSrequest
+  - Parameter Definitions: generated/requestParameterComponents
   - Query Types: query-types
   - Genomic Coordinates: genomic-coordinates-mappings
   - Recommended Terms: terms-and-values
-  - Query Solutions: query-solutions
   - Query Schema Source Files: https://github.com/ga4gh-beacon/variant-query-types/tree/main/schemas
 
 #<--------------------------- / Navigation ----------------------------------->#
