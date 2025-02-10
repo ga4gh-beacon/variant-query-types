@@ -27,7 +27,7 @@ This represents the generic collection of variant parameters allowed in Beacon v
 ## `VQSrequest` 
 
 #### Description
-This represents the generic collection of variant parameters supported in Beacon v2+ requests.    
+The `VQSrequest` type represents the generic collection of variant parameters supported in Beacon v2+ requests. These include parameters with close alignment to VRS v2 concepts and replacing some Beacon v1/v2 generics with tighter definitions (e.g. `referenceAccession` instead of `referenceName` and `accession` or `copyChange` for a specific subset of former `variantType` values) but also keep some conceptsm beyond VRS scope or specifically geared towards query applications (`geneId`, `sequenceLength`)    
 
 #### Definitions
     
@@ -48,8 +48,6 @@ This represents the generic collection of variant parameters supported in Beacon
     - `aminoacidChange`: `'$ref': './requestParameterComponents.yaml#/$defs/AminoacidChange'`      
     - `genomicAlleleShortForm`: `'$ref': './requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm'`      
     - `sequenceLength`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceLength'`      
-    - `variantMinLength`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantMinLength'`      
-    - `variantMaxLength`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantMaxLength'`      
     - `vrsType`: `'$ref': './requestParameterComponents.yaml#/$defs/VRStype'`    
 
 ## `BV2alleleRequest` 
@@ -213,6 +211,37 @@ A typical Beacon v2.n request for copy number variations (CNVs) queries approxim
     - `end`    
     - `copyChange`        
 
+## `VQSrangeRequest` 
+
+#### Description
+Beacon Range Queries are supposed to return matches of any variant with at least partial overlap of the sequence range specified by `referenceAccession`, `start` and `end` parameters. Additional qualifiers such as `copyChange` or length of the affected sequence can be used to further restrict the returned results. For this request type usually `start` and `end` with a single position are used, _i.e._ a subset of the `start` and `end` specifications. However, 
+
+##### TODO
+    
+* Evaluate to split into more basic `RangeRequest` and specialized
+  requests requiring an effect component
+    
+* Review current VRS v2 and upcoming versions for optoions to express
+  types of variants beyond the `copyChange` parameter    
+
+#### Definitions
+    
+* `type`: `object`    
+* `properties`:    
+    - `requestProfileId`: `'const': 'VQSrangeRequest'`      
+    - `referenceAccession`: `'$ref': './requestParameterComponents.yaml#/$defs/RefSeqId'`      
+    - `start`: `'type': 'integer'`      
+    - `end`: `'type': 'integer'`      
+    - `variantMinLength`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantMinLength'`      
+    - `variantMaxLength`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantMaxLength'`      
+    - `vrsType`: `'$ref': './requestParameterComponents.yaml#/$defs/VRStype'`    
+    
+* `required`:     
+    - `referenceAccession`    
+    - `start`    
+    - `end`    
+    - `vrsType`        
+
 ## `VQSadjacencyRequest` 
 
 #### Description
@@ -240,11 +269,13 @@ A Beacon v2.n request for sequence repeat queries, e.g. for the retrieval of tan
     
 * `type`: `object`    
 * `properties`:    
+    - `requestProfileId`: `'const': 'VQSsequenceRepeatRequest'`      
     - `referenceAccession`: `'$ref': './requestParameterComponents.yaml#/$defs/RefgetAccession'`      
     - `start`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceStart'`      
     - `end`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceEnd'`      
     - `repeatSubunitLength`: `'$ref': './requestParameterComponents.yaml#/$defs/RepeatSubunitLength'`      
-    - `repeatSubunitCount`: `'$ref': './requestParameterComponents.yaml#/$defs/RepeatSubunitCount'`    
+    - `repeatSubunitCount`: `'$ref': './requestParameterComponents.yaml#/$defs/RepeatSubunitCount'`      
+    - `vrsType`: `'const': 'SequenceRepeat'`    
 
 ## `VQSgeneIdRequest` 
 
@@ -262,7 +293,8 @@ A typical Beacon v2.n request for gene queries, e.g. for the retrieval of all va
     - `variantMinLength`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantMinLength'`      
     - `variantMaxLength`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantMaxLength'`      
     - `molecularEffect`: `'$ref': './requestParameterComponents.yaml#/$defs/molecularEffect'`      
-    - `clinicalRelevance`: `'$ref': './requestParameterComponents.yaml#/$defs/clinicalRelevance'`    
+    - `clinicalRelevance`: `'$ref': './requestParameterComponents.yaml#/$defs/clinicalRelevance'`      
+    - `vrsType`: `'$ref': './requestParameterComponents.yaml#/$defs/VRStype'`    
     
 * `required`:     
     - `geneId`        

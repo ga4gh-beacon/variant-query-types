@@ -1,6 +1,6 @@
 # Beacon VQS Requests
 
-This represents the generic collection of variant parameters supported in Beacon v2+ requests.
+The `VQSrequest` type represents the generic collection of variant parameters supported in Beacon v2+ requests. These include parameters with close alignment to VRS v2 concepts and replacing some Beacon v1/v2 generics with tighter definitions (e.g. `referenceAccession` instead of `referenceName` and `accession` or `copyChange` for a specific subset of former `variantType` values) but also keep some conceptsm beyond VRS scope or specifically geared towards query applications (`geneId`, `sequenceLength`)
 
 
 For the parameter definitions please see the [`requestParameterComponents` page.](../requestParameterComponents/)
@@ -37,10 +37,6 @@ For the parameter definitions please see the [`requestParameterComponents` page.
     - `$ref`: `./requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm`    
 * `sequenceLength`:    
     - `$ref`: `./requestParameterComponents.yaml#/$defs/SequenceLength`    
-* `variantMinLength`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/VariantMinLength`    
-* `variantMaxLength`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/VariantMaxLength`    
 * `vrsType`:    
     - `$ref`: `./requestParameterComponents.yaml#/$defs/VRStype`    
 
@@ -130,6 +126,102 @@ The query uses `"copyChange": "EFO:0020073"` for `high-level copy number loss` a
         21975098
     ],
     "vrsType": "CopyNumberCount"
+}```
+
+
+### Find variants overlapping an approximate sequence location
+#### Solution `g_variant` with range indicated by single `start` and `end` positions (`BV2rangeRequest`) and `variantType`
+Here sequence variants at a specifiied region on chromosome 2 are matched by using single start and end positions to indicate the genomic *range*.
+CAVE: Since no variant type is indicated such a query can potentially match a large number of variants, depending on the beacon's content and query interpretation (e.g. "any" overlap of a CNV could be matched unless the variant type is required for CNV queries).
+#### Request 
+    
+* `assemblyId`: `GRCh38`    
+    
+* `referenceName`: `17`    
+    
+* `start`:     
+    - `345675`        
+    
+* `end`:     
+    - `345681`        
+
+##### GET query string
+```assemblyId=GRCh38&referenceName=17&start=345675&end=345681```
+
+##### POST query component 
+```{
+    "assemblyId": "GRCh38",
+    "end": [
+        345681
+    ],
+    "referenceName": "17",
+    "start": [
+        345675
+    ]
+}```
+
+
+### Query for a deletion involving TP53
+#### Solution using `g_variant` with position range
+Query for a deletion involving TP53 using the maximum extent of the gene's coding region (known from somewhere...). The deletion to be found are expected to have an overlap with the queried range; however, the extent of the overlap is not pre-defined (most endpoints woul respond to a **recommended** "any" overlap but this is not a strict requirement imposed by the schema). Here positions refer to chromosome 17 on GRCh38 as indicated by the referenceName RefSeq ID.
+*Recommendation* Implementers should provide a mechanism to match any "deletion" `variantType` (`EFO:0030067`, `DEL`, `SO:0001743`) independent of size since operational definitions of `CNV` vs. `INDEL` vary, and use explicit `variantMinLength`, `variantMaxLength` parameters if needed.
+#### Request 
+    
+* `referenceName`: `refseq:NC_0000017.11`    
+    
+* `start`:     
+    - `7669608`        
+    
+* `end`:     
+    - `7676593`        
+    
+* `variantType`: `DEL`    
+
+##### GET query string
+```referenceName=refseq:NC_0000017.11&start=7669608&end=7676593&variantType=DEL```
+
+##### POST query component 
+```{
+    "end": [
+        7676593
+    ],
+    "referenceName": "refseq:NC_0000017.11",
+    "start": [
+        7669608
+    ],
+    "variantType": "DEL"
+}```
+
+
+### Find insertion events in TP53 or in close proximity (±~5000bp)
+#### Solution using `g_variant` with position range (`BV2rangeRequest`)
+For this query the mapping position of TP53 (17:7669607-7676593) has to be known. Usually this knowledge would be provided by a front end helper and the aditional padding added manually or w/ a helper field (if frequent scenario) and the beacon itself would just receive the positional range request.
+The "insertion" type is here provided through the Sequence Ontology term `SO:0000667` and for the chromosome the full, prefixed RefSeq term is being used.
+#### Request 
+    
+* `referenceName`: `refseq:NC_0000017.11`    
+    
+* `start`:     
+    - `7664000`        
+    
+* `end`:     
+    - `7682000`        
+    
+* `variantType`: `SO:0000667`    
+
+##### GET query string
+```referenceName=refseq:NC_0000017.11&start=7664000&end=7682000&variantType=SO:0000667```
+
+##### POST query component 
+```{
+    "end": [
+        7682000
+    ],
+    "referenceName": "refseq:NC_0000017.11",
+    "start": [
+        7664000
+    ],
+    "variantType": "SO:0000667"
 }```
 
 
@@ -300,21 +392,23 @@ Query for a deletion involving TP53 by using the HUGO name to specify the gene. 
     
 * `copyChange`: `EFO:0030067`    
     
-* `variantMinLength`: `1000`    
-    
-* `variantMaxLength`: `3000000`    
+* `sequenceLength`:     
+    - `1000`    
+    - `3000000`        
     
 * `vrsType`: `CopyNumberCount`    
 
 ##### GET query string
-```requestType=VQSgeneIdRequest&geneId=TP53&copyChange=EFO:0030067&variantMinLength=1000&variantMaxLength=3000000&vrsType=CopyNumberCount```
+```requestType=VQSgeneIdRequest&geneId=TP53&copyChange=EFO:0030067&sequenceLength=1000,3000000&vrsType=CopyNumberCount```
 
 ##### POST query component 
 ```{
     "copyChange": "EFO:0030067",
     "geneId": "TP53",
     "requestType": "VQSgeneIdRequest",
-    "variantMaxLength": 3000000,
-    "variantMinLength": 1000,
+    "sequenceLength": [
+        1000,
+        3000000
+    ],
     "vrsType": "CopyNumberCount"
 }```
