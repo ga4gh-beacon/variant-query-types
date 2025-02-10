@@ -69,10 +69,10 @@ The example uses `"copyChange": "EFO:0030070"` for `copy number gain` as specifi
     
 * `copyChange`: `EFO:0030070`    
     
-* `vrsType`: `copyChange`    
+* `vrsType`: `CopyNumberCount`    
 
 ##### GET query string
-```requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&copyChange=EFO:0030070&vrsType=copyChange```
+```requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&copyChange=EFO:0030070&vrsType=CopyNumberCount```
 
 ##### POST query component 
 ```{
@@ -87,7 +87,7 @@ The example uses `"copyChange": "EFO:0030070"` for `copy number gain` as specifi
         0,
         54700000
     ],
-    "vrsType": "copyChange"
+    "vrsType": "CopyNumberCount"
 }```
 
 
@@ -111,10 +111,10 @@ The query uses `"copyChange": "EFO:0020073"` for `high-level copy number loss` a
     
 * `copyChange`: `EFO:0020073`    
     
-* `vrsType`: `copyChange`    
+* `vrsType`: `CopyNumberCount`    
 
 ##### GET query string
-```requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=21000001,21975098&end=21967753,23000000&copyChange=EFO:0020073&vrsType=copyChange```
+```requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=21000001,21975098&end=21967753,23000000&copyChange=EFO:0020073&vrsType=CopyNumberCount```
 
 ##### POST query component 
 ```{
@@ -129,7 +129,7 @@ The query uses `"copyChange": "EFO:0020073"` for `high-level copy number loss` a
         21000001,
         21975098
     ],
-    "vrsType": "copyChange"
+    "vrsType": "CopyNumberCount"
 }```
 
 
@@ -177,6 +177,118 @@ This is a query for translocations between the MYC and IgH loci, where the break
 }```
 
 
+### `CAG` repeat in the first exon of the huntingtin gene (HTT)
+The gene HTT is located at position 4p16.3. In individuals without Huntington's disease, this CAG segment is typically repeated 10 to 35 times. Expansions beyond 35 copys are associated with the development of Huntington's disease.
+Examples for query parameters are:
+* GeneId: HTT * referenceAccession: refseq:NC_000004.12 * start: 3074681 * end: 3243960 * RepeatSubunitLength: 3 (CAG) * RepeatSubunitCount: [36, 250] (not yet defined in VRS or Beacon) * SequenceLength:  [105, 750]
+See also the [genome browser material](https://genome.ucsc.edu/training/education/cag.html).
+#### Solution using `VQSsequenceRepeatRequest` with locus and `sequenceLength`
+This example uses the HTT genome position and a range of (extended) sequence lengths to match against a `ReferenceLengthExpression` since the VRS v2 model does not contain a "repeat count" concept but only the overall length and unit length (as well as the sequence).
+TODO: Limit location to first exon?
+#### Request 
+    
+* `requestProfileId`: `VQSsequenceRepeatRequest`    
+    
+* `referenceAccession`: `refseq:NC_000004.12`    
+    
+* `start`: `3074681`    
+    
+* `end`: `3243960`    
+    
+* `repeatSubunitLength`: `3`    
+    
+* `sequenceLength`:     
+    - `105`    
+    - `750`        
+    
+* `vrsType`: `ReferenceLengthExpression`    
+
+##### GET query string
+```requestProfileId=VQSsequenceRepeatRequest&referenceAccession=refseq:NC_000004.12&start=3074681&end=3243960&repeatSubunitLength=3&sequenceLength=105,750&vrsType=ReferenceLengthExpression```
+
+##### POST query component 
+```{
+    "end": 3243960,
+    "referenceAccession": "refseq:NC_000004.12",
+    "repeatSubunitLength": 3,
+    "requestProfileId": "VQSsequenceRepeatRequest",
+    "sequenceLength": [
+        105,
+        750
+    ],
+    "start": 3074681,
+    "vrsType": "ReferenceLengthExpression"
+}```
+
+
+### `CAG` repeat in the first exon of the huntingtin gene (HTT)
+For details see above. 
+#### Solution using `VQSsequenceRepeatRequest` with `geneId` and `sequenceLength`
+Here instead of the position simply the gene symbol is being used.
+#### Request 
+    
+* `requestProfileId`: `VQSsequenceRepeatRequest`    
+    
+* `geneId`: `HTT`    
+    
+* `repeatSubunitLength`: `3`    
+    
+* `sequenceLength`:     
+    - `105`    
+    - `750`        
+    
+* `vrsType`: `ReferenceLengthExpression`    
+
+##### GET query string
+```requestProfileId=VQSsequenceRepeatRequest&geneId=HTT&repeatSubunitLength=3&sequenceLength=105,750&vrsType=ReferenceLengthExpression```
+
+##### POST query component 
+```{
+    "geneId": "HTT",
+    "repeatSubunitLength": 3,
+    "requestProfileId": "VQSsequenceRepeatRequest",
+    "sequenceLength": [
+        105,
+        750
+    ],
+    "vrsType": "ReferenceLengthExpression"
+}```
+
+
+### `CGG` trinucleotide repeat expansion in the FMR1 gene
+A `CGG` trinucleotide repeat expansion in the FMR1 gene on the X chromosome (Xq27.3) is known to cause Fragile X Syndrome (FXS). CGG repeating less than 44 times are stable across generations.
+#### Solution using `VQSsequenceRepeatRequest` with `geneId` and `sequenceLength`
+Similarly to the `HTT` example here a `geneId` is used to specify the gene and a range of sequence lengths is used to match against a `ReferenceLengthExpression`.
+#### Request 
+    
+* `requestProfileId`: `VQSsequenceRepeatRequest`    
+    
+* `geneId`: `FMR1`    
+    
+* `repeatSubunitLength`: `3`    
+    
+* `sequenceLength`:     
+    - `130`    
+    - `600`        
+    
+* `vrsType`: `ReferenceLengthExpression`    
+
+##### GET query string
+```requestProfileId=VQSsequenceRepeatRequest&geneId=FMR1&repeatSubunitLength=3&sequenceLength=130,600&vrsType=ReferenceLengthExpression```
+
+##### POST query component 
+```{
+    "geneId": "FMR1",
+    "repeatSubunitLength": 3,
+    "requestProfileId": "VQSsequenceRepeatRequest",
+    "sequenceLength": [
+        130,
+        600
+    ],
+    "vrsType": "ReferenceLengthExpression"
+}```
+
+
 ### Query for a focal deletion involving TP53
 #### Solution using `VQSgeneIdRequest` with `geneId`
 Query for a deletion involving TP53 by using the HUGO name to specify the gene. This request does not provide coordinates so on the server side matching has to be performed from annotated variants or by retrieving the gene's coordinates and creating internally a type of range request. Here we're also  limiting the size of the CNV to a typical "focal deletion" with a lower minimum size of 1kb (to avoid noise and non-structural variants) and an upper limit of 3Mb (to avoid large chromosomal deletions).
@@ -192,10 +304,10 @@ Query for a deletion involving TP53 by using the HUGO name to specify the gene. 
     
 * `variantMaxLength`: `3000000`    
     
-* `vrsType`: `copyChange`    
+* `vrsType`: `CopyNumberCount`    
 
 ##### GET query string
-```requestType=VQSgeneIdRequest&geneId=TP53&copyChange=EFO:0030067&variantMinLength=1000&variantMaxLength=3000000&vrsType=copyChange```
+```requestType=VQSgeneIdRequest&geneId=TP53&copyChange=EFO:0030067&variantMinLength=1000&variantMaxLength=3000000&vrsType=CopyNumberCount```
 
 ##### POST query component 
 ```{
@@ -204,5 +316,5 @@ Query for a deletion involving TP53 by using the HUGO name to specify the gene. 
     "requestType": "VQSgeneIdRequest",
     "variantMaxLength": 3000000,
     "variantMinLength": 1000,
-    "vrsType": "copyChange"
+    "vrsType": "CopyNumberCount"
 }```

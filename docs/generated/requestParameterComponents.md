@@ -141,17 +141,6 @@ A GA4GH RefGet identifier for the reference sequence, _i.e._ either a computed G
     - `refseq:NC_000009.12`    
     - `ga4gh:SQ.S_KjnFVz-FE7M0W6yoaUDgYxLPc1jyWU`        
 
-## `RepeatSubunitCount` 
-
-#### Description
-The number of repeats of a given repeat subunit. This is in addition to the options in the VRS model where repeats are expressed by their `length` and `repeatSubunitLength` (required) and `sequence` (optional) to allow e.g. queries for ranges of increased repeat number. Origin: Beacon v2+ with reference to VRS v2 `ReferenceLengthExpression`    
-
-#### Definitions
-    
-* `oneOf`:     
-    - `integer`    
-    - `$ref: #/$defs/Range`        
-
 ## `RepeatSubunitLength` 
 
 #### Description
