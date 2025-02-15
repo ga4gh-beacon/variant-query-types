@@ -13,8 +13,8 @@ manifestations.
 	Currently (February 2025, towards GA4GH Connect 2025) there is rapid development
 	which is reflected in the version specific pages:
 
-	- [Beacon v2 Query Solutions](generated/requestProfiles_g_variant) for demonstrating options provided by Beacon v2
-	- [Beacon v2+ Query Proposals](generated/requestProfiles_VQSrequest) for proposed parameters and solutions in a Beacon v2+ "Variant Query Standard" **VQS**
+	- [Beacon v2 Query Solutions](../generated/requestProfiles_g_variant) for demonstrating options provided by Beacon v2
+	- [Beacon v2+ Query Proposals](../generated/requestProfiles_VQSrequest) for proposed parameters and solutions in a Beacon v2+ "Variant Query Standard" **VQS**
 
 
 	For additional background see the previous [Beacon Scouts: Genomic Variants Use Cases & Examples](https://docs.google.com/document/d/1cwwRQ2PtlN1dBffCugdkbSHWCPmLgLkADd-5mu-rVAw/edit).
