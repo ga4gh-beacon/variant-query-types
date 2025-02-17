@@ -81,6 +81,13 @@ def main():
     gv_fh = open(gv_f, "w")
     gv_fh.write(f'# Beacon v2 Requests\n\n{request_pattern_ids.get(ph, "")}\n\n')
     gv_fh.write(f'\nFor the parameter definitions please see the [`requestParameterComponents` page.](../requestParameterComponents/)\n\n')
+
+    gv_fh.write("""
+Please note that the properties here - while identical to the parameters of the v2 query parameter definitions - have all been
+re-written as individual, referenced definitions for better re-use and readability
+(e.g. `alternateBases` is defined through `AlternateBases` which again references `Sequence`.
+""")
+
     gv_fh.write(f'## {ph} Parameters\n\n')
     ls = []
     ls = __add_md_def_lines(ls, schemas["requestProfiles"]["$defs"][ph]["properties"])

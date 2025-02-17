@@ -11,10 +11,10 @@ schemas_path: /blob/main/schemas/
 
 nav:
   - Introduction: variant-scouts-home
-  - Variation Types: variant-types
   - Beacon v2 Query Solutions: generated/requestProfiles_g_variant
   - Beacon v2+ VQS Proposals: generated/requestProfiles_VQSrequest
-  - Parameter Definitions: generated/requestParameterComponents
+  - Query Parameter Definitions: generated/requestParameterComponents
+  - Variation Types: variant-types
   # - Query Types: query-types
   - Genomic Coordinates: genomic-coordinates-mappings
   - Recommended Terms: terms-and-values
