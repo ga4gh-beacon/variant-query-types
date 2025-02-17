@@ -77,7 +77,7 @@ using additional parameters beyond the specification) can be found in
 	```
 
 
-## Examples for Beacon v2plus
+## Examples for Beacon VQS
 
 The following examples are using additional parameters beyond the Beacon v2 specification
 and should be considered for discussion only. The generated list can be found in 

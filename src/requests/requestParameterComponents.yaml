@@ -12,7 +12,7 @@ $defs:
       scenarios.
 
     versions:
-      - v2plus
+      - VQS
 
     $ref: "#/$defs/RefgetAccession"
 
@@ -23,7 +23,7 @@ $defs:
       Status: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification
 
     versions:
-      - v2plus
+      - VQS
 
     oneOf:
       - integer
@@ -36,7 +36,7 @@ $defs:
       Status: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification
 
     versions:
-      - v2plus
+      - VQS
 
     oneOf:
       - integer
@@ -49,7 +49,7 @@ $defs:
 
     versions:
       - v2.0
-      - v2plus
+      - VQS
 
     type: string
     examples:
@@ -92,7 +92,7 @@ $defs:
       Origin: Beacon v2.n, based on VRS v1.3+
 
     versions:
-      - v2plus
+      - VQS
 
     type: string
     enum:
@@ -114,7 +114,7 @@ $defs:
 
     versions:
       - v2.0
-      - v2plus
+      - VQS
 
     type: string
     examples:
@@ -128,7 +128,7 @@ $defs:
 
     versions:
       - v2.0
-      - v2plus
+      - VQS
 
     type: string
     examples:
@@ -140,7 +140,7 @@ $defs:
       "0-based, inclusive" format is used.
 
     versions:
-      - v2plus
+      - VQS
 
     type: array
     items: 
@@ -159,7 +159,7 @@ $defs:
       Reference: [GA4GH RefGet](http://samtools.github.io/hts-specs/refget.html)
 
     versions:
-      - v2plus
+      - VQS
 
     type: string
     examples:
@@ -173,7 +173,7 @@ $defs:
       Origin: VRS v2
 
     versions:
-      - v2plus
+      - VQS
 
     oneOf:
       - integer
@@ -189,7 +189,7 @@ $defs:
       Origin: Beacon v2+
 
     versions:
-      - v2plus
+      - VQS
 
     type: string
 
@@ -208,7 +208,7 @@ $defs:
       TODO: Review use of base characters.
 
     versions:
-      - v2plus
+      - VQS
 
     type: string
 
@@ -224,7 +224,7 @@ $defs:
       Origin: VRS v2
 
     versions:
-      - v2plus
+      - VQS
 
     oneOf:
       - integer
@@ -236,7 +236,7 @@ $defs:
       Status: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification
 
     versions:
-      - v2plus
+      - VQS
 
     oneOf:
       - integer
@@ -248,7 +248,7 @@ $defs:
       Status: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification
 
     versions:
-      - v2plus
+      - VQS
 
     oneOf:
       - integer
@@ -265,7 +265,7 @@ $defs:
       Status: PROPOSED FOR BEACON v2.n
 
     versions:
-      - v2plus
+      - VQS
 
     type: string
     examples:
@@ -279,7 +279,7 @@ $defs:
       Origin: VRS v2
 
     versions:
-      - v2plus
+      - VQS
 
     type: string
     enum:

@@ -22,7 +22,7 @@ The main examples relevant to variation queries here are `referenceName` and
 
 Due to the adoption of VRS concepts already recommendations for some values can be provided.
 
-### `referenceName` (v1/v2) and `referenceSequence` (v2+)
+### `referenceName` (v1/v2) and `referenceSequence` (v2plus/VQS)
 
 Reference names (`referenceName`) in Beacon v1/v2 allow versioned and unversioned
 formats and use an `assemblyId` to specify the reference genome.
@@ -49,7 +49,7 @@ use as option.
 ?referenceSequence=refseq:NC_000017.11
 ```
 
-### `variantType` (v1/v2) and `copyChange` (v2+)
+### `variantType` (v1/v2) and `copyChange` (VQS)
 
 In Beacon v1/v2 the `variantType` parameter is a free text field and can be used
 to scope queries for specific types of genomic variations. It is very permissive

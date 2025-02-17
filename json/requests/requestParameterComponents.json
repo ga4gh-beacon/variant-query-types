@@ -4,7 +4,7 @@
             "$ref": "#/$defs/RefgetAccession",
             "description": "A GA4GH RefGet identifier for the __adjacent__ sequence in adjacency/fusion scenarios.",
             "versions": [
-                "v2plus"
+                "VQS"
             ]
         },
         "AdjacencyEnd": {
@@ -16,7 +16,7 @@
                 }
             ],
             "versions": [
-                "v2plus"
+                "VQS"
             ]
         },
         "AdjacencyStart": {
@@ -28,7 +28,7 @@
                 }
             ],
             "versions": [
-                "v2plus"
+                "VQS"
             ]
         },
         "AlternateBases": {
@@ -49,7 +49,7 @@
             "type": "string",
             "versions": [
                 "v2.0",
-                "v2plus"
+                "VQS"
             ]
         },
         "Assembly": {
@@ -80,7 +80,7 @@
             ],
             "type": "string",
             "versions": [
-                "v2plus"
+                "VQS"
             ]
         },
         "End": {
@@ -107,7 +107,7 @@
             "type": "string",
             "versions": [
                 "v2.0",
-                "v2plus"
+                "VQS"
             ]
         },
         "GenomicAlleleShortForm": {
@@ -118,7 +118,7 @@
             "type": "string",
             "versions": [
                 "v2.0",
-                "v2plus"
+                "VQS"
             ]
         },
         "MateEnd": {
@@ -158,7 +158,7 @@
             },
             "type": "array",
             "versions": [
-                "v2plus"
+                "VQS"
             ]
         },
         "RefSeqId": {
@@ -192,7 +192,7 @@
             ],
             "type": "string",
             "versions": [
-                "v2plus"
+                "VQS"
             ]
         },
         "RepeatSubunitLength": {
@@ -204,21 +204,21 @@
                 }
             ],
             "versions": [
-                "v2plus"
+                "VQS"
             ]
         },
         "RequestProfileId": {
             "description": "The `requestProfileId` parameter here allows beacons to check the type of query being performed and to compare the provided request parameters for conformity with the expected query profile. The parameter definition here is a placeholder; the definitions of typed queries will use constant values for their `requestProfileId` parameter. Origin: Beacon v2+",
             "type": "string",
             "versions": [
-                "v2plus"
+                "VQS"
             ]
         },
         "Sequence": {
             "description": "DNA bases.    \n* Accepted values: `[ACGTN]*`     * N is a wildcard, that denotes the position of any base,\n  and can be used as a standalone base of any type or within a partially known\n  sequence. As example, a query of `ANNT` the Ns can take take any form of [ACGT]\n  and will match `ANNT`, `ACNT`, `ACCT`, `ACGT` ... and so forth.    \n\nOrigin: VRS v1.n\nTODO: Review use of base characters.",
             "type": "string",
             "versions": [
-                "v2plus"
+                "VQS"
             ]
         },
         "SequenceEnd": {
@@ -230,7 +230,7 @@
                 }
             ],
             "versions": [
-                "v2plus"
+                "VQS"
             ]
         },
         "SequenceLength": {
@@ -242,7 +242,7 @@
                 }
             ],
             "versions": [
-                "v2plus"
+                "VQS"
             ]
         },
         "SequenceStart": {
@@ -254,7 +254,7 @@
                 }
             ],
             "versions": [
-                "v2plus"
+                "VQS"
             ]
         },
         "Start": {
@@ -285,7 +285,7 @@
             ],
             "type": "string",
             "versions": [
-                "v2plus"
+                "VQS"
             ]
         },
         "VariantId": {
@@ -296,7 +296,7 @@
             ],
             "type": "string",
             "versions": [
-                "v2plus"
+                "VQS"
             ]
         },
         "VariantMaxLength": {

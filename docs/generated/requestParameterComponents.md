@@ -9,7 +9,7 @@ A GA4GH RefGet identifier for the __adjacent__ sequence in adjacency/fusion scen
 #### Definitions
     
 * `versions`:     
-    - `v2plus`        
+    - `VQS`        
     
 * `$ref`: `#/$defs/RefgetAccession`    
 
@@ -21,7 +21,7 @@ Start position or range (_i.e._ in case of a fuzzy breakpoint) on an adjacent se
 #### Definitions
     
 * `versions`:     
-    - `v2plus`        
+    - `VQS`        
     
 * `oneOf`:     
     - `integer`    
@@ -35,7 +35,7 @@ End position or range (_i.e._ in case of a fuzzy breakpoint) on an adjacent sequ
 #### Definitions
     
 * `versions`:     
-    - `v2plus`        
+    - `VQS`        
     
 * `oneOf`:     
     - `integer`    
@@ -50,7 +50,7 @@ Aminoacid alteration of interest. Format 1 letter Origin: Beacon v2.0
     
 * `versions`:     
     - `v2.0`    
-    - `v2plus`        
+    - `VQS`        
     
 * `type`: `string`    
     
@@ -87,7 +87,7 @@ Origin: Beacon v2.n, based on VRS v1.3+
 #### Definitions
     
 * `versions`:     
-    - `v2plus`        
+    - `VQS`        
     
 * `type`: `string`    
     
@@ -114,7 +114,7 @@ Origin: Beacon v2.0
     
 * `versions`:     
     - `v2.0`    
-    - `v2plus`        
+    - `VQS`        
     
 * `type`: `string`    
     
@@ -131,7 +131,7 @@ HGVSId descriptor Origin: Beacon v2.0
     
 * `versions`:     
     - `v2.0`    
-    - `v2plus`        
+    - `VQS`        
     
 * `type`: `string`    
     
@@ -146,7 +146,7 @@ An array of 2 integer values. If referring to sequence positions the "0-based, i
 #### Definitions
     
 * `versions`:     
-    - `v2plus`        
+    - `VQS`        
     
 * `type`: `array`    
 * `items`:    
@@ -163,7 +163,7 @@ A GA4GH RefGet identifier for the reference sequence, _i.e._ either a computed G
 #### Definitions
     
 * `versions`:     
-    - `v2plus`        
+    - `VQS`        
     
 * `type`: `string`    
     
@@ -179,7 +179,7 @@ The number of residues in a repeat subunit. In contrast to the VRS model we allo
 #### Definitions
     
 * `versions`:     
-    - `v2plus`        
+    - `VQS`        
     
 * `oneOf`:     
     - `integer`    
@@ -193,7 +193,7 @@ The `requestProfileId` parameter here allows beacons to check the type of query 
 #### Definitions
     
 * `versions`:     
-    - `v2plus`        
+    - `VQS`        
     
 * `type`: `string`    
 
@@ -214,7 +214,7 @@ TODO: Review use of base characters.
 #### Definitions
     
 * `versions`:     
-    - `v2plus`        
+    - `VQS`        
     
 * `type`: `string`    
 
@@ -228,7 +228,7 @@ Origin: VRS v2
 #### Definitions
     
 * `versions`:     
-    - `v2plus`        
+    - `VQS`        
     
 * `oneOf`:     
     - `integer`    
@@ -242,7 +242,7 @@ Start position or range (_i.e._ in case of a fuzzy breakpoint) on a sequence. St
 #### Definitions
     
 * `versions`:     
-    - `v2plus`        
+    - `VQS`        
     
 * `oneOf`:     
     - `integer`    
@@ -256,7 +256,7 @@ End position or range (_i.e._ in case of a fuzzy breakpoint) on a sequence. Stat
 #### Definitions
     
 * `versions`:     
-    - `v2plus`        
+    - `VQS`        
     
 * `oneOf`:     
     - `integer`    
@@ -278,7 +278,7 @@ Status: PROPOSED FOR BEACON v2.n
 #### Definitions
     
 * `versions`:     
-    - `v2plus`        
+    - `VQS`        
     
 * `type`: `string`    
     
@@ -294,7 +294,7 @@ Type of the variation according to the VRS model. Examples are here e.g. `Adjace
 #### Definitions
     
 * `versions`:     
-    - `v2plus`        
+    - `VQS`        
     
 * `type`: `string`    
     
