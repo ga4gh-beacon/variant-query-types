@@ -6,12 +6,12 @@
 	example files in the source tree instead of maintaining separate descriptions.
 	The examples below (though correct) will be replaced with the new system soon.
 
-	The current version of query examples for the Beacon v2 parameters (_i.e._ not
-	using additional parameters beyond the specification) can be found in 
-	**[Beacon v2 Examples](../generated/requestProfiles_g_variant)**.
+## Mature, working examples for Beacon v2
 
+The current version of query examples for the Beacon v2 parameters (_i.e._ not
+using additional parameters beyond the specification) can be found in 
+**[Beacon v2 Examples](../generated/requestProfiles_g_variant)**.
 
-## Mature, working examples
 
 ### Any deletion(s) involving the TP53 gene locus
 
@@ -77,4 +77,10 @@
 	```
 
 
-## Work in Progress
+## Examples for Beacon v2plus
+
+The following examples are using additional parameters beyond the Beacon v2 specification
+and should be considered for discussion only. The generated list can be found in 
+**[Beacon VQS Examples](../generated/requestProfiles_VQSrequest)**.
+
+

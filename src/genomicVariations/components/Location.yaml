@@ -1,0 +1,76 @@
+"$schema": https://json-schema.org/draft/2020-12/schema
+"$id": https://progenetix.org/services/schemas/VRSsequenceLocation/v2024-08-13
+title: VRS SequenceLocation
+type: object
+description: >-
+  Simplified VRS v2 Location definitions.
+oneOf:
+  - '#/definitions/SequenceLocation'
+definitions:
+  SequenceLocation:
+    description: >-
+      A Location defined by an interval on a referenced Sequence.
+      Source: https://vrs.ga4gh.org/en/2.x/concepts/LocationAndReference/SequenceLocation.html
+    type: object
+    properties:
+      id:
+        type: string
+        description: >-
+          The `logical` identifier of the entity in the system of record, e.g. a
+          UUID. This `id` is unique within a given system. The identified entity
+          may have a different `id` in a different system, or may refer to an
+          `id` for the shared concept in another system (e.g. a CURIE).
+      label:
+        type: string
+        description: >-
+          A primary name for the entity.
+      description:
+        description: >-
+          A free-text description of the entity.
+      alternativeLabels:
+        type: array
+        items:
+          type: string
+        description: >-
+          Alternative name(s) for the Entity.
+      # extensions:
+      #   type: array
+      #   items:
+      #     $ref: ...Extension
+      #   description: >-
+      #     A list of extensions to the entity. Extensions are not expected to be
+      #     natively understood, but may be used for pre-negotiated exchange of
+      #     message attributes between systems.
+      #     TODO: Needed in Beacon? Correct reference?
+      digest:
+        type: string
+        description: >-
+          A sha512t24u digest created using the VRS Computed Identifier algorithm.
+      type:
+        type: string
+        const: SequenceLocation
+        default: SequenceLocation
+      sequenceReference:
+        type: string
+        description: >-
+          A reference to a Sequence on which the location is defined as an IRI.
+          TODO: VRS2 also allows a SequenceReference object here, essentially a
+          GA4GH refget accession object.
+      start:
+        type: integer
+        description: >-
+          Start of the interval.
+          TODO: VRS2 also allows intervals "Range" here.
+      end:
+        type: integer
+        description: >-
+          Start of the interval.
+          TODO: VRS2 also allows intervals "Range" here.
+      sequence:
+        type: string
+        description: >-
+          A character string of _residues_ that represents a biological sequence
+          using the conventional sequence order (5’-to-3’ for nucleic acid
+          sequences, and amino-to-carboxyl for amino acid sequences). IUPAC
+          ambiguity codes are permitted in Sequence Strings.
+          TODO: Needed for Beacon? Revise definition - in VRS a referenced schema.

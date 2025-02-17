@@ -1,0 +1,52 @@
+{
+    "$id": "https://progenetix.org/services/schemas/VRSallele/v2023-07-25",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "definitions": {
+        "LiteralSequenceExpression": {
+            "additionalProperties": false,
+            "description": "An explicit expression of a Sequence.",
+            "properties": {
+                "sequence": {
+                    "description": "A character string of Residues that represents a biological sequence using the conventional sequence order for nucleic acid sequences.",
+                    "pattern": "^[A-Z*\\-]*$",
+                    "type": "string"
+                },
+                "type": {
+                    "const": "LiteralSequenceExpression",
+                    "default": "LiteralSequenceExpression",
+                    "description": "MUST be \"LiteralSequenceExpression\"",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "sequence",
+                "type"
+            ],
+            "type": "object"
+        }
+    },
+    "description": "Simplified VRS allele for use in Beacon v.2n.",
+    "properties": {
+        "location": {
+            "$ref": "./Location.json"
+        },
+        "state": {
+            "$ref": "#/definitions/LiteralSequenceExpression"
+        },
+        "type": {
+            "const": "Allele",
+            "default": "Allele",
+            "description": "MUST be \"Allele\"",
+            "type": "string"
+        }
+    },
+    "required": {
+        "all_of": [
+            "type",
+            "state",
+            "location"
+        ]
+    },
+    "title": "VRS Allele",
+    "type": "object"
+}

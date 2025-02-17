@@ -1,0 +1,27 @@
+{
+    "$id": "https://progenetix.org/services/schemas/VRSadjacency/v2024-08-13",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "Simplified VRS adjacency/fusion schema for use in Beacon v2.n.",
+    "properties": {
+        "adjoinedSequences": {
+            "items": {
+                "$ref": "./Location.json"
+            },
+            "type": "array"
+        },
+        "type": {
+            "const": "Adjacency",
+            "default": "Adjacency",
+            "description": "MUST be \"Adjacency\"",
+            "type": "string"
+        }
+    },
+    "required": {
+        "all_of": [
+            "type",
+            "adjoinedSequences"
+        ]
+    },
+    "title": "VRS Adjacency",
+    "type": "object"
+}

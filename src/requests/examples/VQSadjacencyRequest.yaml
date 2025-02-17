@@ -1,0 +1,29 @@
+examples:
+  VQSadjacency_01:
+    description: >-
+      ### Find  t(8;14)(q24;q32) translocations
+
+      #### Solution for `VQSrequest` using genomic ranges (`VQSadjacencyRequest`)
+
+      This is a query for translocations between the MYC and IgH loci, where the
+      breakpoints are loosely defined through there well known cytogenetic bands.
+      The query here follows the VRS adjacency model. In contrast to the VRS
+      representational model, here:    
+
+
+      - VRS uses an array of 2 genomic locations while Beacon names the location
+        parameters individually (using "adjacency..." for the second partner)    
+      - VRS explicitely encodes directionality by using either `start` or `end`
+        position parameters (integers or ranges) while this query example creates
+        non-directional ranges on both sides since directionality might not be known,
+        the storage system might not encode this or all options could be of interest    
+
+    request:
+      requestProfileId: VQSadjacencyRequest
+      referenceAccession: refseq:NC_000008.11
+      start: 116700000
+      end: 145138636
+      adjacencyAccession: refseq:NC_000014.9
+      adjacencyStart: 89300000
+      adjacencyEnd: 107043718
+      vrsType: Adjacency

@@ -1,0 +1,12 @@
+replace_vals:
+  "$schema":
+    replaceValue: 'https://json-schema.org/draft/2020-12/schema'
+    add: True
+replace_text:
+  - from: ___some_matched_text___
+    to: ___some_transformed_text___
+
+supported_types:
+  - json
+  - yaml
+delete_existing_files: True

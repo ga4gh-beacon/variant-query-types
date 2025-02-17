@@ -1,0 +1,14 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": true,
+    "description": "Schema for a VRS-derived SystemicVariation for a Beacon version TBD (beyond v2.1)",
+    "properties": {
+        "oneOf": [
+            {
+                "$ref": "./CopyNumberChange"
+            }
+        ]
+    },
+    "title": "Systemic Variation",
+    "type": "object"
+}

@@ -1,0 +1,10 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Molecular Variation
+description: >-
+  Schema for a VRS-derived MolecularVariation for a Beacon version TBD (beyond v2.1)
+type: object
+properties:
+  oneOf:
+    - $ref: ./Adjacency
+    - $ref: ./Allele
+additionalProperties: true
