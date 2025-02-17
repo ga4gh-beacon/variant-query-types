@@ -86,9 +86,73 @@ $defs:
         $ref: "./requestParameterComponents.yaml#/$defs/SequenceLength"
       vrsType:
         $ref: "./requestParameterComponents.yaml#/$defs/VRStype"
+      genomicFeatures:
+        $ref: "./requestParameterComponents.yaml#/$defs/GenomicFeature"
+      phenoClinicEffects:
+        $ref: "./requestParameterComponents.yaml#/$defs/PhenoClinicEffect"
 
 ################################################################################
-# BV2: Typed Beacon v2 queries utilizing v2.0 parameters
+# Generic query types supported both in v2 and VQS
+################################################################################
+
+  variantIdRequest:
+    description: >-
+      A typical Beacon v2 request for matching variations by their `variantId`.
+      This request is used to retrieve a specific variant by its identifier.
+    type: object
+    properties:
+      requestProfileId:
+        const: BV2variantIdRequest
+      variantId:
+        $ref: "./requestParameterComponents.yaml#/$defs/VariantId"
+
+  aminoacidChangeRequest:
+    description: >-
+      A Beacon v2 request for amino acid change queries, e.g. for the
+      retrieval of all variants leading to specific amino acid change. The request
+      may be restricted by additionally providing the gene ID.
+    type: object
+    properties:
+      requestProfileId:
+        const: BV2aminoacidChangeRequest
+      aminoacidChange:
+        $ref: "./requestParameterComponents.yaml#/$defs/AminoacidChange"
+      geneId:
+        $ref: "./requestParameterComponents.yaml#/$defs/GeneId"
+    required:
+      - aminoacidChange
+
+  BV2genomicAlleleShortFormRequest:
+    type: object
+    properties:
+      genomicAlleleShortForm:
+        $ref: "./requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm"
+
+  geneIdRequest:
+    description: >-
+      A typical Beacon v2.n request for gene queries, e.g. for the retrieval of
+      all variants in a gene or variants restricted by additional parameters
+      such `variantType` or length of the affected sequence.
+      TODO: Evaluate to split into more basic `GeneIdRequest` and specialized
+            requests requiring an effect component.
+    type: object
+    properties:
+      requestProfileId:
+        const: BV2geneIdRequest
+      geneId:
+        $ref: "./requestParameterComponents.yaml#/$defs/GeneId"
+      variantType:
+        $ref: "./requestParameterComponents.yaml#/$defs/VariantType"
+      variantMinLength:
+        $ref: "./requestParameterComponents.yaml#/$defs/VariantMinLength"
+      variantMaxLength:
+        $ref: "./requestParameterComponents.yaml#/$defs/VariantMaxLength"
+    required:
+      - geneId
+
+
+################################################################################
+# BV2: Typed Beacon v2 queries 
 ################################################################################
 
   BV2alleleRequest:
@@ -189,66 +253,6 @@ $defs:
       - referenceName
       - start
       - end
-
-
-################################################################################
-# Generic query types supported both in v2 and v2+
-################################################################################
-
-  BV2variantIdRequest:
-    description: >-
-      A typical Beacon v2 request for matching variations by their `variantId`.
-      This request is used to retrieve a specific variant by its identifier.
-    type: object
-    properties:
-      requestProfileId:
-        const: BV2variantIdRequest
-      variantId:
-        $ref: "./requestParameterComponents.yaml#/$defs/VariantId"
-
-  BV2aminoacidChangeRequest:
-    description: >-
-      A Beacon v2 request for amino acid change queries, e.g. for the
-      retrieval of all variants leading to specific amino acid change. The request
-      may be restricted by additionally providing the gene ID.
-    type: object
-    properties:
-      requestProfileId:
-        const: BV2aminoacidChangeRequest
-      aminoacidChange:
-        $ref: "./requestParameterComponents.yaml#/$defs/AminoacidChange"
-      geneId:
-        $ref: "./requestParameterComponents.yaml#/$defs/GeneId"
-    required:
-      - aminoacidChange
-
-  BV2genomicAlleleShortFormRequest:
-    type: object
-    properties:
-      genomicAlleleShortForm:
-        $ref: "./requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm"
-
-  BV2geneIdRequest:
-    description: >-
-      A typical Beacon v2.n request for gene queries, e.g. for the retrieval of
-      all variants in a gene or variants restricted by additional parameters
-      such `variantType` or length of the affected sequence.
-      TODO: Evaluate to split into more basic `GeneIdRequest` and specialized
-            requests requiring an effect component.
-    type: object
-    properties:
-      requestProfileId:
-        const: BV2geneIdRequest
-      geneId:
-        $ref: "./requestParameterComponents.yaml#/$defs/GeneId"
-      variantType:
-        $ref: "./requestParameterComponents.yaml#/$defs/VariantType"
-      variantMinLength:
-        $ref: "./requestParameterComponents.yaml#/$defs/VariantMinLength"
-      variantMaxLength:
-        $ref: "./requestParameterComponents.yaml#/$defs/VariantMaxLength"
-    required:
-      - geneId
 
 
 ################################################################################
@@ -428,7 +432,7 @@ $defs:
       - geneId
 
 ################################################################################
-# Proposed multi variant requests
+# Future Option: Proposed multi variant requests
 ################################################################################
 
   BV2multivarsRequest:

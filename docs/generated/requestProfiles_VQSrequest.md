@@ -7,39 +7,60 @@ For the parameter definitions please see the [`requestParameterComponents` page.
 
 ## VQSrequest Parameters
 
-* `requestProfileId`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/RequestProfileId`    
-* `referenceAccession`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/RefgetAccession`    
-* `start`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/SequenceStart`    
-* `end`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/SequenceEnd`    
-* `sequence`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/Sequence`    
-* `copyChange`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/CopyChange`    
-* `adjacencyAccession`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/AdjacencyAccession`    
-* `adjacencyStart`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/AdjacencyStart`    
-* `adjacencyEnd`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/AdjacencyEnd`    
-* `repeatSubunitCount`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/RepeatSubunitCount`    
-* `repeatSubunitLength`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/RepeatSubunitLength`    
-* `geneId`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/GeneId`    
-* `aminoacidChange`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/AminoacidChange`    
-* `genomicAlleleShortForm`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm`    
-* `sequenceLength`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/SequenceLength`    
-* `vrsType`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/VRStype`    
+    
 
+#### `requestProfileId`: [./requestParameterComponents.yaml#/$defs/RequestProfileId](../requestParameterComponents#requestprofileid)    
+    
+
+#### `referenceAccession`: [./requestParameterComponents.yaml#/$defs/RefgetAccession](../requestParameterComponents#refgetaccession)    
+    
+
+#### `start`: [./requestParameterComponents.yaml#/$defs/SequenceStart](../requestParameterComponents#sequencestart)    
+    
+
+#### `end`: [./requestParameterComponents.yaml#/$defs/SequenceEnd](../requestParameterComponents#sequenceend)    
+    
+
+#### `sequence`: [./requestParameterComponents.yaml#/$defs/Sequence](../requestParameterComponents#sequence)    
+    
+
+#### `copyChange`: [./requestParameterComponents.yaml#/$defs/CopyChange](../requestParameterComponents#copychange)    
+    
+
+#### `adjacencyAccession`: [./requestParameterComponents.yaml#/$defs/AdjacencyAccession](../requestParameterComponents#adjacencyaccession)    
+    
+
+#### `adjacencyStart`: [./requestParameterComponents.yaml#/$defs/AdjacencyStart](../requestParameterComponents#adjacencystart)    
+    
+
+#### `adjacencyEnd`: [./requestParameterComponents.yaml#/$defs/AdjacencyEnd](../requestParameterComponents#adjacencyend)    
+    
+
+#### `repeatSubunitCount`: [./requestParameterComponents.yaml#/$defs/RepeatSubunitCount](../requestParameterComponents#repeatsubunitcount)    
+    
+
+#### `repeatSubunitLength`: [./requestParameterComponents.yaml#/$defs/RepeatSubunitLength](../requestParameterComponents#repeatsubunitlength)    
+    
+
+#### `geneId`: [./requestParameterComponents.yaml#/$defs/GeneId](../requestParameterComponents#geneid)    
+    
+
+#### `aminoacidChange`: [./requestParameterComponents.yaml#/$defs/AminoacidChange](../requestParameterComponents#aminoacidchange)    
+    
+
+#### `genomicAlleleShortForm`: [./requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm](../requestParameterComponents#genomicalleleshortform)    
+    
+
+#### `sequenceLength`: [./requestParameterComponents.yaml#/$defs/SequenceLength](../requestParameterComponents#sequencelength)    
+    
+
+#### `vrsType`: [./requestParameterComponents.yaml#/$defs/VRStype](../requestParameterComponents#vrstype)    
+    
+
+#### `genomicFeatures`: [./requestParameterComponents.yaml#/$defs/GenomicFeature](../requestParameterComponents#genomicfeature)    
+    
+
+#### `phenoClinicEffects`: [./requestParameterComponents.yaml#/$defs/PhenoClinicEffect](../requestParameterComponents#phenocliniceffect)    
 
 ## Beacon v2+/VQS "VRSified" Request Examples
 

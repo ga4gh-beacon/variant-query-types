@@ -21,8 +21,9 @@ This represents the generic collection of variant parameters allowed in Beacon v
     - `genomicAlleleShortForm`: `'$ref': './requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm'`      
     - `variantMinLength`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantMinLength'`      
     - `variantMaxLength`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantMaxLength'`    
-* `examples`:    
-    - `$ref`: `../examples/g_variant.yaml#/examples`    
+    
+
+#### `examples`: [../examples/g_variant.yaml#/examples](../examples/g_variant.yaml#/examples)    
 
 ## `VQSrequest` 
 
@@ -48,7 +49,62 @@ The `VQSrequest` type represents the generic collection of variant parameters su
     - `aminoacidChange`: `'$ref': './requestParameterComponents.yaml#/$defs/AminoacidChange'`      
     - `genomicAlleleShortForm`: `'$ref': './requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm'`      
     - `sequenceLength`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceLength'`      
-    - `vrsType`: `'$ref': './requestParameterComponents.yaml#/$defs/VRStype'`    
+    - `vrsType`: `'$ref': './requestParameterComponents.yaml#/$defs/VRStype'`      
+    - `genomicFeatures`: `'$ref': './requestParameterComponents.yaml#/$defs/GenomicFeature'`      
+    - `phenoClinicEffects`: `'$ref': './requestParameterComponents.yaml#/$defs/PhenoClinicEffect'`    
+
+## `variantIdRequest` 
+
+#### Description
+A typical Beacon v2 request for matching variations by their `variantId`. This request is used to retrieve a specific variant by its identifier.    
+
+#### Definitions
+    
+* `type`: `object`    
+* `properties`:    
+    - `requestProfileId`: `'const': 'BV2variantIdRequest'`      
+    - `variantId`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantId'`    
+
+## `aminoacidChangeRequest` 
+
+#### Description
+A Beacon v2 request for amino acid change queries, e.g. for the retrieval of all variants leading to specific amino acid change. The request may be restricted by additionally providing the gene ID.    
+
+#### Definitions
+    
+* `type`: `object`    
+* `properties`:    
+    - `requestProfileId`: `'const': 'BV2aminoacidChangeRequest'`      
+    - `aminoacidChange`: `'$ref': './requestParameterComponents.yaml#/$defs/AminoacidChange'`      
+    - `geneId`: `'$ref': './requestParameterComponents.yaml#/$defs/GeneId'`    
+    
+* `required`:     
+    - `aminoacidChange`        
+
+## `BV2genomicAlleleShortFormRequest` 
+    
+* `type`: `object`    
+* `properties`:    
+    - `genomicAlleleShortForm`: `'$ref': './requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm'`    
+
+## `geneIdRequest` 
+
+#### Description
+A typical Beacon v2.n request for gene queries, e.g. for the retrieval of all variants in a gene or variants restricted by additional parameters such `variantType` or length of the affected sequence. TODO: Evaluate to split into more basic `GeneIdRequest` and specialized
+      requests requiring an effect component.    
+
+#### Definitions
+    
+* `type`: `object`    
+* `properties`:    
+    - `requestProfileId`: `'const': 'BV2geneIdRequest'`      
+    - `geneId`: `'$ref': './requestParameterComponents.yaml#/$defs/GeneId'`      
+    - `variantType`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantType'`      
+    - `variantMinLength`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantMinLength'`      
+    - `variantMaxLength`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantMaxLength'`    
+    
+* `required`:     
+    - `geneId`        
 
 ## `BV2alleleRequest` 
     
@@ -112,59 +168,6 @@ Beacon Range Queries are supposed to return matches of any variant with at least
     - `referenceName`    
     - `start`    
     - `end`        
-
-## `BV2variantIdRequest` 
-
-#### Description
-A typical Beacon v2 request for matching variations by their `variantId`. This request is used to retrieve a specific variant by its identifier.    
-
-#### Definitions
-    
-* `type`: `object`    
-* `properties`:    
-    - `requestProfileId`: `'const': 'BV2variantIdRequest'`      
-    - `variantId`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantId'`    
-
-## `BV2aminoacidChangeRequest` 
-
-#### Description
-A Beacon v2 request for amino acid change queries, e.g. for the retrieval of all variants leading to specific amino acid change. The request may be restricted by additionally providing the gene ID.    
-
-#### Definitions
-    
-* `type`: `object`    
-* `properties`:    
-    - `requestProfileId`: `'const': 'BV2aminoacidChangeRequest'`      
-    - `aminoacidChange`: `'$ref': './requestParameterComponents.yaml#/$defs/AminoacidChange'`      
-    - `geneId`: `'$ref': './requestParameterComponents.yaml#/$defs/GeneId'`    
-    
-* `required`:     
-    - `aminoacidChange`        
-
-## `BV2genomicAlleleShortFormRequest` 
-    
-* `type`: `object`    
-* `properties`:    
-    - `genomicAlleleShortForm`: `'$ref': './requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm'`    
-
-## `BV2geneIdRequest` 
-
-#### Description
-A typical Beacon v2.n request for gene queries, e.g. for the retrieval of all variants in a gene or variants restricted by additional parameters such `variantType` or length of the affected sequence. TODO: Evaluate to split into more basic `GeneIdRequest` and specialized
-      requests requiring an effect component.    
-
-#### Definitions
-    
-* `type`: `object`    
-* `properties`:    
-    - `requestProfileId`: `'const': 'BV2geneIdRequest'`      
-    - `geneId`: `'$ref': './requestParameterComponents.yaml#/$defs/GeneId'`      
-    - `variantType`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantType'`      
-    - `variantMinLength`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantMinLength'`      
-    - `variantMaxLength`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantMaxLength'`    
-    
-* `required`:     
-    - `geneId`        
 
 ## `VQSalleleRequest` 
 

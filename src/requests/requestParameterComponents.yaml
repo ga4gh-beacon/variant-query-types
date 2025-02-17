@@ -19,7 +19,8 @@ $defs:
   AdjacencyStart:
     description: >-
       Start position or range (_i.e._ in case of a fuzzy breakpoint) on an
-      adjacent sequence in case of a sequence adjecency
+      adjacent sequence in case of a sequence adjecency    
+      
       Status: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification
 
     versions:
@@ -32,7 +33,8 @@ $defs:
   AdjacencyEnd:
     description: >-
       End position or range (_i.e._ in case of a fuzzy breakpoint) on an
-      adjacent sequence in case of a sequence adjecency
+      adjacent sequence in case of a sequence adjecency    
+      
       Status: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification
 
     versions:
@@ -45,6 +47,7 @@ $defs:
   AminoacidChange:
     description: >-
       Aminoacid alteration of interest. Format 1 letter
+      
       Origin: Beacon v2.0
 
     versions:
@@ -110,6 +113,7 @@ $defs:
       * A gene identifier
       * It is strongly suggested to use a symbol following
         the HGNC (https://www.genenames.org) nomenclature.
+      
       Origin: Beacon v2.0
 
     versions:
@@ -124,6 +128,7 @@ $defs:
   GenomicAlleleShortForm:
     description: >-
       HGVSId descriptor
+      
       Origin: Beacon v2.0
 
     versions:
@@ -155,7 +160,9 @@ $defs:
       computed GA4GH checksum or other unique namespaced identifier supported
       by the server. It replaces the `referenceName` and `assemblyId` parameters
       according to the VRS v2 definition.
+      
       Origin: VRS v2
+      
       Reference: [GA4GH RefGet](http://samtools.github.io/hts-specs/refget.html)
 
     versions:
@@ -170,6 +177,7 @@ $defs:
     description: >-
       The number of residues in a repeat subunit. In contrast to the VRS model we
       allow for range queries (e.g. all repeats with subunits of 1 or 2).
+      
       Origin: VRS v2
 
     versions:
@@ -186,6 +194,7 @@ $defs:
       with the expected query profile.
       The parameter definition here is a placeholder; the definitions of typed queries
       will use constant values for their `requestProfileId` parameter.
+      
       Origin: Beacon v2+
 
     versions:

@@ -7,31 +7,42 @@ For the parameter definitions please see the [`requestParameterComponents` page.
 
 ## g_variant Parameters
 
-* `assemblyId`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/Assembly`    
-* `referenceName`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/RefSeqId`    
-* `referenceBases`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/ReferenceBases`    
-* `alternateBases`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/AlternateBases`    
-* `variantType`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/VariantType`    
-* `start`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/Start`    
-* `end`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/End`    
-* `geneId`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/GeneId`    
-* `aminoacidChange`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/AminoacidChange`    
-* `genomicAlleleShortForm`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm`    
-* `variantMinLength`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/VariantMinLength`    
-* `variantMaxLength`:    
-    - `$ref`: `./requestParameterComponents.yaml#/$defs/VariantMaxLength`    
+    
 
+#### `assemblyId`: [./requestParameterComponents.yaml#/$defs/Assembly](../requestParameterComponents#assembly)    
+    
+
+#### `referenceName`: [./requestParameterComponents.yaml#/$defs/RefSeqId](../requestParameterComponents#refseqid)    
+    
+
+#### `referenceBases`: [./requestParameterComponents.yaml#/$defs/ReferenceBases](../requestParameterComponents#referencebases)    
+    
+
+#### `alternateBases`: [./requestParameterComponents.yaml#/$defs/AlternateBases](../requestParameterComponents#alternatebases)    
+    
+
+#### `variantType`: [./requestParameterComponents.yaml#/$defs/VariantType](../requestParameterComponents#varianttype)    
+    
+
+#### `start`: [./requestParameterComponents.yaml#/$defs/Start](../requestParameterComponents#start)    
+    
+
+#### `end`: [./requestParameterComponents.yaml#/$defs/End](../requestParameterComponents#end)    
+    
+
+#### `geneId`: [./requestParameterComponents.yaml#/$defs/GeneId](../requestParameterComponents#geneid)    
+    
+
+#### `aminoacidChange`: [./requestParameterComponents.yaml#/$defs/AminoacidChange](../requestParameterComponents#aminoacidchange)    
+    
+
+#### `genomicAlleleShortForm`: [./requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm](../requestParameterComponents#genomicalleleshortform)    
+    
+
+#### `variantMinLength`: [./requestParameterComponents.yaml#/$defs/VariantMinLength](../requestParameterComponents#variantminlength)    
+    
+
+#### `variantMaxLength`: [./requestParameterComponents.yaml#/$defs/VariantMaxLength](../requestParameterComponents#variantmaxlength)    
 
 ## Beacon v2 Request Examples
 
@@ -206,44 +217,5 @@ The "insertion" type is here provided through the Sequence Ontology term `SO:000
     "start": [
         7664000
     ],
-    "variantType": "SO:0000667"
-}```
-
-
-### Query for a deletion involving TP53
-#### Solution `g_variant` with `geneId` (`BV2geneIdRequest`)
-Query for a deletion involving TP53 by using the HUGO name to specify the gene. This request does not provide coordinates so on the server side matching has to be performed from annotated variants or by retrieving the gene's coordinates and creating internally a type of range request.
-#### Request 
-    
-* `geneId`: `TP53`    
-    
-* `variantType`: `DEL`    
-
-##### GET query string
-```geneId=TP53&variantType=DEL```
-
-##### POST query component 
-```{
-    "geneId": "TP53",
-    "variantType": "DEL"
-}```
-
-
-### Find insertion events in TP53
-#### Solution using `g_variant` with `geneId` (`BV2geneIdRequest`)
-Query for a deletion involving TP53 by using the HUGO name to specify the gene. This request does not provide coordinates so on the server side matching has to be performed from annotated variants or by retrieving the gene's coordinates and creating internally a type of range request.
-The "insertion" type is here provided through the Sequence Ontology term `SO:0000667` (which has to be supported by the beacon server, either in the annotation or through mapping to the internal vocabulary).
-#### Request 
-    
-* `geneId`: `TP53`    
-    
-* `variantType`: `SO:0000667`    
-
-##### GET query string
-```geneId=TP53&variantType=SO:0000667```
-
-##### POST query component 
-```{
-    "geneId": "TP53",
     "variantType": "SO:0000667"
 }```

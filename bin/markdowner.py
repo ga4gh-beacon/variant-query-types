@@ -27,6 +27,7 @@ def main():
     #>------------------------------------------------------------------------<#
 
     """
+
     """
 
 
@@ -82,7 +83,7 @@ def main():
     gv_fh.write(f'\nFor the parameter definitions please see the [`requestParameterComponents` page.](../requestParameterComponents/)\n\n')
     gv_fh.write(f'## {ph} Parameters\n\n')
     ls = []
-    ls = __add_md_parameter_lines(ls, schemas["requestProfiles"]["$defs"][ph]["properties"])
+    ls = __add_md_def_lines(ls, schemas["requestProfiles"]["$defs"][ph]["properties"])
     gv_fh.write("\n".join(ls).replace("\n\n", "\n").replace("\n\n", "\n").replace("\n#", "\n\n#"))
     gv_fh.write(f'\n\n## Beacon v2 Request Examples\n\n')
     skips.append(ph)
@@ -94,7 +95,7 @@ def main():
     vqs_fh.write(f'\nFor the parameter definitions please see the [`requestParameterComponents` page.](../requestParameterComponents/)\n\n')
     vqs_fh.write(f'## {ph} Parameters\n\n')
     ls = []
-    ls = __add_md_parameter_lines(ls, schemas["requestProfiles"]["$defs"][ph]["properties"])
+    ls = __add_md_def_lines(ls, schemas["requestProfiles"]["$defs"][ph]["properties"])
     vqs_fh.write("\n".join(ls).replace("\n\n", "\n").replace("\n\n", "\n").replace("\n#", "\n\n#"))
     vqs_fh.write(f'\n\n## Beacon v2+/VQS "VRSified" Request Examples\n\n')
     skips.append(ph)
@@ -158,11 +159,23 @@ def __request_make_POST(rq):
 
 ################################################################################
 
+def __add_md_def_lines(lines, parameter):
+    for pik, piv in parameter.items():
+        if (f_l := __reformat_ref(pik, piv)):
+            lines += f_l
+
+    return lines
+
+################################################################################
+
 def __add_md_parameter_lines(lines, parameter):
 
     for pik, piv in parameter.items():
         # print(f'{pik}: {type(piv)}')
         if type(piv) is dict:
+            if (f_l := __reformat_ref(pik, piv)):
+                lines += f_l
+                return lines
             js = '  \n'
             lines.append(f'* `{pik}`:    \n')
             lines.append(js.join([f'    - `{k}`: `{str(v).replace("{", "").replace("}", "")}`    ' for k, v in piv.items()]))                    
@@ -181,6 +194,15 @@ def __add_md_parameter_lines(lines, parameter):
         lines.append(f'\n')
 
     return lines
+
+def __reformat_ref(pik, piv):
+    if not (p_ref := piv.get("$ref")):
+        return
+    p_link = p_ref.replace("./requestParameterComponents.yaml", "../requestParameterComponents")
+    p_link = p_link.replace("/$defs/", "")
+    p_base, p_rest = p_link.split('#')
+    return [f'    \n#### `{pik}`: [{p_ref}]({p_base}#{p_rest.lower()})    ']
+
 
 ################################################################################
 ################################################################################

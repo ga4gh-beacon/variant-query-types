@@ -16,7 +16,8 @@ A GA4GH RefGet identifier for the __adjacent__ sequence in adjacency/fusion scen
 ## `AdjacencyStart` 
 
 #### Description
-Start position or range (_i.e._ in case of a fuzzy breakpoint) on an adjacent sequence in case of a sequence adjecency Status: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification    
+Start position or range (_i.e._ in case of a fuzzy breakpoint) on an adjacent sequence in case of a sequence adjecency    
+Status: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification    
 
 #### Definitions
     
@@ -30,7 +31,8 @@ Start position or range (_i.e._ in case of a fuzzy breakpoint) on an adjacent se
 ## `AdjacencyEnd` 
 
 #### Description
-End position or range (_i.e._ in case of a fuzzy breakpoint) on an adjacent sequence in case of a sequence adjecency Status: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification    
+End position or range (_i.e._ in case of a fuzzy breakpoint) on an adjacent sequence in case of a sequence adjecency    
+Status: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification    
 
 #### Definitions
     
@@ -44,7 +46,8 @@ End position or range (_i.e._ in case of a fuzzy breakpoint) on an adjacent sequ
 ## `AminoacidChange` 
 
 #### Description
-Aminoacid alteration of interest. Format 1 letter Origin: Beacon v2.0    
+Aminoacid alteration of interest. Format 1 letter
+Origin: Beacon v2.0    
 
 #### Definitions
     
@@ -125,7 +128,8 @@ Origin: Beacon v2.0
 ## `GenomicAlleleShortForm` 
 
 #### Description
-HGVSId descriptor Origin: Beacon v2.0    
+HGVSId descriptor
+Origin: Beacon v2.0    
 
 #### Definitions
     
@@ -158,7 +162,9 @@ An array of 2 integer values. If referring to sequence positions the "0-based, i
 ## `RefgetAccession` 
 
 #### Description
-A GA4GH RefGet identifier for the reference sequence, _i.e._ either a computed GA4GH checksum or other unique namespaced identifier supported by the server. It replaces the `referenceName` and `assemblyId` parameters according to the VRS v2 definition. Origin: VRS v2 Reference: [GA4GH RefGet](http://samtools.github.io/hts-specs/refget.html)    
+A GA4GH RefGet identifier for the reference sequence, _i.e._ either a computed GA4GH checksum or other unique namespaced identifier supported by the server. It replaces the `referenceName` and `assemblyId` parameters according to the VRS v2 definition.
+Origin: VRS v2
+Reference: [GA4GH RefGet](http://samtools.github.io/hts-specs/refget.html)    
 
 #### Definitions
     
@@ -174,7 +180,8 @@ A GA4GH RefGet identifier for the reference sequence, _i.e._ either a computed G
 ## `RepeatSubunitLength` 
 
 #### Description
-The number of residues in a repeat subunit. In contrast to the VRS model we allow for range queries (e.g. all repeats with subunits of 1 or 2). Origin: VRS v2    
+The number of residues in a repeat subunit. In contrast to the VRS model we allow for range queries (e.g. all repeats with subunits of 1 or 2).
+Origin: VRS v2    
 
 #### Definitions
     
@@ -188,7 +195,8 @@ The number of residues in a repeat subunit. In contrast to the VRS model we allo
 ## `RequestProfileId` 
 
 #### Description
-The `requestProfileId` parameter here allows beacons to check the type of query being performed and to compare the provided request parameters for conformity with the expected query profile. The parameter definition here is a placeholder; the definitions of typed queries will use constant values for their `requestProfileId` parameter. Origin: Beacon v2+    
+The `requestProfileId` parameter here allows beacons to check the type of query being performed and to compare the provided request parameters for conformity with the expected query profile. The parameter definition here is a placeholder; the definitions of typed queries will use constant values for their `requestProfileId` parameter.
+Origin: Beacon v2+    
 
 #### Definitions
     

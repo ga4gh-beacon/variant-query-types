@@ -8,7 +8,7 @@
             ]
         },
         "AdjacencyEnd": {
-            "description": "End position or range (_i.e._ in case of a fuzzy breakpoint) on an adjacent sequence in case of a sequence adjecency Status: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification",
+            "description": "End position or range (_i.e._ in case of a fuzzy breakpoint) on an adjacent sequence in case of a sequence adjecency    \nStatus: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification",
             "oneOf": [
                 "integer",
                 {
@@ -20,7 +20,7 @@
             ]
         },
         "AdjacencyStart": {
-            "description": "Start position or range (_i.e._ in case of a fuzzy breakpoint) on an adjacent sequence in case of a sequence adjecency Status: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification",
+            "description": "Start position or range (_i.e._ in case of a fuzzy breakpoint) on an adjacent sequence in case of a sequence adjecency    \nStatus: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification",
             "oneOf": [
                 "integer",
                 {
@@ -41,7 +41,7 @@
             ]
         },
         "AminoacidChange": {
-            "description": "Aminoacid alteration of interest. Format 1 letter Origin: Beacon v2.0",
+            "description": "Aminoacid alteration of interest. Format 1 letter\nOrigin: Beacon v2.0",
             "examples": [
                 "V600E",
                 "M734V"
@@ -99,7 +99,7 @@
             ]
         },
         "GeneId": {
-            "description": "* A gene identifier * It is strongly suggested to use a symbol following\n  the HGNC (https://www.genenames.org) nomenclature.\nOrigin: Beacon v2.0",
+            "description": "* A gene identifier * It is strongly suggested to use a symbol following\n  the HGNC (https://www.genenames.org) nomenclature.\n\nOrigin: Beacon v2.0",
             "examples": [
                 "BRAF",
                 "SCN5A"
@@ -111,7 +111,7 @@
             ]
         },
         "GenomicAlleleShortForm": {
-            "description": "HGVSId descriptor Origin: Beacon v2.0",
+            "description": "HGVSId descriptor\nOrigin: Beacon v2.0",
             "examples": [
                 "NM_004006.2:c.4375C>T"
             ],
@@ -185,7 +185,7 @@
             ]
         },
         "RefgetAccession": {
-            "description": "A GA4GH RefGet identifier for the reference sequence, _i.e._ either a computed GA4GH checksum or other unique namespaced identifier supported by the server. It replaces the `referenceName` and `assemblyId` parameters according to the VRS v2 definition. Origin: VRS v2 Reference: [GA4GH RefGet](http://samtools.github.io/hts-specs/refget.html)",
+            "description": "A GA4GH RefGet identifier for the reference sequence, _i.e._ either a computed GA4GH checksum or other unique namespaced identifier supported by the server. It replaces the `referenceName` and `assemblyId` parameters according to the VRS v2 definition.\nOrigin: VRS v2\nReference: [GA4GH RefGet](http://samtools.github.io/hts-specs/refget.html)",
             "examples": [
                 "refseq:NC_000009.12",
                 "ga4gh:SQ.S_KjnFVz-FE7M0W6yoaUDgYxLPc1jyWU"
@@ -196,7 +196,7 @@
             ]
         },
         "RepeatSubunitLength": {
-            "description": "The number of residues in a repeat subunit. In contrast to the VRS model we allow for range queries (e.g. all repeats with subunits of 1 or 2). Origin: VRS v2",
+            "description": "The number of residues in a repeat subunit. In contrast to the VRS model we allow for range queries (e.g. all repeats with subunits of 1 or 2).\nOrigin: VRS v2",
             "oneOf": [
                 "integer",
                 {
@@ -208,7 +208,7 @@
             ]
         },
         "RequestProfileId": {
-            "description": "The `requestProfileId` parameter here allows beacons to check the type of query being performed and to compare the provided request parameters for conformity with the expected query profile. The parameter definition here is a placeholder; the definitions of typed queries will use constant values for their `requestProfileId` parameter. Origin: Beacon v2+",
+            "description": "The `requestProfileId` parameter here allows beacons to check the type of query being performed and to compare the provided request parameters for conformity with the expected query profile. The parameter definition here is a placeholder; the definitions of typed queries will use constant values for their `requestProfileId` parameter.\nOrigin: Beacon v2+",
             "type": "string",
             "versions": [
                 "VQS"
