@@ -10,15 +10,15 @@ examples:
       disease, this CAG segment is typically repeated 10 to 35 times. Expansions
       beyond 35 copys are associated with the development of Huntington's disease.
 
-      Examples for query parameters are:
+      Examples for query parameters are:    
 
-      * GeneId: HTT
-      * referenceAccession: refseq:NC_000004.12
-      * start: 3074681
-      * end: 3243960
-      * RepeatSubunitLength: 3 (CAG)
-      * RepeatSubunitCount: [36, 250] (not yet defined in VRS or Beacon)
-      * SequenceLength:  [105, 750]
+      * GeneId: HTT   
+      * referenceAccession: refseq:NC_000004.12   
+      * start: 3074681    
+      * end: 3243960    
+      * RepeatSubunitLength: 3 (CAG)    
+      * RepeatSubunitCount: [36, 250] (not yet defined in VRS or Beacon)    
+      * SequenceLength:  [105, 750]    
       
       See also the [genome browser material](https://genome.ucsc.edu/training/education/cag.html).
 
