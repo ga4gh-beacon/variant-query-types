@@ -282,6 +282,24 @@ $defs:
       - start
       - sequence
 
+  VQSsequenceLengthRequest:
+    description: |-
+      A Beacon v2+ query for an allelic variant by its length.
+    type: object
+    properties:
+      requestProfileId:
+        const: VQSsequenceLengthRequest
+      referenceAccession:
+        $ref: "./requestParameterComponents.yaml#/$defs/RefgetAccession"
+      sequenceLength:
+        $ref: "./requestParameterComponents.yaml#/$defs/SequenceLength"
+      vrsType:
+        const: Allele
+    required:
+      - referenceAccession
+      - start
+      - sequenceLength
+
   VQScopyChangeRequest:
     description: |-
       A typical Beacon v2.n request for copy number variations (CNVs) queries

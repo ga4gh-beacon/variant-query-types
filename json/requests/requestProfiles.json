@@ -391,6 +391,29 @@
             },
             "type": "object"
         },
+        "VQSsequenceLengthRequest": {
+            "description": "A Beacon v2+ query for an allelic variant by its length.",
+            "properties": {
+                "referenceAccession": {
+                    "$ref": "./requestParameterComponents.json#/$defs/RefgetAccession"
+                },
+                "requestProfileId": {
+                    "const": "VQSsequenceLengthRequest"
+                },
+                "sequenceLength": {
+                    "$ref": "./requestParameterComponents.json#/$defs/SequenceLength"
+                },
+                "vrsType": {
+                    "const": "Allele"
+                }
+            },
+            "required": [
+                "referenceAccession",
+                "start",
+                "sequenceLength"
+            ],
+            "type": "object"
+        },
         "VQSsequenceRepeatRequest": {
             "description": "A Beacon v2.n request for sequence repeat queries, e.g. for the\nretrieval of tandem repeat expansions or other sequence repeat events.",
             "properties": {

@@ -218,6 +218,25 @@ allele requests but replaces the original parameters with VRS v2 concepts.
     - `start`    
     - `sequence`        
 
+## `VQSsequenceLengthRequest` 
+
+#### Description
+A Beacon v2+ query for an allelic variant by its length.    
+
+#### Definitions
+    
+* `type`: `object`    
+* `properties`:    
+    - `requestProfileId`: `'const': 'VQSsequenceLengthRequest'`      
+    - `referenceAccession`: `'$ref': './requestParameterComponents.yaml#/$defs/RefgetAccession'`      
+    - `sequenceLength`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceLength'`      
+    - `vrsType`: `'const': 'Allele'`    
+    
+* `required`:     
+    - `referenceAccession`    
+    - `start`    
+    - `sequenceLength`        
+
 ## `VQScopyChangeRequest` 
 
 #### Description
