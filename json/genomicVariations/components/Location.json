@@ -3,7 +3,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "definitions": {
         "SequenceLocation": {
-            "description": "A Location defined by an interval on a referenced Sequence. Source: https://vrs.ga4gh.org/en/2.x/concepts/LocationAndReference/SequenceLocation.html",
+            "description": "A Location defined by an interval on a referenced Sequence.\nSource: https://vrs.ga4gh.org/en/2.x/concepts/LocationAndReference/SequenceLocation.html",
             "properties": {
                 "alternativeLabels": {
                     "description": "Alternative name(s) for the Entity.",
@@ -20,11 +20,11 @@
                     "type": "string"
                 },
                 "end": {
-                    "description": "Start of the interval. TODO: VRS2 also allows intervals \"Range\" here.",
+                    "description": "Start of the interval.\nTODO: VRS2 also allows intervals \"Range\" here.",
                     "type": "integer"
                 },
                 "id": {
-                    "description": "The `logical` identifier of the entity in the system of record, e.g. a UUID. This `id` is unique within a given system. The identified entity may have a different `id` in a different system, or may refer to an `id` for the shared concept in another system (e.g. a CURIE).",
+                    "description": "The `logical` identifier of the entity in the system of record, e.g. a\nUUID. This `id` is unique within a given system. The identified entity\nmay have a different `id` in a different system, or may refer to an\n`id` for the shared concept in another system (e.g. a CURIE).",
                     "type": "string"
                 },
                 "label": {
@@ -32,15 +32,15 @@
                     "type": "string"
                 },
                 "sequence": {
-                    "description": "A character string of _residues_ that represents a biological sequence using the conventional sequence order (5\u2019-to-3\u2019 for nucleic acid sequences, and amino-to-carboxyl for amino acid sequences). IUPAC ambiguity codes are permitted in Sequence Strings. TODO: Needed for Beacon? Revise definition - in VRS a referenced schema.",
+                    "description": "A character string of _residues_ that represents a biological sequence\nusing the conventional sequence order (5\u2019-to-3\u2019 for nucleic acid\nsequences, and amino-to-carboxyl for amino acid sequences). IUPAC\nambiguity codes are permitted in Sequence Strings.\nTODO: Needed for Beacon? Revise definition - in VRS a referenced schema.",
                     "type": "string"
                 },
                 "sequenceReference": {
-                    "description": "A reference to a Sequence on which the location is defined as an IRI. TODO: VRS2 also allows a SequenceReference object here, essentially a GA4GH refget accession object.",
+                    "description": "A reference to a Sequence on which the location is defined as an IRI.\nTODO: VRS2 also allows a SequenceReference object here, essentially a\nGA4GH refget accession object.",
                     "type": "string"
                 },
                 "start": {
-                    "description": "Start of the interval. TODO: VRS2 also allows intervals \"Range\" here.",
+                    "description": "Start of the interval.\nTODO: VRS2 also allows intervals \"Range\" here.",
                     "type": "integer"
                 },
                 "type": {

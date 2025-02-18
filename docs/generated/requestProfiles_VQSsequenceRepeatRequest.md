@@ -1,6 +1,7 @@
 # Request Profile: `VQSsequenceRepeatRequest`
 
-A Beacon v2.n request for sequence repeat queries, e.g. for the retrieval of tandem repeat expansions or other sequence repeat events.
+A Beacon v2.n request for sequence repeat queries, e.g. for the
+retrieval of tandem repeat expansions or other sequence repeat events.
 
 ### `CAG` repeat in the first exon of the huntingtin gene (HTT)
 
@@ -70,8 +71,11 @@ TODO: Limit location to first exon?
 
 
 ### `CAG` repeat in the first exon of the huntingtin gene (HTT)
+
 For details see above. 
+
 #### Solution using `VQSsequenceRepeatRequest` with `geneId` and `sequenceLength`
+
 Here instead of the position simply the gene symbol is being used.
 #### Request 
     
@@ -108,9 +112,15 @@ Here instead of the position simply the gene symbol is being used.
 
 
 ### `CGG` trinucleotide repeat expansion in the FMR1 gene
-A `CGG` trinucleotide repeat expansion in the FMR1 gene on the X chromosome (Xq27.3) is known to cause Fragile X Syndrome (FXS). CGG repeating less than 44 times are stable across generations.
+
+A `CGG` trinucleotide repeat expansion in the FMR1 gene on the X chromosome
+(Xq27.3) is known to cause Fragile X Syndrome (FXS). CGG repeating less than
+44 times are stable across generations.
+
 #### Solution using `VQSsequenceRepeatRequest` with `geneId` and `sequenceLength`
-Similarly to the `HTT` example here a `geneId` is used to specify the gene and a range of sequence lengths is used to match against a `ReferenceLengthExpression`.
+
+Similarly to the `HTT` example here a `geneId` is used to specify the gene
+and a range of sequence lengths is used to match against a `ReferenceLengthExpression`.
 #### Request 
     
 * `requestProfileId`: `VQSsequenceRepeatRequest`    

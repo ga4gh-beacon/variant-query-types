@@ -1,6 +1,7 @@
 # Beacon v2 Requests
 
-This represents the generic collection of variant parameters allowed in Beacon v2 requests.
+This represents the generic collection of variant parameters allowed in
+Beacon v2 requests.
 
 
 For the parameter definitions please see the [`requestParameterComponents` page.](../requestParameterComponents/)
@@ -53,8 +54,16 @@ re-written as individual, referenced definitions for better re-use and readabili
 
 
 ### Find small, _variable_ sequence insertions/deletions at an approximate position
-#### Solution `g_variant` with `start` and `end` ranges (`BV2bracketRequest`) and `variantType`
-Here sequence variants (insertions or deletions) involving a specific region on chromosome 17 but of varying length are matched by using "fuzzy" start  and end ranges ("brackets"). The variant type is identified as an INDEL although the interpretation is left to the implementation; e.g. an insertion which is stored as sequence change `17:43045708:A>AAACAAAC` would fulfill the request but might not be indicated as `INDEL` type.
+
+#### Solution `g_variant` with `start` and `end` ranges (`BV2bracketRequest`)
+and `variantType`
+
+Here sequence variants (insertions or deletions) involving a specific region
+on chromosome 17 but of varying length are matched by using "fuzzy" start 
+and end ranges ("brackets"). The variant type is identified as an INDEL although
+the interpretation is left to the implementation; e.g. an insertion which is
+stored as sequence change `17:43045708:A>AAACAAAC` would fulfill the request
+but might not be indicated as `INDEL` type.
 #### Request 
     
 * `assemblyId`: `GRCh38`    
@@ -95,9 +104,19 @@ Here sequence variants (insertions or deletions) involving a specific region on 
 
 
 ### Copy number gains involving the _whole_ locus _chr2:54,700,000-63,900,000_
+
 #### Solution for `g_variant` using `start` and `end` ranges (`BV2bracketRequest`)
-The query has to indicate the involved genomic region by positions as well as the type of change. Here, matched duplication events start 5\` of the region and end 3\` of it. For capturing any event upt to the complete chromosome duplication this requires knowledge about the maximum value (_i.e._ chromosome base length; using a random very large number might fail depending on the implementation).
-The example uses `EFO:0030070` for `copy number gain` instead of the alternative `SO:0001742` `copy_number_gain` or the VCF `DUP` as the preferred since the EFO terms provide a more granular expressivity and are referenced in the [VRS definitions](https://vrs.ga4gh.org/en/latest/terms_and_model.html#systemic-variation).
+
+The query has to indicate the involved genomic region by positions as well as the
+type of change. Here, matched duplication events start 5\` of the region and end 3\`
+of it. For capturing any event upt to the complete chromosome duplication this
+requires knowledge about the maximum value (_i.e._ chromosome base length; using a
+random very large number might fail depending on the implementation).
+
+The example uses `EFO:0030070` for `copy number gain` instead of the alternative
+`SO:0001742` `copy_number_gain` or the VCF `DUP` as the preferred since the EFO terms
+provide a more granular expressivity and are referenced in the
+[VRS definitions](https://vrs.ga4gh.org/en/latest/terms_and_model.html#systemic-variation).
 #### Request 
     
 * `assemblyId`: `GRCh38`    
@@ -138,9 +157,17 @@ The example uses `EFO:0030070` for `copy number gain` instead of the alternative
 
 
 ### Find variants overlapping an approximate sequence location
-#### Solution `g_variant` with range indicated by single `start` and `end` positions (`BV2rangeRequest`) and `variantType`
-Here sequence variants at a specifiied region on chromosome 2 are matched by using single start and end positions to indicate the genomic *range*.
-CAVE: Since no variant type is indicated such a query can potentially match a large number of variants, depending on the beacon's content and query interpretation (e.g. "any" overlap of a CNV could be matched unless the variant type is required for CNV queries).
+
+#### Solution `g_variant` with range indicated by single `start` and `end` positions (`BV2rangeRequest`)
+and `variantType`
+
+Here sequence variants at a specifiied region on chromosome 2 are matched
+by using single start and end positions to indicate the genomic *range*.
+
+CAVE: Since no variant type is indicated such a query can potentially
+match a large number of variants, depending on the beacon's content
+and query interpretation (e.g. "any" overlap of a CNV could be matched
+unless the variant type is required for CNV queries).
 #### Request 
     
 * `assemblyId`: `GRCh38`    
@@ -174,9 +201,21 @@ CAVE: Since no variant type is indicated such a query can potentially match a la
 
 
 ### Query for a deletion involving TP53
+
 #### Solution using `g_variant` with position range
-Query for a deletion involving TP53 using the maximum extent of the gene's coding region (known from somewhere...). The deletion to be found are expected to have an overlap with the queried range; however, the extent of the overlap is not pre-defined (most endpoints woul respond to a **recommended** "any" overlap but this is not a strict requirement imposed by the schema). Here positions refer to chromosome 17 on GRCh38 as indicated by the referenceName RefSeq ID.
-*Recommendation* Implementers should provide a mechanism to match any "deletion" `variantType` (`EFO:0030067`, `DEL`, `SO:0001743`) independent of size since operational definitions of `CNV` vs. `INDEL` vary, and use explicit `variantMinLength`, `variantMaxLength` parameters if needed.
+
+Query for a deletion involving TP53 using the maximum extent of the gene's
+coding region (known from somewhere...). The deletion to be found are expected
+to have an overlap with the queried range; however, the extent of the overlap
+is not pre-defined (most endpoints woul respond to a **recommended** "any"
+overlap but this is not a strict requirement imposed by the schema).
+Here positions refer to chromosome 17 on GRCh38 as indicated by the referenceName
+RefSeq ID.
+
+*Recommendation* Implementers should provide a mechanism to match any "deletion"
+`variantType` (`EFO:0030067`, `DEL`, `SO:0001743`) independent of size since
+operational definitions of `CNV` vs. `INDEL` vary, and use explicit `variantMinLength`,
+`variantMaxLength` parameters if needed.
 #### Request 
     
 * `referenceName`: `refseq:NC_0000017.11`    
@@ -210,9 +249,16 @@ Query for a deletion involving TP53 using the maximum extent of the gene's codin
 
 
 ### Find insertion events in TP53 or in close proximity (±~5000bp)
+
 #### Solution using `g_variant` with position range (`BV2rangeRequest`)
-For this query the mapping position of TP53 (17:7669607-7676593) has to be known. Usually this knowledge would be provided by a front end helper and the aditional padding added manually or w/ a helper field (if frequent scenario) and the beacon itself would just receive the positional range request.
-The "insertion" type is here provided through the Sequence Ontology term `SO:0000667` and for the chromosome the full, prefixed RefSeq term is being used.
+
+For this query the mapping position of TP53 (17:7669607-7676593) has to be
+known. Usually this knowledge would be provided by a front end helper and
+the aditional padding added manually or w/ a helper field (if frequent scenario)
+and the beacon itself would just receive the positional range request.
+
+The "insertion" type is here provided through the Sequence Ontology term
+`SO:0000667` and for the chromosome the full, prefixed RefSeq term is being used.
 #### Request 
     
 * `referenceName`: `refseq:NC_0000017.11`    

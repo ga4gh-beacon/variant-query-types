@@ -1,10 +1,23 @@
 # Request Profile: `VQSadjacencyRequest`
 
-A typical Beacon v2.n request for sequence adjacency queries, e.g. for the retrieval of chromosomal translocation events or sequence fusions. TODO: In VRS v2 there is an implicit sequence directionality from the use of either start or end parameters for either side of the adjacency. This might be problematic on the query side where in many instances just the approximate position of the (fused) breakpoints maight be of interest. This needs additional clarification (e.g. use of integer `start` and `end`, `adjacencyStart` and  `adjecencyEnd` parameters to indicate direction independent matching).
+A typical Beacon v2.n request for sequence adjacency queries, e.g. for the
+retrieval of chromosomal translocation events or sequence fusions.
+TODO: In VRS v2 there is an implicit sequence directionality from the use
+of either start or end parameters for either side of the adjacency. This might
+be problematic on the query side where in many instances just the approximate
+position of the (fused) breakpoints maight be of interest. This needs additional
+clarification (e.g. use of integer `start` and `end`, `adjacencyStart` and 
+`adjecencyEnd` parameters to indicate direction independent matching).
 
 ### Find  t(8;14)(q24;q32) translocations
+
 #### Solution for `VQSrequest` using genomic ranges (`VQSadjacencyRequest`)
-This is a query for translocations between the MYC and IgH loci, where the breakpoints are loosely defined through there well known cytogenetic bands. The query here follows the VRS adjacency model. In contrast to the VRS representational model, here:    
+
+This is a query for translocations between the MYC and IgH loci, where the
+breakpoints are loosely defined through there well known cytogenetic bands.
+The query here follows the VRS adjacency model. In contrast to the VRS
+representational model, here:    
+
 
 - VRS uses an array of 2 genomic locations while Beacon names the location
   parameters individually (using "adjacency..." for the second partner)    

@@ -7,7 +7,7 @@
             "properties": {
                 "alleleOrigin": {
                     "$ref": "https://raw.githubusercontent.com/ga4gh-beacon/beacon-v2/main/framework/json/common/ontologyTerm.json",
-                    "description": "Ontology value for allele origin of variant in sample from the Variant Origin (SO:0001762). Categories are `somatic variant`, `germline variant`, `maternal variant`, `paternal variant`, `de novo variant`, `pedigree specific variant`, `population specific variant`. Corresponds to Variant Inheritance in FHIR.",
+                    "description": "Ontology value for allele origin of variant in sample from the\nVariant Origin (SO:0001762). Categories are `somatic variant`, `germline\nvariant`, `maternal variant`, `paternal variant`, `de novo variant`, `pedigree\nspecific variant`, `population specific variant`. Corresponds to Variant\nInheritance in FHIR.",
                     "examples": [
                         {
                             "id": "SO:0001777",
@@ -60,7 +60,7 @@
                     "type": "array"
                 },
                 "id": {
-                    "description": "Internal id of this case level *instance* of the variant. This is an optional housekeeping parameter and should not be confused with the identifier of the variant (`variantInternalId`).",
+                    "description": "Internal id of this case level *instance* of the variant. This\nis an optional housekeeping parameter and should not be confused with the\nidentifier of the variant (`variantInternalId`).",
                     "examples": [
                         "id0001-var101101118"
                     ],
@@ -88,7 +88,7 @@
                 },
                 "zygosity": {
                     "$ref": "https://raw.githubusercontent.com/ga4gh-beacon/beacon-v2/main/framework/json/common/ontologyTerm.json",
-                    "description": "Ontology term for zygosity in which variant is present in the sample from the Zygosity Ontology (GENO:0000391) , e.g `heterozygous` (GENO:0000135)",
+                    "description": "Ontology term for zygosity in which variant is present in the\nsample from the Zygosity Ontology (GENO:0000391) , e.g `heterozygous` (GENO:0000135)",
                     "examples": [
                         {
                             "id": "GENO:0000135",
@@ -151,11 +151,11 @@
             "type": "object"
         },
         "GenomicFeature": {
-            "description": "Genomic feature(s) related to the variant. NOTE: Although genes could also be referenced using these attributes, they have an independent section to allow direct queries.",
+            "description": "Genomic feature(s) related to the variant.\nNOTE: Although genes could also be referenced using these attributes, they\nhave an independent section to allow direct queries.",
             "properties": {
                 "featureClass": {
                     "$ref": "https://raw.githubusercontent.com/ga4gh-beacon/beacon-v2/main/framework/json/common/ontologyTerm.json",
-                    "description": "Ontology term that describes the class of genomic feature affected by the variant. Values from SO (Sequence ontology) are recommended, e.g. `SO:0001623: 5 prime UTR variant`",
+                    "description": "Ontology term that describes the class of genomic feature affected\nby the variant. Values from SO (Sequence ontology) are recommended, e.g.\n`SO:0001623: 5 prime UTR variant`",
                     "examples": [
                         {
                             "id": "SO:0001623",
@@ -165,7 +165,7 @@
                 },
                 "featureID": {
                     "$ref": "https://raw.githubusercontent.com/ga4gh-beacon/beacon-v2/main/framework/json/common/ontologyTerm.json",
-                    "description": "Where applicable, ID/accession/name of genomic feature related to the `featureClass`, preferably in CURIE format. If the value is a gene id or name, it points to the gene related to the `featureClass`, e.g. `the 5 prime UTR upstream of TP53`",
+                    "description": "Where applicable, ID/accession/name of genomic feature related\nto the `featureClass`, preferably in CURIE format. If the value is a gene\nid or name, it points to the gene related to the `featureClass`, e.g. `the\n5 prime UTR upstream of TP53`",
                     "examples": [
                         {
                             "id": "HGNC:11998",
@@ -198,7 +198,7 @@
                     "type": "string"
                 },
                 "proteinHGVSIds": {
-                    "description": "List of HGVSId descriptor(s) at protein level (for protein-altering variants).",
+                    "description": "List of HGVSId descriptor(s) at protein level (for protein-altering\nvariants).",
                     "examples": [
                         [
                             "NP_009225.1:p.Glu1817Ter"
@@ -225,7 +225,7 @@
                     "type": "array"
                 },
                 "variantAlternativeIds": {
-                    "description": "List of cross-referencing ID(s), for the variant in other databases (e.g. dbSNP, ClinVar, ClinGen, COSMIC), as `externalReferences` with CURIE(s).",
+                    "description": "List of cross-referencing ID(s), for the variant in other databases\n(e.g. dbSNP, ClinVar, ClinGen, COSMIC), as `externalReferences` with CURIE(s).",
                     "examples": [
                         [
                             {
@@ -261,7 +261,7 @@
         "LegacyVariation": {
             "properties": {
                 "alternateBases": {
-                    "description": "Alternate bases for this variant (starting from `start`). * Accepted values: IUPAC codes for nucleotides (e.g. `https://www.bioinformatics.org/sms/iupac.html`). * N is a wildcard, that denotes the position of any base, and can be used as\n  a standalone base of any type or within a partially known sequence.\n* an *empty value* is used in the case of deletions with the maximally\n  trimmed, deleted sequence being indicated in `ReferenceBases`",
+                    "description": "Alternate bases for this variant (starting from `start`).\n* Accepted values: IUPAC codes for nucleotides (e.g. `https://www.bioinformatics.org/sms/iupac.html`).\n* N is a wildcard, that denotes the position of any base, and can be used as\n  a standalone base of any type or within a partially known sequence.\n* an *empty value* is used in the case of deletions with the maximally\n  trimmed, deleted sequence being indicated in `ReferenceBases`",
                     "examples": [
                         "T",
                         "G",
@@ -276,7 +276,7 @@
                     "$ref": "https://raw.githubusercontent.com/ga4gh/vrs/main/schema/vrs.json#/definitions/Location"
                 },
                 "referenceBases": {
-                    "description": "Reference bases for this variant (starting from `start`). * Accepted values: IUPAC codes for nucleotides (e.g. `https://www.bioinformatics.org/sms/iupac.html`). * N is a wildcard, that denotes the position of any base, and can be used\n  as a standalone base of any type or within a partially known sequence.\n* an *empty value* is used in the case of insertions with the maximally\n  trimmed, inserted sequence being indicated in `AlternateBases`.",
+                    "description": "Reference bases for this variant (starting from `start`).\n* Accepted values: IUPAC codes for nucleotides (e.g. `https://www.bioinformatics.org/sms/iupac.html`).\n* N is a wildcard, that denotes the position of any base, and can be used\n  as a standalone base of any type or within a partially known sequence.\n* an *empty value* is used in the case of insertions with the maximally\n  trimmed, inserted sequence being indicated in `AlternateBases`.",
                     "examples": [
                         "A",
                         "T",
@@ -289,7 +289,7 @@
                 },
                 "variantType": {
                     "default": "SNP",
-                    "description": "The `variantType` declares the nature of the variation in relation to a reference. In a response, it is used to describe the variation. Examples here are e.g. structural variants such as `DUP` (increased allelic count of material from the genomic region  between `start` and `end` positions without assumption about the placement of the additional sequence) or `DEL` (deletion of sequence following `start`). Either `alternateBases` or `variantType` is required in representing a `LegacyVariation`.",
+                    "description": "The `variantType` declares the nature of the variation in relation\nto a reference. In a response, it is used to describe the variation. Examples\nhere are e.g. structural variants such as `DUP` (increased allelic\ncount of material from the genomic region  between `start` and `end` positions\nwithout assumption about the placement of the additional sequence) or `DEL`\n(deletion of sequence following `start`). Either `alternateBases` or `variantType`\nis required in representing a `LegacyVariation`.",
                     "examples": [
                         "SNP",
                         "DEL",
@@ -344,7 +344,7 @@
                     "type": "array"
                 },
                 "molecularEffects": {
-                    "description": "Ontology term that includes describes the class of molecular consequence generated by the variant. Values from SO (Sequence Ontology) are recommended, e.g.  `SO:0001583: missense variant`.",
+                    "description": "Ontology term that includes describes the class of molecular\nconsequence generated by the variant. Values from SO (Sequence Ontology) are recommended, e.g. \n`SO:0001583: missense variant`.",
                     "examples": [
                         {
                             "id": "SO:0002322",
@@ -384,7 +384,7 @@
                     ]
                 },
                 "clinicalRelevance": {
-                    "description": "Indication of the clinical relevance of the variant Recommended: A value from the five-tiered classification from the American College of Medical Genetics (ACMG) designed to describe the likelihood that a genomic sequence variant is causative of an inherited disease. (NCIT:C168798).",
+                    "description": "Indication of the clinical relevance of the variant\nRecommended: A value from the five-tiered classification from the American\nCollege of Medical Genetics (ACMG) designed to describe the likelihood that\na genomic sequence variant is causative of an inherited disease. (NCIT:C168798).",
                     "enum": [
                         "benign",
                         "likely benign",
@@ -419,7 +419,7 @@
                 },
                 "evidenceType": {
                     "$ref": "https://raw.githubusercontent.com/ga4gh-beacon/beacon-v2/main/framework/json/common/ontologyTerm.json",
-                    "description": "Ontology term for the type of evidence supporting variant-disease association Recommended: values from the Evidence & Conclusion Ontology (ECO)",
+                    "description": "Ontology term for the type of evidence supporting variant-disease association\nRecommended: values from the Evidence & Conclusion Ontology (ECO)",
                     "examples": [
                         {
                             "id": "ECO:0000361",
@@ -448,7 +448,7 @@
                     "type": "number"
                 },
                 "population": {
-                    "description": "A name for the population. A population could an ethnic, geographical one or just the members of a study.",
+                    "description": "A name for the population. A population could an ethnic, geographical\none or just the members of a study.",
                     "examples": [
                         "East Asian",
                         "ICGC Chronic Lymphocytic Leukemia-ES",
@@ -543,7 +543,7 @@
             "$ref": "#/definitions/MolecularAttributes"
         },
         "variantInternalId": {
-            "description": "Reference to the **internal** variant ID. This represents the primary key/identifier of that variant **inside** a given Beacon instance. Different Beacon instances may use identical id values, referring to unrelated variants. Public identifiers such as the GA4GH Variant Representation Id (VRSid) MUST be returned in the `identifiers` section. A Beacon instance can, of course, use the VRSid as their own internal id but still MUST represent this then in the `identifiers` section. TODO: Review this definition.",
+            "description": "Reference to the **internal** variant ID. This represents the primary\nkey/identifier of that variant **inside** a given Beacon instance. Different\nBeacon instances may use identical id values, referring to unrelated variants.\nPublic identifiers such as the GA4GH Variant Representation Id (VRSid) MUST\nbe returned in the `identifiers` section. A Beacon instance can, of course,\nuse the VRSid as their own internal id but still MUST represent this then in\nthe `identifiers` section.\nTODO: Review this definition.",
             "examples": [
                 "var00001",
                 "v110112"

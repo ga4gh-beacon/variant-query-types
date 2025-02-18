@@ -122,7 +122,7 @@ $defs:
     required:
       - aminoacidChange
 
-  BV2genomicAlleleShortFormRequest:
+  genomicAlleleShortFormRequest:
     type: object
     properties:
       genomicAlleleShortForm:
@@ -300,10 +300,8 @@ $defs:
         $ref: "./requestParameterComponents.yaml#/$defs/SequenceEnd"
       copyChange:
         $ref: "./requestParameterComponents.yaml#/$defs/CopyChange"
-      variantMinLength:
-        $ref: "./requestParameterComponents.yaml#/$defs/VariantMinLength"
-      variantMaxLength:
-        $ref: "./requestParameterComponents.yaml#/$defs/VariantMaxLength"
+      sequenceLength:
+        $ref: "./requestParameterComponents.yaml#/$defs/SequenceLength"
       vrsType:
         const: CopyNumberChange
     required:
@@ -339,10 +337,8 @@ $defs:
         type: integer
       end:
         type: integer
-      variantMinLength:
-        $ref: "./requestParameterComponents.yaml#/$defs/VariantMinLength"
-      variantMaxLength:
-        $ref: "./requestParameterComponents.yaml#/$defs/VariantMaxLength"
+      sequenceLength:
+        $ref: "./requestParameterComponents.yaml#/$defs/SequenceLength"
       vrsType:
         $ref: "./requestParameterComponents.yaml#/$defs/VRStype"
 
@@ -418,10 +414,8 @@ $defs:
         $ref: "./requestParameterComponents.yaml#/$defs/GeneId"
       copyChange:
         $ref: "./requestParameterComponents.yaml#/$defs/CopyChange"
-      variantMinLength:
-        $ref: "./requestParameterComponents.yaml#/$defs/VariantMinLength"
-      variantMaxLength:
-        $ref: "./requestParameterComponents.yaml#/$defs/VariantMaxLength"
+      sequenceLength:
+        $ref: "./requestParameterComponents.yaml#/$defs/SequenceLength"
       molecularEffect:
         $ref: "./requestParameterComponents.yaml#/$defs/molecularEffect"
       clinicalRelevance:
