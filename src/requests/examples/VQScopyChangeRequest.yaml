@@ -1,6 +1,6 @@
 examples:
   VQScopyChange_01:
-    description: >-
+    description: |-
       ### Copy number gains involving the _whole_ locus _chr2:54,700,000-63,900,000_
 
       #### Solution for `VQSrequest` using `start` and `end` ranges (`VQScopyChangeRequest`)
@@ -28,7 +28,7 @@ examples:
 
 
   VQScopyChange_02:
-    description: >-
+    description: |-
       ### Focal high-level deletion involving the _CDKN2A_ locus
 
       #### Solution for `VQSrequest` using `start` and `end` ranges (`VQScopyChangeRequest`)

@@ -1,6 +1,6 @@
 examples:
   BV2bracket_indel_01:
-    description: >-
+    description: |-
       ### Find small, _variable_ sequence insertions/deletions at an approximate position
       
       #### Solution `g_variant` with `start` and `end` ranges (`BV2bracketRequest`)
@@ -26,7 +26,7 @@ examples:
 
 
   BV2bracket_CNV_01:
-    description: >-
+    description: |-
       ### Copy number gains involving the _whole_ locus _chr2:54,700,000-63,900,000_
 
       #### Solution for `g_variant` using `start` and `end` ranges (`BV2bracketRequest`)

@@ -3,12 +3,31 @@
 A Beacon v2.n request for sequence repeat queries, e.g. for the retrieval of tandem repeat expansions or other sequence repeat events.
 
 ### `CAG` repeat in the first exon of the huntingtin gene (HTT)
-The gene HTT is located at position 4p16.3. In individuals without Huntington's disease, this CAG segment is typically repeated 10 to 35 times. Expansions beyond 35 copys are associated with the development of Huntington's disease.
+
+The gene HTT is located at position 4p16.3. In individuals without Huntington's
+disease, this CAG segment is typically repeated 10 to 35 times. Expansions
+beyond 35 copys are associated with the development of Huntington's disease.
+
 Examples for query parameters are:    
-* GeneId: HTT    * referenceAccession: refseq:NC_000004.12    * start: 3074681     * end: 3243960     * RepeatSubunitLength: 3 (CAG)     * RepeatSubunitCount: [36, 250] (not yet defined in VRS or Beacon)     * SequenceLength:  [105, 750]    
+
+
+* GeneId: HTT   
+* referenceAccession: refseq:NC_000004.12   
+* start: 3074681    
+* end: 3243960    
+* RepeatSubunitLength: 3 (CAG)    
+* RepeatSubunitCount: [36, 250] (not yet defined in VRS or Beacon)    
+* SequenceLength:  [105, 750]    
+
 See also the [genome browser material](https://genome.ucsc.edu/training/education/cag.html).
+
 #### Solution using `VQSsequenceRepeatRequest` with locus and `sequenceLength`
-This example uses the HTT genome position and a range of (extended) sequence lengths to match against a `ReferenceLengthExpression` since the VRS v2 model does not contain a "repeat count" concept but only the overall length and unit length (as well as the sequence).
+
+This example uses the HTT genome position and a range of (extended) sequence
+lengths to match against a `ReferenceLengthExpression` since the VRS v2 model
+does not contain a "repeat count" concept but only the overall length and
+unit length (as well as the sequence).
+
 TODO: Limit location to first exon?
 #### Request 
     
@@ -29,10 +48,13 @@ TODO: Limit location to first exon?
 * `vrsType`: `ReferenceLengthExpression`    
 
 ##### GET query string
-```requestProfileId=VQSsequenceRepeatRequest&referenceAccession=refseq:NC_000004.12&start=3074681&end=3243960&repeatSubunitLength=3&sequenceLength=105,750&vrsType=ReferenceLengthExpression```
+```
+?requestProfileId=VQSsequenceRepeatRequest&referenceAccession=refseq:NC_000004.12&start=3074681&end=3243960&repeatSubunitLength=3&sequenceLength=105,750&vrsType=ReferenceLengthExpression
+```
 
 ##### POST query component 
-```{
+```json
+{
     "end": 3243960,
     "referenceAccession": "refseq:NC_000004.12",
     "repeatSubunitLength": 3,
@@ -43,7 +65,8 @@ TODO: Limit location to first exon?
     ],
     "start": 3074681,
     "vrsType": "ReferenceLengthExpression"
-}```
+}
+```
 
 
 ### `CAG` repeat in the first exon of the huntingtin gene (HTT)
@@ -65,10 +88,13 @@ Here instead of the position simply the gene symbol is being used.
 * `vrsType`: `ReferenceLengthExpression`    
 
 ##### GET query string
-```requestProfileId=VQSsequenceRepeatRequest&geneId=HTT&repeatSubunitLength=3&sequenceLength=105,750&vrsType=ReferenceLengthExpression```
+```
+?requestProfileId=VQSsequenceRepeatRequest&geneId=HTT&repeatSubunitLength=3&sequenceLength=105,750&vrsType=ReferenceLengthExpression
+```
 
 ##### POST query component 
-```{
+```json
+{
     "geneId": "HTT",
     "repeatSubunitLength": 3,
     "requestProfileId": "VQSsequenceRepeatRequest",
@@ -77,7 +103,8 @@ Here instead of the position simply the gene symbol is being used.
         750
     ],
     "vrsType": "ReferenceLengthExpression"
-}```
+}
+```
 
 
 ### `CGG` trinucleotide repeat expansion in the FMR1 gene
@@ -99,10 +126,13 @@ Similarly to the `HTT` example here a `geneId` is used to specify the gene and a
 * `vrsType`: `ReferenceLengthExpression`    
 
 ##### GET query string
-```requestProfileId=VQSsequenceRepeatRequest&geneId=FMR1&repeatSubunitLength=3&sequenceLength=130,600&vrsType=ReferenceLengthExpression```
+```
+?requestProfileId=VQSsequenceRepeatRequest&geneId=FMR1&repeatSubunitLength=3&sequenceLength=130,600&vrsType=ReferenceLengthExpression
+```
 
 ##### POST query component 
-```{
+```json
+{
     "geneId": "FMR1",
     "repeatSubunitLength": 3,
     "requestProfileId": "VQSsequenceRepeatRequest",
@@ -111,4 +141,5 @@ Similarly to the `HTT` example here a `geneId` is used to specify the gene and a
         600
     ],
     "vrsType": "ReferenceLengthExpression"
-}```
+}
+```

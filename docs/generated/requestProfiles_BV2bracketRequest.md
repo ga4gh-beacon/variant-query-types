@@ -22,10 +22,13 @@ Here sequence variants (insertions or deletions) involving a specific region on 
 * `variantType`: `INDEL`    
 
 ##### GET query string
-```assemblyId=GRCh38&referenceName=17&start=43045703,43045709&end=43045715,43045720&variantType=INDEL```
+```
+?assemblyId=GRCh38&referenceName=17&start=43045703,43045709&end=43045715,43045720&variantType=INDEL
+```
 
 ##### POST query component 
-```{
+```json
+{
     "assemblyId": "GRCh38",
     "end": [
         43045715,
@@ -37,7 +40,8 @@ Here sequence variants (insertions or deletions) involving a specific region on 
         43045709
     ],
     "variantType": "INDEL"
-}```
+}
+```
 
 
 ### Copy number gains involving the _whole_ locus _chr2:54,700,000-63,900,000_
@@ -61,10 +65,13 @@ The example uses `EFO:0030070` for `copy number gain` instead of the alternative
 * `variantType`: `EFO:0030070`    
 
 ##### GET query string
-```assemblyId=GRCh38&referenceName=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&variantType=EFO:0030070```
+```
+?assemblyId=GRCh38&referenceName=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&variantType=EFO:0030070
+```
 
 ##### POST query component 
-```{
+```json
+{
     "assemblyId": "GRCh38",
     "end": [
         63900000,
@@ -76,4 +83,5 @@ The example uses `EFO:0030070` for `copy number gain` instead of the alternative
         54700000
     ],
     "variantType": "EFO:0030070"
-}```
+}
+```

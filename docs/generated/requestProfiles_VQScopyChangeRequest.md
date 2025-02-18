@@ -25,10 +25,13 @@ The example uses `"copyChange": "EFO:0030070"` for `copy number gain` as specifi
 * `vrsType`: `CopyNumberCount`    
 
 ##### GET query string
-```requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&copyChange=EFO:0030070&vrsType=CopyNumberCount```
+```
+?requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&copyChange=EFO:0030070&vrsType=CopyNumberCount
+```
 
 ##### POST query component 
-```{
+```json
+{
     "copyChange": "EFO:0030070",
     "end": [
         63900000,
@@ -41,7 +44,8 @@ The example uses `"copyChange": "EFO:0030070"` for `copy number gain` as specifi
         54700000
     ],
     "vrsType": "CopyNumberCount"
-}```
+}
+```
 
 
 ### Focal high-level deletion involving the _CDKN2A_ locus
@@ -67,10 +71,13 @@ The query uses `"copyChange": "EFO:0020073"` for `high-level copy number loss` a
 * `vrsType`: `CopyNumberCount`    
 
 ##### GET query string
-```requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=21000001,21975098&end=21967753,23000000&copyChange=EFO:0020073&vrsType=CopyNumberCount```
+```
+?requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=21000001,21975098&end=21967753,23000000&copyChange=EFO:0020073&vrsType=CopyNumberCount
+```
 
 ##### POST query component 
-```{
+```json
+{
     "copyChange": "EFO:0020073",
     "end": [
         21967753,
@@ -83,4 +90,5 @@ The query uses `"copyChange": "EFO:0020073"` for `high-level copy number loss` a
         21975098
     ],
     "vrsType": "CopyNumberCount"
-}```
+}
+```

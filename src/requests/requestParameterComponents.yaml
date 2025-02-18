@@ -1,5 +1,5 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-description: >-
+description: |-
   Component definitions for `requestProfiles`. The definition of each parameter
   as a component allows for reuse across multiple request patterns but also for
   e.g. easy referencing in OpenAPI endpoints.
@@ -7,7 +7,7 @@ description: >-
 $defs:
 
   AdjacencyAccession:
-    description: >-
+    description: |-
       A GA4GH RefGet identifier for the __adjacent__ sequence in adjacency/fusion
       scenarios.
 
@@ -17,7 +17,7 @@ $defs:
     $ref: "#/$defs/RefgetAccession"
 
   AdjacencyStart:
-    description: >-
+    description: |-
       Start position or range (_i.e._ in case of a fuzzy breakpoint) on an
       adjacent sequence in case of a sequence adjecency    
       
@@ -31,7 +31,7 @@ $defs:
       - $ref: "#/$defs/Range"
 
   AdjacencyEnd:
-    description: >-
+    description: |-
       End position or range (_i.e._ in case of a fuzzy breakpoint) on an
       adjacent sequence in case of a sequence adjecency    
       
@@ -45,7 +45,7 @@ $defs:
       - $ref: "#/$defs/Range"
 
   AminoacidChange:
-    description: >-
+    description: |-
       Aminoacid alteration of interest. Format 1 letter
       
       Origin: Beacon v2.0
@@ -60,7 +60,7 @@ $defs:
       - M734V
 
   CopyChange:
-    description: >-
+    description: |-
       MUST use a primaryCode representing one of:
 
       ```
@@ -109,7 +109,7 @@ $defs:
       - EFO:0030072
 
   GeneId:
-    description: >-
+    description: |-
       * A gene identifier
       * It is strongly suggested to use a symbol following
         the HGNC (https://www.genenames.org) nomenclature.
@@ -126,7 +126,7 @@ $defs:
       - SCN5A
 
   GenomicAlleleShortForm:
-    description: >-
+    description: |-
       HGVSId descriptor
       
       Origin: Beacon v2.0
@@ -140,7 +140,7 @@ $defs:
       - NM_004006.2:c.4375C>T
 
   Range:
-    description: >-
+    description: |-
       An array of 2 integer values. If referring to sequence positions the
       "0-based, inclusive" format is used.
 
@@ -155,7 +155,7 @@ $defs:
       maxItems: 2
 
   RefgetAccession:
-    description: >-
+    description: |-
       A GA4GH RefGet identifier for the reference sequence, _i.e._ either a
       computed GA4GH checksum or other unique namespaced identifier supported
       by the server. It replaces the `referenceName` and `assemblyId` parameters
@@ -174,7 +174,7 @@ $defs:
       - ga4gh:SQ.S_KjnFVz-FE7M0W6yoaUDgYxLPc1jyWU
 
   RepeatSubunitLength:
-    description: >-
+    description: |-
       The number of residues in a repeat subunit. In contrast to the VRS model we
       allow for range queries (e.g. all repeats with subunits of 1 or 2).
       
@@ -188,7 +188,7 @@ $defs:
       - $ref: "#/$defs/Range"
 
   RequestProfileId:
-    description: >-
+    description: |-
       The `requestProfileId` parameter here allows beacons to check the type of query
       being performed and to compare the provided request parameters for conformity
       with the expected query profile.
@@ -203,7 +203,7 @@ $defs:
     type: string
 
   Sequence:
-    description: >-
+    description: |-
       DNA bases.    
 
       * Accepted values: `[ACGTN]*`    
@@ -222,7 +222,7 @@ $defs:
     type: string
 
   SequenceLength:
-    description: >-
+    description: |-
       The sequence length when querying the conceptual representation of a
       sequence according to a VRS `ReferenceLengthExpression` class.
 
@@ -240,7 +240,7 @@ $defs:
       - $ref: "#/$defs/Range"
 
   SequenceStart:
-    description: >-
+    description: |-
       Start position or range (_i.e._ in case of a fuzzy breakpoint) on a sequence.
       Status: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification
 
@@ -252,7 +252,7 @@ $defs:
       - $ref: "#/$defs/Range"
 
   SequenceEnd:
-    description: >-
+    description: |-
       End position or range (_i.e._ in case of a fuzzy breakpoint) on a sequence.
       Status: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification
 
@@ -264,7 +264,7 @@ $defs:
       - $ref: "#/$defs/Range"
 
   VariantId:
-    description: >-
+    description: |-
       * A variant identifier such as a VRSid, ClinVar id, dbSNP rsID or a
         COSMIC identifier
       * In the default data model this query parameter corresponds to
@@ -282,7 +282,7 @@ $defs:
       - dbSNP:rs587780345
 
   VRStype:
-    description: >-
+    description: |-
       Type of the variation according to the VRS model. Examples are here e.g.
       `Adjacency` or `Allele`.
       Origin: VRS v2
@@ -305,7 +305,7 @@ $defs:
 ################################################################################
 
   Assembly:
-    description: >-
+    description: |-
       Genomic assembly accession and version as RefSqeq assembly accession
       (e.g. "GCF_000001405.39") or a versioned assembly name or synonym such as UCSC
       Genome Browser assembly (e.g. "hg38") or Genome Reference Consortium Human (e.g.
@@ -325,7 +325,7 @@ $defs:
       - GRCh38.p13
 
   RefSeqId:
-    description: >-
+    description: |-
       Reference sequence id for genomic reference sequence in which variant
       coordinates are given, e.g. "refseq:NC_000009.12" for human chromosome 9 in the
       GRCh38 assembly. The use of the assembly specific RefSeqId is recommended
@@ -346,7 +346,7 @@ $defs:
       - NC_012920.1
 
   ReferenceBases:
-    description: >-
+    description: |-
       The reference bases for the variant at the indicated position. It is based
       on the VCF cocept of having (anchored) reference bases at an indicated
       genomic location in combination with `alternateBases` to define their
@@ -365,7 +365,7 @@ $defs:
     $ref: "#/$defs/Sequence"
 
   AlternateBases:
-    description: >-
+    description: |-
       The bases of a sequence variant at a given position differing from the
       reference sequence, as defined by the `referenceBases` parameter. Please
       see `refereenceBases` for further information.
@@ -380,7 +380,7 @@ $defs:
     $ref: "#/$defs/Sequence"
 
   VariantType:
-    description: >-
+    description: |-
       The `variantType` is used to query variants which are not defined through
       a sequence of one or more bases using the `alternateBases` parameter. This
       VCF derived parameter is being replaced by the more specific VRS derived
@@ -417,7 +417,7 @@ $defs:
       - EFO:0030069
 
   Start:
-    description: >-
+    description: |-
       NOTE: This parameter will be _potentially_ replaced by the VRS based definition
             which uses either an integer or a Range (2 integers) in contrast to
             the use of an array with 1 or 2 integers here. The difference lies in 
@@ -460,7 +460,7 @@ $defs:
     maxItems: 2
 
   End:
-    description: >-
+    description: |-
       ##### Notes
       
       See the `start` parameter for information on the potential replacement
@@ -484,7 +484,7 @@ $defs:
     maxItems: 2
 
   MateName:
-    description: >-
+    description: |-
       ##### Notes
 
       * while the `mateName` parameter was originally defined for Beacon v1.1
@@ -502,7 +502,7 @@ $defs:
     $ref: "#/$defs/RefSeqId"
 
   MateStart:
-    description: >-
+    description: |-
       genomic start position of fusion partner breakpoint region
       Status: DEPRECATED in v2.n (see `mateName`)
 
@@ -514,7 +514,7 @@ $defs:
     type: integer
 
   MateEnd:
-    description: >-
+    description: |-
       genomic end position of fusion partner breakpoint region
       Status: DEPRECATED in v2.n (see `mateName`)
 
@@ -526,7 +526,7 @@ $defs:
     type: integer
 
   VariantMinLength:
-    description: >-
+    description: |-
       * Minimum length in bases of a genomic variant
       * This is an optional parameter without prescribed use. While a length is
         commonly available for structural variants such as copy number variations,
@@ -547,7 +547,7 @@ $defs:
     minimum: 0
 
   VariantMaxLength:
-    description: >-
+    description: |-
       * Maximum length in bases of a genomic variant.
       * This is an optional parameter without prescribed use. While a length is
         commonly available for structural variants such as copy number variations,

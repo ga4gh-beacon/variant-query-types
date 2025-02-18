@@ -1,6 +1,6 @@
 $schema: https://json-schema.org/draft/2020-12/schema
 title: Genomic Variations Request Parameters
-description: >-
+description: |-
   The request parameters schemas define the atomic parameters used in query
   documents against a variation entity.
   TODO: Variant Scouts => revise (e.g. name & PascalCasing of definitions ...)
@@ -8,7 +8,7 @@ type: object
 
 $defs:
   assemblyId:
-    description: >-
+    description: |-
       Genomic assembly accession and version as RefSqeq assembly accession
       (e.g. "GCF_000001405.39") or a versioned assembly name or synonym such as UCSC
       Genome Browser assembly (e.g. "hg38") or Genome Reference Consortium Human (e.g.
@@ -21,7 +21,7 @@ $defs:
       - GRCh38.p13
 
   referenceName:
-    description: >-
+    description: |-
       Sequence id for genomic sequence (e.g. chromosome) in which variant
       coordinates (`start`, `end` ...) are given. Preferably a RefSeqId or 
       alternatively common synonymous or aliases.
@@ -35,7 +35,7 @@ $defs:
       - NC_012920.1
 
   mateName:
-    description: >-
+    description: |-
       Sequence id for genomic sequence (e.g. chromosome) as in the `referenceName`
       parameter, for use cases describing a fusion event (to a different or
       identical chromosome).
@@ -48,7 +48,7 @@ $defs:
       - NC_012920.1
 
   basePositions:
-    description: >-
+    description: |-
       Precise or fuzzy start coordinate position(s), allele locus
       (0-based, inclusive).
       * `start` only:
@@ -106,7 +106,7 @@ $defs:
     maxItems: 2
 
   sequence:
-    description: >-
+    description: |-
       Sequence of bases for a variation (starting from `start`).
       * Accepted values: [ACGTN]
       * N is a wildcard, that denotes the position of any base and can be used as
@@ -119,7 +119,7 @@ $defs:
     pattern: ^([ACGTUNRYSWKMBDHV\-\.]*)$
 
   variantType:
-    description: >-
+    description: |-
       The `variantType` is used to query variants which are not defined through
       a sequence of one or more bases using the `alternateBases` parameter.
       Examples here are e.g. structural variants:
@@ -137,7 +137,7 @@ $defs:
     type: string
 
   variantMinLength:
-    description: >-
+    description: |-
       * Minimum length in bases of a genomic variant
       * This is an optional parameter without prescribed use. While a length is
         commonly available for structural variants such as copy number variations,
@@ -149,7 +149,7 @@ $defs:
     minimum: 0
 
   variantMaxLength:
-    description: >-
+    description: |-
       * Maximum length in bases of a genomic variant.
       * This is an optional parameter without prescribed use. While a length is
         commonly available for structural variants such as copy number variations,
@@ -161,7 +161,7 @@ $defs:
     minimum: 1
 
   geneId:
-    description: >-
+    description: |-
       * A gene identifier
       * It is strongly suggested to use a symbol following
         the HGNC (https://www.genenames.org) nomenclature.
@@ -171,7 +171,7 @@ $defs:
       - SCN5A
 
   aminoacidChange:
-    description: >-
+    description: |-
       Aminoacid alteration in 1 letter format
     type: string
     examples:
@@ -179,7 +179,7 @@ $defs:
       - M734V
 
   genomicAlleleShortForm:
-    description: >-
+    description: |-
       Genomic HGVSId descriptor.
     type: string
     examples:

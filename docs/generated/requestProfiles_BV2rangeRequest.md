@@ -19,10 +19,13 @@ CAVE: Since no variant type is indicated such a query can potentially match a la
     - `345681`        
 
 ##### GET query string
-```assemblyId=GRCh38&referenceName=17&start=345675&end=345681```
+```
+?assemblyId=GRCh38&referenceName=17&start=345675&end=345681
+```
 
 ##### POST query component 
-```{
+```json
+{
     "assemblyId": "GRCh38",
     "end": [
         345681
@@ -31,7 +34,8 @@ CAVE: Since no variant type is indicated such a query can potentially match a la
     "start": [
         345675
     ]
-}```
+}
+```
 
 
 ### Query for a deletion involving TP53
@@ -51,10 +55,13 @@ Query for a deletion involving TP53 using the maximum extent of the gene's codin
 * `variantType`: `DEL`    
 
 ##### GET query string
-```referenceName=refseq:NC_0000017.11&start=7669608&end=7676593&variantType=DEL```
+```
+?referenceName=refseq:NC_0000017.11&start=7669608&end=7676593&variantType=DEL
+```
 
 ##### POST query component 
-```{
+```json
+{
     "end": [
         7676593
     ],
@@ -63,7 +70,8 @@ Query for a deletion involving TP53 using the maximum extent of the gene's codin
         7669608
     ],
     "variantType": "DEL"
-}```
+}
+```
 
 
 ### Find insertion events in TP53 or in close proximity (±~5000bp)
@@ -83,10 +91,13 @@ The "insertion" type is here provided through the Sequence Ontology term `SO:000
 * `variantType`: `SO:0000667`    
 
 ##### GET query string
-```referenceName=refseq:NC_0000017.11&start=7664000&end=7682000&variantType=SO:0000667```
+```
+?referenceName=refseq:NC_0000017.11&start=7664000&end=7682000&variantType=SO:0000667
+```
 
 ##### POST query component 
-```{
+```json
+{
     "end": [
         7682000
     ],
@@ -95,4 +106,5 @@ The "insertion" type is here provided through the Sequence Ontology term `SO:000
         7664000
     ],
     "variantType": "SO:0000667"
-}```
+}
+```

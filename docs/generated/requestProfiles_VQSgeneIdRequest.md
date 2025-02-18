@@ -21,10 +21,13 @@ Query for a deletion involving TP53 by using the HUGO name to specify the gene. 
 * `vrsType`: `CopyNumberCount`    
 
 ##### GET query string
-```requestType=VQSgeneIdRequest&geneId=TP53&copyChange=EFO:0030067&sequenceLength=1000,3000000&vrsType=CopyNumberCount```
+```
+?requestType=VQSgeneIdRequest&geneId=TP53&copyChange=EFO:0030067&sequenceLength=1000,3000000&vrsType=CopyNumberCount
+```
 
 ##### POST query component 
-```{
+```json
+{
     "copyChange": "EFO:0030067",
     "geneId": "TP53",
     "requestType": "VQSgeneIdRequest",
@@ -33,4 +36,5 @@ Query for a deletion involving TP53 by using the HUGO name to specify the gene. 
         3000000
     ],
     "vrsType": "CopyNumberCount"
-}```
+}
+```

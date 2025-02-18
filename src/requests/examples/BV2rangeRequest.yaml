@@ -1,6 +1,6 @@
 examples:
   BV2range_allele_01:
-    description: >-
+    description: |-
       ### Find variants overlapping an approximate sequence location
 
       #### Solution `g_variant` with range indicated by single `start` and `end` positions (`BV2rangeRequest`)
@@ -23,7 +23,7 @@ examples:
         - 345681
 
   BV2range__deletion_01:
-    description: >-
+    description: |-
       ### Query for a deletion involving TP53
       
       #### Solution using `g_variant` with position range
@@ -49,7 +49,7 @@ examples:
       variantType: DEL
 
   BV2range_insertion_01:
-    description: >-
+    description: |-
       ### Find insertion events in TP53 or in close proximity (±~5000bp)
       
       #### Solution using `g_variant` with position range (`BV2rangeRequest`)

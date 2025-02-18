@@ -3,7 +3,7 @@ examples:
   # <------------------------------------------------------------------------ >#
 
   VQSsequenceRepeat_locus_01:
-    description: >-
+    description: |-
       ### `CAG` repeat in the first exon of the huntingtin gene (HTT)
 
       The gene HTT is located at position 4p16.3. In individuals without Huntington's
@@ -11,6 +11,7 @@ examples:
       beyond 35 copys are associated with the development of Huntington's disease.
 
       Examples for query parameters are:    
+
 
       * GeneId: HTT   
       * referenceAccession: refseq:NC_000004.12   
@@ -45,7 +46,7 @@ examples:
   # <------------------------------------------------------------------------ >#
 
   VQSsequenceRepeat_gene_01:
-    description: >-
+    description: |-
       ### `CAG` repeat in the first exon of the huntingtin gene (HTT)
 
       For details see above. 
@@ -66,7 +67,7 @@ examples:
   # <------------------------------------------------------------------------ >#
 
   VQSsequenceRepeat_gene_02:
-    description: >-
+    description: |-
       ### `CGG` trinucleotide repeat expansion in the FMR1 gene
 
       A `CGG` trinucleotide repeat expansion in the FMR1 gene on the X chromosome

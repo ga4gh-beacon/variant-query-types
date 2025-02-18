@@ -7,7 +7,7 @@ $defs:
 ################################################################################
 
   g_variant:
-    description: >-
+    description: |-
       This represents the generic collection of variant parameters allowed in
       Beacon v2 requests.
     type: object
@@ -44,7 +44,7 @@ $defs:
 ################################################################################
 
   VQSrequest:
-    description: >-
+    description: |-
       The `VQSrequest` type represents the generic collection of variant parameters
       supported in Beacon v2+ requests. These include parameters with close alignment
       to VRS v2 concepts and replacing some Beacon v1/v2 generics with tighter
@@ -96,7 +96,7 @@ $defs:
 ################################################################################
 
   variantIdRequest:
-    description: >-
+    description: |-
       A typical Beacon v2 request for matching variations by their `variantId`.
       This request is used to retrieve a specific variant by its identifier.
     type: object
@@ -107,7 +107,7 @@ $defs:
         $ref: "./requestParameterComponents.yaml#/$defs/VariantId"
 
   aminoacidChangeRequest:
-    description: >-
+    description: |-
       A Beacon v2 request for amino acid change queries, e.g. for the
       retrieval of all variants leading to specific amino acid change. The request
       may be restricted by additionally providing the gene ID.
@@ -129,7 +129,7 @@ $defs:
         $ref: "./requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm"
 
   geneIdRequest:
-    description: >-
+    description: |-
       A typical Beacon v2.n request for gene queries, e.g. for the retrieval of
       all variants in a gene or variants restricted by additional parameters
       such `variantType` or length of the affected sequence.
@@ -159,7 +159,7 @@ $defs:
     type: object
     properties:
       requestProfileId:
-        description: >-
+        description: |-
           Note: The `requestProfile` parameter had not been defined for Beacon v2.0
           and therefore in _senso stricto_ is not part of requests only relying
           on v2 parameters.
@@ -180,7 +180,7 @@ $defs:
       - alternateBases
 
   BV2bracketRequest:
-    description: >-
+    description: |-
       A typical Beacon v2 request for matching variations where start and end
       fall in a genomic range. Here, the approximate or varying positions for
       variation start and end are queried through brackets, _i.e._ by using 2
@@ -215,7 +215,7 @@ $defs:
       - variantType
 
   BV2rangeRequest:
-    description: >-
+    description: |-
       Beacon Range Queries are supposed to return matches of any variant with at
       least partial overlap of the sequence range specified by `referenceName`,
       `start` and end `parameters`. Additional qualifiers such as `variantType`
@@ -260,7 +260,7 @@ $defs:
 ################################################################################
 
   VQSalleleRequest:
-    description: >-
+    description: |-
       A Beacon v2+ sequence query. It is in its scope similar to the Beacon v1/v2
       allele requests but replaces the original parameters with VRS v2 concepts.
     type: object
@@ -283,7 +283,7 @@ $defs:
       - sequence
 
   VQScopyChangeRequest:
-    description: >-
+    description: |-
       A typical Beacon v2.n request for copy number variations (CNVs) queries
       approximate positions for CNV start and end regions through use of the
       `Range` type. The `copyChange` parameter indicates the relative change in
@@ -313,7 +313,7 @@ $defs:
       - copyChange
 
   VQSrangeRequest:
-    description: >-
+    description: |-
       Beacon Range Queries are supposed to return matches of any variant with at
       least partial overlap of the sequence range specified by `referenceAccession`,
       `start` and `end` parameters. Additional qualifiers such as `copyChange`
@@ -353,7 +353,7 @@ $defs:
       - vrsType
 
   VQSadjacencyRequest:
-    description: >-
+    description: |-
       A typical Beacon v2.n request for sequence adjacency queries, e.g. for the
       retrieval of chromosomal translocation events or sequence fusions.
       TODO: In VRS v2 there is an implicit sequence directionality from the use
@@ -382,7 +382,7 @@ $defs:
         const: Adjacency
 
   VQSsequenceRepeatRequest:
-    description: >-
+    description: |-
       A Beacon v2.n request for sequence repeat queries, e.g. for the
       retrieval of tandem repeat expansions or other sequence repeat events.
     type: object
@@ -404,7 +404,7 @@ $defs:
 
 
   VQSgeneIdRequest:
-    description: >-
+    description: |-
       A typical Beacon v2.n request for gene queries, e.g. for the retrieval of
       all variants in a gene or variants restricted by additional parameters
       such as CNV type (`copyChange`) or length of the affected sequence.
@@ -436,7 +436,7 @@ $defs:
 ################################################################################
 
   BV2multivarsRequest:
-    description: >-
+    description: |-
       This multi variant query is a collection of individual variant queries
       based on the Beacon v2 parameters (`g_variant`).
       Status: Proposed for evaluation for Beacon v2.n or v3.0 (but potentially
@@ -446,7 +446,7 @@ $defs:
       requestProfileId:
         const: BV2multivarsRequest
       variantLogic:
-        description: >-
+        description: |-
           The logic to apply to the set of variants in the query. The default is
           to apply the AND logic, meaning that all **samples** (i.e. biosamples,
           individuals or analyses) must fulfil the query criteria:
@@ -469,7 +469,7 @@ $defs:
           $ref: "#/$defs/g_variant"
 
   VQSmultivarRequest:
-    description: >-
+    description: |-
       This multi variant query is a collection of individual variant queries
       based on the Beacon v2+ "VQS" query patterns.
       Status: Proposed for evaluation for Beacon v2.n or v3.0

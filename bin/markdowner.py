@@ -26,12 +26,6 @@ def main():
 
     #>------------------------------------------------------------------------<#
 
-    """
-
-    """
-
-
-
     file_pars = {
         "requestParameterComponents":{
             "headline": "Request Parameter Definitions",
@@ -122,20 +116,23 @@ re-written as individual, referenced definitions for better re-use and readabili
                 ex_ls = [f'## `{rp_id}` Examples']
                 for ex_id, ex in ex_d["examples"].items():
                     rp_fh.write(f'\n\n{ex.get("description", "")}\n')
-                    if "BV2" in rp_id:
+                    if not "VQS" in rp_id:
                         gv_fh.write(f'\n\n{ex.get("description", "")}\n')
-                    elif "VQS" in rp_id:
+                    if not "BV2" in rp_id:
                         vqs_fh.write(f'\n\n{ex.get("description", "")}\n')
                     rq = ex.get("request", {})
                     ls = []
                     ls.append(f'#### Request \n')
                     ls = __add_md_parameter_lines(ls, rq)
-                    ls.append(f'\n##### GET query string\n```{__request_make_GET(rq)}```\n')
-                    ls.append(f'\n##### POST query component \n```{__request_make_POST(rq)}```\n')
+
+                    ls.append(f'\n##### GET query string\n```\n?{__request_make_GET(rq)}\n```\n')
+                    ls.append(f'\n##### POST query component \n```json\n{__request_make_POST(rq)}\n```\n')
+ 
+
                     rp_fh.write("\n".join(ls).replace("\n\n", "\n").replace("\n\n", "\n").replace("\n#", "\n\n#"))
-                    if "BV2" in rp_id:
+                    if not "VQS" in rp_id:
                         gv_fh.write("\n".join(ls).replace("\n\n", "\n").replace("\n\n", "\n").replace("\n#", "\n\n#"))
-                    elif "VQS" in rp_id:
+                    if not "BV2" in rp_id:
                         vqs_fh.write("\n".join(ls).replace("\n\n", "\n").replace("\n\n", "\n").replace("\n#", "\n\n#"))
 
         rp_fh.close()
@@ -201,6 +198,8 @@ def __add_md_parameter_lines(lines, parameter):
         lines.append(f'\n')
 
     return lines
+
+################################################################################
 
 def __reformat_ref(pik, piv):
     if not (p_ref := piv.get("$ref")):

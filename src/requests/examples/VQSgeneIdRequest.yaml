@@ -1,6 +1,6 @@
 examples:
   VQSgeneIdRequest_deletion_01:
-    description: >-
+    description: |-
       ### Query for a focal deletion involving TP53
       
       #### Solution using `VQSgeneIdRequest` with `geneId`

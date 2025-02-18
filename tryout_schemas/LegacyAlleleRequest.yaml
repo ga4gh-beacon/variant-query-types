@@ -1,7 +1,7 @@
 $schema: https://json-schema.org/draft/2020-12/schema
 $id: https://genomebeacons.org/schemas/beacon/BeaconAlleleRequest/v1.0.0
 title: BeaconAlleleRequest
-description: >-
+description: |-
   `BeaconAlleleRequest` represents the "classic" Beacon request type where
   a genomic sequence variation is queried by position and sequence (as well as
   optional reference sequence).

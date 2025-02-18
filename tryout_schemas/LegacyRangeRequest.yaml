@@ -1,7 +1,7 @@
 $schema: https://json-schema.org/draft/2020-12/schema
 $id: https://genomebeacons.org/schemas/beacon/BeaconRangeRequest/v1.1.0
 title: VariantRangeRequest
-description: >-
+description: |-
   A request for matching variants in a genomic range. This request type requires
   to provide *exactly* 1 `start` and 1 `end` position, which are both 0-based and
   define the base range with which variants should be associated. The exact way

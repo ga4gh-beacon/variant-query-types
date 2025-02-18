@@ -1,6 +1,6 @@
 examples:
   BV2geneId_deletion_01:
-    description: >-
+    description: |-
       ### Query for a deletion involving TP53
       
       #### Solution `g_variant` with `geneId` (`BV2geneIdRequest`)
@@ -14,7 +14,7 @@ examples:
       variantType: DEL
 
   BV2geneId_insertion_01:
-    description: >-
+    description: |-
       ### Find insertion events in TP53
       
       #### Solution using `g_variant` with `geneId` (`BV2geneIdRequest`)

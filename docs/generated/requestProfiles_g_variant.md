@@ -72,10 +72,13 @@ Here sequence variants (insertions or deletions) involving a specific region on 
 * `variantType`: `INDEL`    
 
 ##### GET query string
-```assemblyId=GRCh38&referenceName=17&start=43045703,43045709&end=43045715,43045720&variantType=INDEL```
+```
+?assemblyId=GRCh38&referenceName=17&start=43045703,43045709&end=43045715,43045720&variantType=INDEL
+```
 
 ##### POST query component 
-```{
+```json
+{
     "assemblyId": "GRCh38",
     "end": [
         43045715,
@@ -87,7 +90,8 @@ Here sequence variants (insertions or deletions) involving a specific region on 
         43045709
     ],
     "variantType": "INDEL"
-}```
+}
+```
 
 
 ### Copy number gains involving the _whole_ locus _chr2:54,700,000-63,900,000_
@@ -111,10 +115,13 @@ The example uses `EFO:0030070` for `copy number gain` instead of the alternative
 * `variantType`: `EFO:0030070`    
 
 ##### GET query string
-```assemblyId=GRCh38&referenceName=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&variantType=EFO:0030070```
+```
+?assemblyId=GRCh38&referenceName=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&variantType=EFO:0030070
+```
 
 ##### POST query component 
-```{
+```json
+{
     "assemblyId": "GRCh38",
     "end": [
         63900000,
@@ -126,7 +133,8 @@ The example uses `EFO:0030070` for `copy number gain` instead of the alternative
         54700000
     ],
     "variantType": "EFO:0030070"
-}```
+}
+```
 
 
 ### Find variants overlapping an approximate sequence location
@@ -146,10 +154,13 @@ CAVE: Since no variant type is indicated such a query can potentially match a la
     - `345681`        
 
 ##### GET query string
-```assemblyId=GRCh38&referenceName=17&start=345675&end=345681```
+```
+?assemblyId=GRCh38&referenceName=17&start=345675&end=345681
+```
 
 ##### POST query component 
-```{
+```json
+{
     "assemblyId": "GRCh38",
     "end": [
         345681
@@ -158,7 +169,8 @@ CAVE: Since no variant type is indicated such a query can potentially match a la
     "start": [
         345675
     ]
-}```
+}
+```
 
 
 ### Query for a deletion involving TP53
@@ -178,10 +190,13 @@ Query for a deletion involving TP53 using the maximum extent of the gene's codin
 * `variantType`: `DEL`    
 
 ##### GET query string
-```referenceName=refseq:NC_0000017.11&start=7669608&end=7676593&variantType=DEL```
+```
+?referenceName=refseq:NC_0000017.11&start=7669608&end=7676593&variantType=DEL
+```
 
 ##### POST query component 
-```{
+```json
+{
     "end": [
         7676593
     ],
@@ -190,7 +205,8 @@ Query for a deletion involving TP53 using the maximum extent of the gene's codin
         7669608
     ],
     "variantType": "DEL"
-}```
+}
+```
 
 
 ### Find insertion events in TP53 or in close proximity (±~5000bp)
@@ -210,10 +226,13 @@ The "insertion" type is here provided through the Sequence Ontology term `SO:000
 * `variantType`: `SO:0000667`    
 
 ##### GET query string
-```referenceName=refseq:NC_0000017.11&start=7664000&end=7682000&variantType=SO:0000667```
+```
+?referenceName=refseq:NC_0000017.11&start=7664000&end=7682000&variantType=SO:0000667
+```
 
 ##### POST query component 
-```{
+```json
+{
     "end": [
         7682000
     ],
@@ -222,4 +241,5 @@ The "insertion" type is here provided through the Sequence Ontology term `SO:000
         7664000
     ],
     "variantType": "SO:0000667"
-}```
+}
+```

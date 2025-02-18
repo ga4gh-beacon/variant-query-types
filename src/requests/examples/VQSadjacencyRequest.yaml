@@ -1,6 +1,6 @@
 examples:
   VQSadjacency_01:
-    description: >-
+    description: |-
       ### Find  t(8;14)(q24;q32) translocations
 
       #### Solution for `VQSrequest` using genomic ranges (`VQSadjacencyRequest`)

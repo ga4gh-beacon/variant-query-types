@@ -31,10 +31,13 @@ This is a query for translocations between the MYC and IgH loci, where the break
 * `vrsType`: `Adjacency`    
 
 ##### GET query string
-```requestProfileId=VQSadjacencyRequest&referenceAccession=refseq:NC_000008.11&start=116700000&end=145138636&adjacencyAccession=refseq:NC_000014.9&adjacencyStart=89300000&adjacencyEnd=107043718&vrsType=Adjacency```
+```
+?requestProfileId=VQSadjacencyRequest&referenceAccession=refseq:NC_000008.11&start=116700000&end=145138636&adjacencyAccession=refseq:NC_000014.9&adjacencyStart=89300000&adjacencyEnd=107043718&vrsType=Adjacency
+```
 
 ##### POST query component 
-```{
+```json
+{
     "adjacencyAccession": "refseq:NC_000014.9",
     "adjacencyEnd": 107043718,
     "adjacencyStart": 89300000,
@@ -43,4 +46,5 @@ This is a query for translocations between the MYC and IgH loci, where the break
     "requestProfileId": "VQSadjacencyRequest",
     "start": 116700000,
     "vrsType": "Adjacency"
-}```
+}
+```
