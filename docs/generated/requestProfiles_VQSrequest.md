@@ -85,27 +85,43 @@ random very large number might fail depending on the implementation).
 The example uses `"copyChange": "EFO:0030070"` for `copy number gain` as specified in the
 [VRS definitions](https://vrs.ga4gh.org/en/latest/terms_and_model.html#systemic-variation).
 #### Request 
+
     
 * `requestProfileId`: `VQScopyChangeRequest`    
+
+
     
 * `referenceAccession`: `refseq:NC_000002.12`    
+
+
     
 * `start`:     
     - `0`    
     - `54700000`        
+
+
     
 * `end`:     
     - `63900000`    
     - `242193529`        
+
+
     
 * `copyChange`: `EFO:0030070`    
+
+
     
 * `vrsType`: `CopyNumberCount`    
+
+
+
 
 ##### GET query string
 ```
 ?requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&copyChange=EFO:0030070&vrsType=CopyNumberCount
 ```
+
+
 
 ##### POST query component 
 ```json
@@ -141,27 +157,43 @@ as specified in the [VRS definitions](https://vrs.ga4gh.org/en/latest/terms_and_
 With hierarchical expansion of this term explicit complete genomic deletions
 (`EFO:0030069`) should be retrieved too.
 #### Request 
+
     
 * `requestProfileId`: `VQScopyChangeRequest`    
+
+
     
 * `referenceAccession`: `refseq:NC_000002.12`    
+
+
     
 * `start`:     
     - `21000001`    
     - `21975098`        
+
+
     
 * `end`:     
     - `21967753`    
     - `23000000`        
+
+
     
 * `copyChange`: `EFO:0020073`    
+
+
     
 * `vrsType`: `CopyNumberCount`    
+
+
+
 
 ##### GET query string
 ```
 ?requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=21000001,21975098&end=21967753,23000000&copyChange=EFO:0020073&vrsType=CopyNumberCount
 ```
+
+
 
 ##### POST query component 
 ```json
@@ -199,27 +231,47 @@ representational model, here:
   non-directional ranges on both sides since directionality might not be known,
   the storage system might not encode this or all options could be of interest    
 #### Request 
+
     
 * `requestProfileId`: `VQSadjacencyRequest`    
+
+
     
 * `referenceAccession`: `refseq:NC_000008.11`    
+
+
     
 * `start`: `116700000`    
+
+
     
 * `end`: `145138636`    
+
+
     
 * `adjacencyAccession`: `refseq:NC_000014.9`    
+
+
     
 * `adjacencyStart`: `89300000`    
+
+
     
 * `adjacencyEnd`: `107043718`    
+
+
     
 * `vrsType`: `Adjacency`    
+
+
+
 
 ##### GET query string
 ```
 ?requestProfileId=VQSadjacencyRequest&referenceAccession=refseq:NC_000008.11&start=116700000&end=145138636&adjacencyAccession=refseq:NC_000014.9&adjacencyStart=89300000&adjacencyEnd=107043718&vrsType=Adjacency
 ```
+
+
 
 ##### POST query component 
 ```json
@@ -264,27 +316,45 @@ unit length (as well as the sequence).
 
 TODO: Limit location to first exon?
 #### Request 
+
     
 * `requestProfileId`: `VQSsequenceRepeatRequest`    
+
+
     
 * `referenceAccession`: `refseq:NC_000004.12`    
+
+
     
 * `start`: `3074681`    
+
+
     
 * `end`: `3243960`    
+
+
     
 * `repeatSubunitLength`: `3`    
+
+
     
 * `sequenceLength`:     
     - `105`    
     - `750`        
+
+
     
 * `vrsType`: `ReferenceLengthExpression`    
+
+
+
 
 ##### GET query string
 ```
 ?requestProfileId=VQSsequenceRepeatRequest&referenceAccession=refseq:NC_000004.12&start=3074681&end=3243960&repeatSubunitLength=3&sequenceLength=105,750&vrsType=ReferenceLengthExpression
 ```
+
+
 
 ##### POST query component 
 ```json
@@ -311,23 +381,37 @@ For details see above.
 
 Here instead of the position simply the gene symbol is being used.
 #### Request 
+
     
 * `requestProfileId`: `VQSsequenceRepeatRequest`    
+
+
     
 * `geneId`: `HTT`    
+
+
     
 * `repeatSubunitLength`: `3`    
+
+
     
 * `sequenceLength`:     
     - `105`    
     - `750`        
+
+
     
 * `vrsType`: `ReferenceLengthExpression`    
+
+
+
 
 ##### GET query string
 ```
 ?requestProfileId=VQSsequenceRepeatRequest&geneId=HTT&repeatSubunitLength=3&sequenceLength=105,750&vrsType=ReferenceLengthExpression
 ```
+
+
 
 ##### POST query component 
 ```json
@@ -355,23 +439,37 @@ A `CGG` trinucleotide repeat expansion in the FMR1 gene on the X chromosome
 Similarly to the `HTT` example here a `geneId` is used to specify the gene
 and a range of sequence lengths is used to match against a `ReferenceLengthExpression`.
 #### Request 
+
     
 * `requestProfileId`: `VQSsequenceRepeatRequest`    
+
+
     
 * `geneId`: `FMR1`    
+
+
     
 * `repeatSubunitLength`: `3`    
+
+
     
 * `sequenceLength`:     
     - `130`    
     - `600`        
+
+
     
 * `vrsType`: `ReferenceLengthExpression`    
+
+
+
 
 ##### GET query string
 ```
 ?requestProfileId=VQSsequenceRepeatRequest&geneId=FMR1&repeatSubunitLength=3&sequenceLength=130,600&vrsType=ReferenceLengthExpression
 ```
+
+
 
 ##### POST query component 
 ```json
@@ -400,23 +498,37 @@ limiting the size of the CNV to a typical "focal deletion" with a lower minimum
 size of 1kb (to avoid noise and non-structural variants) and an upper limit
 of 3Mb (to avoid large chromosomal deletions).
 #### Request 
+
     
 * `requestType`: `VQSgeneIdRequest`    
+
+
     
 * `geneId`: `TP53`    
+
+
     
 * `copyChange`: `EFO:0030067`    
+
+
     
 * `sequenceLength`:     
     - `1000`    
     - `3000000`        
+
+
     
 * `vrsType`: `CopyNumberCount`    
+
+
+
 
 ##### GET query string
 ```
 ?requestType=VQSgeneIdRequest&geneId=TP53&copyChange=EFO:0030067&sequenceLength=1000,3000000&vrsType=CopyNumberCount
 ```
+
+
 
 ##### POST query component 
 ```json

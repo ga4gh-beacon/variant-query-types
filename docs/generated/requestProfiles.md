@@ -3,7 +3,7 @@
 ## `g_variant` 
 
 #### Description
-This represents the generic collection of variant parameters allowed in
+This represents the generic collection of variant parameters allowed in  
 Beacon v2 requests.    
 
 #### Definitions
@@ -29,12 +29,12 @@ Beacon v2 requests.
 ## `VQSrequest` 
 
 #### Description
-The `VQSrequest` type represents the generic collection of variant parameters
-supported in Beacon v2+ requests. These include parameters with close alignment
-to VRS v2 concepts and replacing some Beacon v1/v2 generics with tighter
-definitions (e.g. `referenceAccession` instead of `referenceName` and `accession`
-or `copyChange` for a specific subset of former `variantType` values) but also
-keep some conceptsm beyond VRS scope or specifically geared towards query
+The `VQSrequest` type represents the generic collection of variant parameters  
+supported in Beacon v2+ requests. These include parameters with close alignment  
+to VRS v2 concepts and replacing some Beacon v1/v2 generics with tighter  
+definitions (e.g. `referenceAccession` instead of `referenceName` and `accession`  
+or `copyChange` for a specific subset of former `variantType` values) but also  
+keep some conceptsm beyond VRS scope or specifically geared towards query  
 applications (`geneId`, `sequenceLength`)    
 
 #### Definitions
@@ -63,7 +63,7 @@ applications (`geneId`, `sequenceLength`)
 ## `variantIdRequest` 
 
 #### Description
-A typical Beacon v2 request for matching variations by their `variantId`.
+A typical Beacon v2 request for matching variations by their `variantId`.  
 This request is used to retrieve a specific variant by its identifier.    
 
 #### Definitions
@@ -76,8 +76,8 @@ This request is used to retrieve a specific variant by its identifier.
 ## `aminoacidChangeRequest` 
 
 #### Description
-A Beacon v2 request for amino acid change queries, e.g. for the
-retrieval of all variants leading to specific amino acid change. The request
+A Beacon v2 request for amino acid change queries, e.g. for the  
+retrieval of all variants leading to specific amino acid change. The request  
 may be restricted by additionally providing the gene ID.    
 
 #### Definitions
@@ -100,10 +100,10 @@ may be restricted by additionally providing the gene ID.
 ## `geneIdRequest` 
 
 #### Description
-A typical Beacon v2.n request for gene queries, e.g. for the retrieval of
-all variants in a gene or variants restricted by additional parameters
-such `variantType` or length of the affected sequence.
-TODO: Evaluate to split into more basic `GeneIdRequest` and specialized
+A typical Beacon v2.n request for gene queries, e.g. for the retrieval of  
+all variants in a gene or variants restricted by additional parameters  
+such `variantType` or length of the affected sequence.  
+TODO: Evaluate to split into more basic `GeneIdRequest` and specialized  
       requests requiring an effect component.    
 
 #### Definitions
@@ -138,14 +138,14 @@ TODO: Evaluate to split into more basic `GeneIdRequest` and specialized
 ## `BV2bracketRequest` 
 
 #### Description
-A typical Beacon v2 request for matching variations where start and end
-fall in a genomic range. Here, the approximate or varying positions for
-variation start and end are queried through brackets, _i.e._ by using 2
-values for `start` and `end` each. This is a typical scenario in querying
-for CNVs where the `variantType` parameter indicates the relative change in
-genomic copy number through either VCF derived string parameters
-or, preferably, EFO terms (pls. refer to the class definition.)
-Since a bracket request is a positional query for varying sequence extend
+A typical Beacon v2 request for matching variations where start and end  
+fall in a genomic range. Here, the approximate or varying positions for  
+variation start and end are queried through brackets, _i.e._ by using 2  
+values for `start` and `end` each. This is a typical scenario in querying  
+for CNVs where the `variantType` parameter indicates the relative change in  
+genomic copy number through either VCF derived string parameters  
+or, preferably, EFO terms (pls. refer to the class definition.)  
+Since a bracket request is a positional query for varying sequence extend  
 no `sequence` parameter should be used.    
 
 #### Definitions
@@ -170,12 +170,12 @@ no `sequence` parameter should be used.
 ## `BV2rangeRequest` 
 
 #### Description
-Beacon Range Queries are supposed to return matches of any variant with at
-least partial overlap of the sequence range specified by `referenceName`,
-`start` and end `parameters`. Additional qualifiers such as `variantType`
-or length of the affected sequence can be used to further restrict the
-returned results.
-For this request type `start` and `end` with a single position are used,
+Beacon Range Queries are supposed to return matches of any variant with at  
+least partial overlap of the sequence range specified by `referenceName`,  
+`start` and end `parameters`. Additional qualifiers such as `variantType`  
+or length of the affected sequence can be used to further restrict the  
+returned results.  
+For this request type `start` and `end` with a single position are used,  
 _i.e._ a subset of the `start` and `end` specifications.    
 
 #### Definitions
@@ -199,7 +199,7 @@ _i.e._ a subset of the `start` and `end` specifications.
 ## `VQSalleleRequest` 
 
 #### Description
-A Beacon v2+ sequence query. It is in its scope similar to the Beacon v1/v2
+A Beacon v2+ sequence query. It is in its scope similar to the Beacon v1/v2  
 allele requests but replaces the original parameters with VRS v2 concepts.    
 
 #### Definitions
@@ -221,9 +221,9 @@ allele requests but replaces the original parameters with VRS v2 concepts.
 ## `VQScopyChangeRequest` 
 
 #### Description
-A typical Beacon v2.n request for copy number variations (CNVs) queries
-approximate positions for CNV start and end regions through use of the
-`Range` type. The `copyChange` parameter indicates the relative change in
+A typical Beacon v2.n request for copy number variations (CNVs) queries  
+approximate positions for CNV start and end regions through use of the  
+`Range` type. The `copyChange` parameter indicates the relative change in  
 genomic copy number (pls. refer to the class definition.)    
 
 #### Definitions
@@ -247,20 +247,20 @@ genomic copy number (pls. refer to the class definition.)
 ## `VQSrangeRequest` 
 
 #### Description
-Beacon Range Queries are supposed to return matches of any variant with at
-least partial overlap of the sequence range specified by `referenceAccession`,
-`start` and `end` parameters. Additional qualifiers such as `copyChange`
-or length of the affected sequence can be used to further restrict the
-returned results.
-For this request type usually `start` and `end` with a single position are used,
-_i.e._ a subset of the `start` and `end` specifications. However, 
+Beacon Range Queries are supposed to return matches of any variant with at  
+least partial overlap of the sequence range specified by `referenceAccession`,  
+`start` and `end` parameters. Additional qualifiers such as `copyChange`  
+or length of the affected sequence can be used to further restrict the  
+returned results.  
+For this request type usually `start` and `end` with a single position are used,  
+_i.e._ a subset of the `start` and `end` specifications. However,   
+  
 
-##### TODO
-    
-* Evaluate to split into more basic `RangeRequest` and specialized
-  requests requiring an effect component
-    
-* Review current VRS v2 and upcoming versions for optoions to express
+##### TODO  
+  
+* Evaluate to split into more basic `RangeRequest` and specialized  
+  requests requiring an effect component  
+* Review current VRS v2 and upcoming versions for optoions to express  
   types of variants beyond the `copyChange` parameter    
 
 #### Definitions
@@ -283,13 +283,13 @@ _i.e._ a subset of the `start` and `end` specifications. However,
 ## `VQSadjacencyRequest` 
 
 #### Description
-A typical Beacon v2.n request for sequence adjacency queries, e.g. for the
-retrieval of chromosomal translocation events or sequence fusions.
-TODO: In VRS v2 there is an implicit sequence directionality from the use
-of either start or end parameters for either side of the adjacency. This might
-be problematic on the query side where in many instances just the approximate
-position of the (fused) breakpoints maight be of interest. This needs additional
-clarification (e.g. use of integer `start` and `end`, `adjacencyStart` and 
+A typical Beacon v2.n request for sequence adjacency queries, e.g. for the  
+retrieval of chromosomal translocation events or sequence fusions.  
+TODO: In VRS v2 there is an implicit sequence directionality from the use  
+of either start or end parameters for either side of the adjacency. This might  
+be problematic on the query side where in many instances just the approximate  
+position of the (fused) breakpoints maight be of interest. This needs additional  
+clarification (e.g. use of integer `start` and `end`, `adjacencyStart` and   
 `adjecencyEnd` parameters to indicate direction independent matching).    
 
 #### Definitions
@@ -308,7 +308,7 @@ clarification (e.g. use of integer `start` and `end`, `adjacencyStart` and
 ## `VQSsequenceRepeatRequest` 
 
 #### Description
-A Beacon v2.n request for sequence repeat queries, e.g. for the
+A Beacon v2.n request for sequence repeat queries, e.g. for the  
 retrieval of tandem repeat expansions or other sequence repeat events.    
 
 #### Definitions
@@ -326,10 +326,10 @@ retrieval of tandem repeat expansions or other sequence repeat events.
 ## `VQSgeneIdRequest` 
 
 #### Description
-A typical Beacon v2.n request for gene queries, e.g. for the retrieval of
-all variants in a gene or variants restricted by additional parameters
-such as CNV type (`copyChange`) or length of the affected sequence.
-TODO: Evaluate to split into more basic `GeneIdRequest` and specialized
+A typical Beacon v2.n request for gene queries, e.g. for the retrieval of  
+all variants in a gene or variants restricted by additional parameters  
+such as CNV type (`copyChange`) or length of the affected sequence.  
+TODO: Evaluate to split into more basic `GeneIdRequest` and specialized  
       requests requiring an effect component.    
 
 #### Definitions
@@ -350,9 +350,9 @@ TODO: Evaluate to split into more basic `GeneIdRequest` and specialized
 ## `BV2multivarsRequest` 
 
 #### Description
-This multi variant query is a collection of individual variant queries
-based on the Beacon v2 parameters (`g_variant`).
-Status: Proposed for evaluation for Beacon v2.n or v3.0 (but potentially
+This multi variant query is a collection of individual variant queries  
+based on the Beacon v2 parameters (`g_variant`).  
+Status: Proposed for evaluation for Beacon v2.n or v3.0 (but potentially  
         skipped in favor of the `VQSmultivarRequest` queries).    
 
 #### Definitions
@@ -366,8 +366,8 @@ Status: Proposed for evaluation for Beacon v2.n or v3.0 (but potentially
 ## `VQSmultivarRequest` 
 
 #### Description
-This multi variant query is a collection of individual variant queries
-based on the Beacon v2+ "VQS" query patterns.
+This multi variant query is a collection of individual variant queries  
+based on the Beacon v2+ "VQS" query patterns.  
 Status: Proposed for evaluation for Beacon v2.n or v3.0    
 
 #### Definitions

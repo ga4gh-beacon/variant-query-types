@@ -26,27 +26,47 @@ representational model, here:
   non-directional ranges on both sides since directionality might not be known,
   the storage system might not encode this or all options could be of interest    
 #### Request 
+
     
 * `requestProfileId`: `VQSadjacencyRequest`    
+
+
     
 * `referenceAccession`: `refseq:NC_000008.11`    
+
+
     
 * `start`: `116700000`    
+
+
     
 * `end`: `145138636`    
+
+
     
 * `adjacencyAccession`: `refseq:NC_000014.9`    
+
+
     
 * `adjacencyStart`: `89300000`    
+
+
     
 * `adjacencyEnd`: `107043718`    
+
+
     
 * `vrsType`: `Adjacency`    
+
+
+
 
 ##### GET query string
 ```
 ?requestProfileId=VQSadjacencyRequest&referenceAccession=refseq:NC_000008.11&start=116700000&end=145138636&adjacencyAccession=refseq:NC_000014.9&adjacencyStart=89300000&adjacencyEnd=107043718&vrsType=Adjacency
 ```
+
+
 
 ##### POST query component 
 ```json
