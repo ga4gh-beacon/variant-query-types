@@ -18,7 +18,7 @@ nav:
   # - Query Types: query-types
   - Genomic Coordinates: genomic-coordinates-mappings
   - Recommended Terms: terms-and-values
-  - Query Schema Source Files: https://github.com/ga4gh-beacon/variant-query-types/tree/main/schemas
+  - Query Schema Source Files: https://github.com/ga4gh-beacon/variant-query-types/tree/main/src/requests
 
 #<--------------------------- / Navigation ----------------------------------->#
 
