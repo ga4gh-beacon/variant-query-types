@@ -18,23 +18,37 @@ limiting the size of the CNV to a typical "focal deletion" with a lower minimum
 size of 1kb (to avoid noise and non-structural variants) and an upper limit
 of 3Mb (to avoid large chromosomal deletions).
 #### Request 
+
     
 * `requestType`: `VQSgeneIdRequest`    
+
+
     
 * `geneId`: `TP53`    
+
+
     
 * `copyChange`: `EFO:0030067`    
+
+
     
 * `sequenceLength`:     
     - `1000`    
     - `3000000`        
+
+
     
 * `vrsType`: `CopyNumberCount`    
+
+
+
 
 ##### GET query string
 ```
 ?requestType=VQSgeneIdRequest&geneId=TP53&copyChange=EFO:0030067&sequenceLength=1000,3000000&vrsType=CopyNumberCount
 ```
+
+
 
 ##### POST query component 
 ```json

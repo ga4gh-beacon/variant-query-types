@@ -41,7 +41,7 @@
             ]
         },
         "AminoacidChange": {
-            "description": "Aminoacid alteration of interest. Format 1 letter\n\nOrigin: Beacon v2.0",
+            "description": "Aminoacid alteration of interest in 1 letter format.    \n\nOrigin: Beacon v2.0",
             "examples": [
                 "V600E",
                 "M734V"
@@ -67,7 +67,7 @@
             ]
         },
         "CopyChange": {
-            "description": "MUST use a primaryCode representing one of:\n\n```\n* EFO:0030069: complete genomic loss    \n* EFO:0020073: high-level loss    \n* EFO:0030068: low-level loss    \n* EFO:0030067: loss    \n* EFO:0030064: regional base ploidy    \n* EFO:0030070: gain    \n* EFO:0030071: low-level gain    \n* EFO:0030072: high-level gain    \n\n```\n\nEndpoints are expected to provide query expansion according to the hierarchy\nof the terms:\n\n```\n\n- EFO:0030064\n- EFO:0030067\n    |- EFO:0030068\n    \\- EFO:0020073\n         \\- EFO:0030069\n- EFO:0030070\n    |- EFO:0030071\n    \\- EFO:0030072\n\n```\n\n\nOrigin: Beacon v2.n, based on VRS v1.3+",
+            "description": "MUST use a primaryCode representing one of:\n\n* EFO:0030069: complete genomic loss    \n* EFO:0020073: high-level loss    \n* EFO:0030068: low-level loss    \n* EFO:0030067: loss    \n* EFO:0030064: regional base ploidy    \n* EFO:0030070: gain    \n* EFO:0030071: low-level gain    \n* EFO:0030072: high-level gain  \n\nEndpoints are expected to provide query expansion according to the hierarchy\nof the terms:\n\n```\n- EFO:0030064\n- EFO:0030067\n    |- EFO:0030068\n    \\- EFO:0020073\n         \\- EFO:0030069\n- EFO:0030070\n    |- EFO:0030071\n    \\- EFO:0030072\n\n```    \n\nOrigin: Beacon v2.n, based on VRS v1.3+",
             "enum": [
                 "EFO:0030069",
                 "EFO:0020073",

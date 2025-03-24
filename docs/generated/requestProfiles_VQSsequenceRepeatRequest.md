@@ -31,27 +31,45 @@ unit length (as well as the sequence).
 
 TODO: Limit location to first exon?
 #### Request 
+
     
 * `requestProfileId`: `VQSsequenceRepeatRequest`    
+
+
     
 * `referenceAccession`: `refseq:NC_000004.12`    
+
+
     
 * `start`: `3074681`    
+
+
     
 * `end`: `3243960`    
+
+
     
 * `repeatSubunitLength`: `3`    
+
+
     
 * `sequenceLength`:     
     - `105`    
     - `750`        
+
+
     
 * `vrsType`: `ReferenceLengthExpression`    
+
+
+
 
 ##### GET query string
 ```
 ?requestProfileId=VQSsequenceRepeatRequest&referenceAccession=refseq:NC_000004.12&start=3074681&end=3243960&repeatSubunitLength=3&sequenceLength=105,750&vrsType=ReferenceLengthExpression
 ```
+
+
 
 ##### POST query component 
 ```json
@@ -78,23 +96,37 @@ For details see above.
 
 Here instead of the position simply the gene symbol is being used.
 #### Request 
+
     
 * `requestProfileId`: `VQSsequenceRepeatRequest`    
+
+
     
 * `geneId`: `HTT`    
+
+
     
 * `repeatSubunitLength`: `3`    
+
+
     
 * `sequenceLength`:     
     - `105`    
     - `750`        
+
+
     
 * `vrsType`: `ReferenceLengthExpression`    
+
+
+
 
 ##### GET query string
 ```
 ?requestProfileId=VQSsequenceRepeatRequest&geneId=HTT&repeatSubunitLength=3&sequenceLength=105,750&vrsType=ReferenceLengthExpression
 ```
+
+
 
 ##### POST query component 
 ```json
@@ -122,23 +154,37 @@ A `CGG` trinucleotide repeat expansion in the FMR1 gene on the X chromosome
 Similarly to the `HTT` example here a `geneId` is used to specify the gene
 and a range of sequence lengths is used to match against a `ReferenceLengthExpression`.
 #### Request 
+
     
 * `requestProfileId`: `VQSsequenceRepeatRequest`    
+
+
     
 * `geneId`: `FMR1`    
+
+
     
 * `repeatSubunitLength`: `3`    
+
+
     
 * `sequenceLength`:     
     - `130`    
     - `600`        
+
+
     
 * `vrsType`: `ReferenceLengthExpression`    
+
+
+
 
 ##### GET query string
 ```
 ?requestProfileId=VQSsequenceRepeatRequest&geneId=FMR1&repeatSubunitLength=3&sequenceLength=130,600&vrsType=ReferenceLengthExpression
 ```
+
+
 
 ##### POST query component 
 ```json

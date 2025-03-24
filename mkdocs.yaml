@@ -1,7 +1,7 @@
 site_name: 'GA4GH Beacon Genomic Variation Query Standards'
 site_description: 'Development Site of the GA4GH Beacon community'
 site_author: Michael Baudis
-copyright: '&copy; Copyright 2024 GA4GH and Beacon Contributors'
+copyright: '&copy; Copyright 2024-2025 GA4GH and Beacon Contributors'
 repo-name: variant-query-types
 repo_url: https://github.com/ga4gh-beacon/variant-query-types
 edit_uri: blob/main/docs/
@@ -18,7 +18,7 @@ nav:
   # - Query Types: query-types
   - Genomic Coordinates: genomic-coordinates-mappings
   - Recommended Terms: terms-and-values
-  - Query Schema Source Files: https://github.com/ga4gh-beacon/variant-query-types/tree/main/schemas
+  - Query Schema Source Files: https://github.com/ga4gh-beacon/variant-query-types/tree/main/src/requests
 
 #<--------------------------- / Navigation ----------------------------------->#
 

@@ -65,25 +65,39 @@ the interpretation is left to the implementation; e.g. an insertion which is
 stored as sequence change `17:43045708:A>AAACAAAC` would fulfill the request
 but might not be indicated as `INDEL` type.
 #### Request 
+
     
 * `assemblyId`: `GRCh38`    
+
+
     
 * `referenceName`: `17`    
+
+
     
 * `start`:     
     - `43045703`    
     - `43045709`        
+
+
     
 * `end`:     
     - `43045715`    
     - `43045720`        
+
+
     
 * `variantType`: `INDEL`    
+
+
+
 
 ##### GET query string
 ```
 ?assemblyId=GRCh38&referenceName=17&start=43045703,43045709&end=43045715,43045720&variantType=INDEL
 ```
+
+
 
 ##### POST query component 
 ```json
@@ -118,25 +132,39 @@ The example uses `EFO:0030070` for `copy number gain` instead of the alternative
 provide a more granular expressivity and are referenced in the
 [VRS definitions](https://vrs.ga4gh.org/en/latest/terms_and_model.html#systemic-variation).
 #### Request 
+
     
 * `assemblyId`: `GRCh38`    
+
+
     
 * `referenceName`: `refseq:NC_000002.12`    
+
+
     
 * `start`:     
     - `0`    
     - `54700000`        
+
+
     
 * `end`:     
     - `63900000`    
     - `242193529`        
+
+
     
 * `variantType`: `EFO:0030070`    
+
+
+
 
 ##### GET query string
 ```
 ?assemblyId=GRCh38&referenceName=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&variantType=EFO:0030070
 ```
+
+
 
 ##### POST query component 
 ```json
@@ -169,21 +197,33 @@ match a large number of variants, depending on the beacon's content
 and query interpretation (e.g. "any" overlap of a CNV could be matched
 unless the variant type is required for CNV queries).
 #### Request 
+
     
 * `assemblyId`: `GRCh38`    
+
+
     
 * `referenceName`: `17`    
+
+
     
 * `start`:     
     - `345675`        
+
+
     
 * `end`:     
     - `345681`        
+
+
+
 
 ##### GET query string
 ```
 ?assemblyId=GRCh38&referenceName=17&start=345675&end=345681
 ```
+
+
 
 ##### POST query component 
 ```json
@@ -217,21 +257,33 @@ RefSeq ID.
 operational definitions of `CNV` vs. `INDEL` vary, and use explicit `variantMinLength`,
 `variantMaxLength` parameters if needed.
 #### Request 
+
     
 * `referenceName`: `refseq:NC_0000017.11`    
+
+
     
 * `start`:     
     - `7669608`        
+
+
     
 * `end`:     
     - `7676593`        
+
+
     
 * `variantType`: `DEL`    
+
+
+
 
 ##### GET query string
 ```
 ?referenceName=refseq:NC_0000017.11&start=7669608&end=7676593&variantType=DEL
 ```
+
+
 
 ##### POST query component 
 ```json
@@ -260,21 +312,33 @@ and the beacon itself would just receive the positional range request.
 The "insertion" type is here provided through the Sequence Ontology term
 `SO:0000667` and for the chromosome the full, prefixed RefSeq term is being used.
 #### Request 
+
     
 * `referenceName`: `refseq:NC_0000017.11`    
+
+
     
 * `start`:     
     - `7664000`        
+
+
     
 * `end`:     
     - `7682000`        
+
+
     
 * `variantType`: `SO:0000667`    
+
+
+
 
 ##### GET query string
 ```
 ?referenceName=refseq:NC_0000017.11&start=7664000&end=7682000&variantType=SO:0000667
 ```
+
+
 
 ##### POST query component 
 ```json

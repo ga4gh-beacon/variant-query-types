@@ -18,27 +18,43 @@ random very large number might fail depending on the implementation).
 The example uses `"copyChange": "EFO:0030070"` for `copy number gain` as specified in the
 [VRS definitions](https://vrs.ga4gh.org/en/latest/terms_and_model.html#systemic-variation).
 #### Request 
+
     
 * `requestProfileId`: `VQScopyChangeRequest`    
+
+
     
 * `referenceAccession`: `refseq:NC_000002.12`    
+
+
     
 * `start`:     
     - `0`    
     - `54700000`        
+
+
     
 * `end`:     
     - `63900000`    
     - `242193529`        
+
+
     
 * `copyChange`: `EFO:0030070`    
+
+
     
 * `vrsType`: `CopyNumberCount`    
+
+
+
 
 ##### GET query string
 ```
 ?requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&copyChange=EFO:0030070&vrsType=CopyNumberCount
 ```
+
+
 
 ##### POST query component 
 ```json
@@ -74,27 +90,43 @@ as specified in the [VRS definitions](https://vrs.ga4gh.org/en/latest/terms_and_
 With hierarchical expansion of this term explicit complete genomic deletions
 (`EFO:0030069`) should be retrieved too.
 #### Request 
+
     
 * `requestProfileId`: `VQScopyChangeRequest`    
+
+
     
 * `referenceAccession`: `refseq:NC_000002.12`    
+
+
     
 * `start`:     
     - `21000001`    
     - `21975098`        
+
+
     
 * `end`:     
     - `21967753`    
     - `23000000`        
+
+
     
 * `copyChange`: `EFO:0020073`    
+
+
     
 * `vrsType`: `CopyNumberCount`    
+
+
+
 
 ##### GET query string
 ```
 ?requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=21000001,21975098&end=21967753,23000000&copyChange=EFO:0020073&vrsType=CopyNumberCount
 ```
+
+
 
 ##### POST query component 
 ```json

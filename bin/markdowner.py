@@ -85,7 +85,7 @@ re-written as individual, referenced definitions for better re-use and readabili
     gv_fh.write(f'## {ph} Parameters\n\n')
     ls = []
     ls = __add_md_def_lines(ls, schemas["requestProfiles"]["$defs"][ph]["properties"])
-    gv_fh.write("\n".join(ls).replace("\n\n", "\n").replace("\n\n", "\n").replace("\n#", "\n\n#"))
+    gv_fh.write("\n".join(ls).replace("\n#", "\n\n#"))
     gv_fh.write(f'\n\n## Beacon v2 Request Examples\n\n')
     skips.append(ph)
 
@@ -97,7 +97,7 @@ re-written as individual, referenced definitions for better re-use and readabili
     vqs_fh.write(f'## {ph} Parameters\n\n')
     ls = []
     ls = __add_md_def_lines(ls, schemas["requestProfiles"]["$defs"][ph]["properties"])
-    vqs_fh.write("\n".join(ls).replace("\n\n", "\n").replace("\n\n", "\n").replace("\n#", "\n\n#"))
+    vqs_fh.write("\n".join(ls).replace("\n#", "\n\n#"))
     vqs_fh.write(f'\n\n## Beacon v2+/VQS "VRSified" Request Examples\n\n')
     skips.append(ph)
 
@@ -127,13 +127,12 @@ re-written as individual, referenced definitions for better re-use and readabili
 
                     ls.append(f'\n##### GET query string\n```\n?{__request_make_GET(rq)}\n```\n')
                     ls.append(f'\n##### POST query component \n```json\n{__request_make_POST(rq)}\n```\n')
- 
 
-                    rp_fh.write("\n".join(ls).replace("\n\n", "\n").replace("\n\n", "\n").replace("\n#", "\n\n#"))
+                    rp_fh.write("\n".join(ls).replace("\n#", "\n\n#"))
                     if not "VQS" in rp_id:
-                        gv_fh.write("\n".join(ls).replace("\n\n", "\n").replace("\n\n", "\n").replace("\n#", "\n\n#"))
+                        gv_fh.write("\n".join(ls).replace("\n#", "\n\n#"))
                     if not "BV2" in rp_id:
-                        vqs_fh.write("\n".join(ls).replace("\n\n", "\n").replace("\n\n", "\n").replace("\n#", "\n\n#"))
+                        vqs_fh.write("\n".join(ls).replace("\n#", "\n\n#"))
 
         rp_fh.close()
     gv_fh.close()
@@ -191,7 +190,8 @@ def __add_md_parameter_lines(lines, parameter):
             lines.append(f'    \n* `{pik}`: `{piv}`    ')
         elif "description" in pik:
             lines.append(f'#### Description\n')
-            piv = piv.replace("*", "    \n*")
+            # adding 2 spaces at end of lines to force Markdown line  break
+            piv = piv.replace("\n", "  \n\n")
             lines.append(f'{piv}    \n#### Definitions\n')
         else:
             lines.append(f'    \n* `{pik}`: `{piv}`    ')

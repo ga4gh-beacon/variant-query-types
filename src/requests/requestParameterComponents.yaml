@@ -10,10 +10,8 @@ $defs:
     description: >-
       A GA4GH RefGet identifier for the __adjacent__ sequence in adjacency/fusion
       scenarios.
-
     versions:
       - VQS
-
     $ref: "#/$defs/RefgetAccession"
 
   AdjacencyStart:
@@ -28,7 +26,6 @@ $defs:
 
     versions:
       - VQS
-
     oneOf:
       - integer
       - $ref: "#/$defs/Range"
@@ -45,21 +42,18 @@ $defs:
 
     versions:
       - VQS
-
     oneOf:
       - integer
       - $ref: "#/$defs/Range"
 
   AminoacidChange:
     description: |-
-      Aminoacid alteration of interest. Format 1 letter
+      Aminoacid alteration of interest in 1 letter format.    
       
       Origin: Beacon v2.0
-
     versions:
       - v2.0
       - VQS
-
     type: string
     examples:
       - V600E
@@ -69,7 +63,6 @@ $defs:
     description: |-
       MUST use a primaryCode representing one of:
 
-      ```
       * EFO:0030069: complete genomic loss    
       * EFO:0020073: high-level loss    
       * EFO:0030068: low-level loss    
@@ -77,15 +70,12 @@ $defs:
       * EFO:0030064: regional base ploidy    
       * EFO:0030070: gain    
       * EFO:0030071: low-level gain    
-      * EFO:0030072: high-level gain    
+      * EFO:0030072: high-level gain  
+      
+      Endpoints are expected to provide query expansion according to the hierarchy
+      of the terms:
 
       ```
-
-      Endpoints are expected to provide query expansion according
-      to the hierarchy of the terms:
-
-      ```
-
       - EFO:0030064
       - EFO:0030067
           |- EFO:0030068
@@ -95,14 +85,11 @@ $defs:
           |- EFO:0030071
           \- EFO:0030072
 
-      ```
-
-
+      ```    
+      
       Origin: Beacon v2.n, based on VRS v1.3+
-
     versions:
       - VQS
-
     type: string
     enum:
       - EFO:0030069
@@ -121,11 +108,9 @@ $defs:
         the HGNC (https://www.genenames.org) nomenclature.
       
       Origin: Beacon v2.0
-
     versions:
       - v2.0
       - VQS
-
     type: string
     examples:
       - BRAF
@@ -136,11 +121,9 @@ $defs:
       HGVSId descriptor
       
       Origin: Beacon v2.0
-
     versions:
       - v2.0
       - VQS
-
     type: string
     examples:
       - NM_004006.2:c.4375C>T
@@ -149,10 +132,8 @@ $defs:
     description: |-
       An array of 2 integer values. If referring to sequence positions the
       "0-based, inclusive" format is used.
-
     versions:
       - VQS
-
     type: array
     items: 
       type: integer
@@ -170,10 +151,8 @@ $defs:
       Origin: VRS v2
       
       Reference: [GA4GH RefGet](http://samtools.github.io/hts-specs/refget.html)
-
     versions:
       - VQS
-
     type: string
     examples:
       - refseq:NC_000009.12
@@ -185,10 +164,8 @@ $defs:
       allow for range queries (e.g. all repeats with subunits of 1 or 2).
       
       Origin: VRS v2
-
     versions:
       - VQS
-
     oneOf:
       - integer
       - $ref: "#/$defs/Range"
@@ -202,10 +179,8 @@ $defs:
       will use constant values for their `requestProfileId` parameter.
       
       Origin: Beacon v2+
-
     versions:
       - VQS
-
     type: string
 
   Sequence:
@@ -221,10 +196,8 @@ $defs:
       Origin: VRS v1.n
 
       TODO: Review use of base characters.
-
     versions:
       - VQS
-
     type: string
 
   SequenceLength:
@@ -237,10 +210,8 @@ $defs:
       matches.
 
       Origin: VRS v2
-
     versions:
       - VQS
-
     oneOf:
       - integer
       - $ref: "#/$defs/Range"
@@ -249,10 +220,8 @@ $defs:
     description: |-
       Start position or range (_i.e._ in case of a fuzzy breakpoint) on a sequence.
       Status: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification
-
     versions:
       - VQS
-
     oneOf:
       - integer
       - $ref: "#/$defs/Range"
@@ -261,10 +230,8 @@ $defs:
     description: |-
       End position or range (_i.e._ in case of a fuzzy breakpoint) on a sequence.
       Status: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification
-
     versions:
       - VQS
-
     oneOf:
       - integer
       - $ref: "#/$defs/Range"
@@ -278,10 +245,8 @@ $defs:
         identifiers as well. However, no specific query parameterwas defined
         in the Beacon v2 default model.
       Status: PROPOSED FOR BEACON v2.n
-
     versions:
       - VQS
-
     type: string
     examples:
       - ClinGen:CA152954
@@ -292,10 +257,8 @@ $defs:
       Type of the variation according to the VRS model. Examples are here e.g.
       `Adjacency` or `Allele`.
       Origin: VRS v2
-
     versions:
       - VQS
-
     type: string
     enum:
       - Adjacency
@@ -318,12 +281,10 @@ $defs:
       "GRCh38.p13") names.
       DEPRECATION NOTE: The use of a assembly specific sequence identifier obviates
       this parameter. Not part of VRS v2 aligned model versions.
-
     versions:
       - v1
       - v2.0
       - v2.1
-
     type: string
     example:
       - GCF_000001405.39
@@ -339,12 +300,10 @@ $defs:
       used in conjunction with an `Assembly` parameter.
       DEPRECATION NOTE: To be replaced with the `RefgetAccession` from
       VRS v2.
-
     versions:
       - v1
       - v2.0
       - v2.1
-
     type: string
     example:
       - refseq:NC_000009.12
@@ -362,12 +321,10 @@ $defs:
       to indicate deletions.
       Origin: VCF derived (optional) use in Beacon v0.3 -> v2.1
       Status: LEGACY
-
     versions:
       - v1
       - v2.0
       - v2.1
-
     $ref: "#/$defs/Sequence"
 
   AlternateBases:
@@ -377,12 +334,10 @@ $defs:
       see `refereenceBases` for further information.
       Origin: VCF derived use in Beacon v0.3 -> v2.1
       Status: LEGACY
-
     versions:
       - v1
       - v2.0
       - v2.1
-
     $ref: "#/$defs/Sequence"
 
   VariantType:
@@ -409,12 +364,10 @@ $defs:
             over `variantType` for copy number variations. However, additional
             concepts so far have not been covered and might warrant use of an
             additional parameter (`variantClass`?).
-
     versions:
       - v1
       - v2.0
       - v2.1
-
     type: string
     examples:
       - EFO:0030070
@@ -452,11 +405,9 @@ $defs:
           and ending between `end[0]` <-> `end[1]`
         - single or double sided precise matches can be achieved by setting
           `start[1]=start[0]+1` and `end[1]=end[0]+1`
-
     versions:
       - v2.0
       - v2.1
-
     type: array
     items:
       type: integer
@@ -476,11 +427,9 @@ $defs:
 
       * (0-based, exclusive) - see `start`
       * for bracket queries, provide 2 values (e.g. [111,222]).
-
     versions:
       - v2.0
       - v2.1
-
     type: array
     items:
       type: integer
@@ -499,36 +448,30 @@ $defs:
         VRS v2 based `adjacencyAccession` parameter.
 
       Status: DEPRECATED in v2.n
-
     versions:
       - v1.1
       - v2.0
       - v2.1
-
     $ref: "#/$defs/RefSeqId"
 
   MateStart:
     description: |-
       genomic start position of fusion partner breakpoint region
       Status: DEPRECATED in v2.n (see `mateName`)
-
     versions:
       - v1.1
       - v2.0
       - v2.1
-
     type: integer
 
   MateEnd:
     description: |-
       genomic end position of fusion partner breakpoint region
       Status: DEPRECATED in v2.n (see `mateName`)
-
     versions:
       - v1.1
       - v2.0
       - v2.1
-
     type: integer
 
   VariantMinLength:
@@ -543,11 +486,9 @@ $defs:
       Origin: Beacon v2.0
 
       Status: DEPRECATED in v2.n (see `sequenceLength`)
-
     versions:
       - v2.0
       - v2.1
-
     type: integer
     format: int64
     minimum: 0
@@ -564,11 +505,9 @@ $defs:
       Status: DEPRECATED in v2.n (see `sequenceLength`)
 
       Origin: Beacon v2.0
-
     versions:
       - v2.0
       - v2.1
-
     type: integer
     format: int64
     minimum: 1
