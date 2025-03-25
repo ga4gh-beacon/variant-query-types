@@ -2,13 +2,13 @@
     "$defs": {
         "AdjacencyAccession": {
             "$ref": "#/$defs/RefgetAccession",
-            "description": "A GA4GH RefGet identifier for the __adjacent__ sequence in adjacency/fusion\nscenarios.",
+            "description": "A GA4GH RefGet identifier for the __adjacent__ sequence in adjacency/fusion scenarios.",
             "versions": [
                 "VQS"
             ]
         },
         "AdjacencyEnd": {
-            "description": "End position or range (_i.e._ in case of a fuzzy breakpoint) on an\nadjacent sequence in case of a sequence adjecency    \n\nStatus: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification",
+            "description": "End position or range (_i.e._ in case of a fuzzy breakpoint) on an\nadjacent sequence in case of a sequence adjecency    \n\nStatus:\n\n* PROPOSED FOR BEACON v2.n\n* based on VRS v2 with modification",
             "oneOf": [
                 "integer",
                 {
@@ -20,7 +20,7 @@
             ]
         },
         "AdjacencyStart": {
-            "description": "Start position or range (_i.e._ in case of a fuzzy breakpoint) on an\nadjacent sequence in case of a sequence adjecency    \n\nStatus: PROPOSED FOR BEACON v2.n, based on VRS v2 with modification",
+            "description": "Start position or range (_i.e._ in case of a fuzzy breakpoint)\non an adjacent sequence in case of a sequence adjecency    \n\nStatus:\n\n* PROPOSED FOR BEACON v2.n\n* based on VRS v2 with modification",
             "oneOf": [
                 "integer",
                 {
@@ -177,7 +177,7 @@
         },
         "ReferenceBases": {
             "$ref": "#/$defs/Sequence",
-            "description": "The reference bases for the variant at the indicated position. It is based\non the VCF cocept of having (anchored) reference bases at an indicated\ngenomic location in combination with `alternateBases` to define their\nreplacement. In contrast, standards such as GA4GH VRS only indicate the\n`sequence` observed at a given base position, including the use of an empty\nsequence together with `start` + `end` positions with `end - start > 0`\nto indicate deletions.\nOrigin: VCF derived (optional) use in Beacon v0.3 -> v2.1\nStatus: LEGACY",
+            "description": "The reference bases for the variant at the indicated position. It is based\non the VCF concept of having (anchored) reference bases at an indicated\ngenomic location in combination with `alternateBases` to define their\nreplacement. In contrast, standards such as GA4GH VRS only indicate the\n`sequence` observed at a given base position, including the use of an empty\nsequence together with `start` + `end` positions with `end - start > 0`\nto indicate deletions.\nOrigin: VCF derived (optional) use in Beacon v0.3 -> v2.1\nStatus: LEGACY",
             "versions": [
                 "v1",
                 "v2.0",
@@ -208,7 +208,7 @@
             ]
         },
         "RequestProfileId": {
-            "description": "The `requestProfileId` parameter here allows beacons to check the type of query\nbeing performed and to compare the provided request parameters for conformity\nwith the expected query profile.\nThe parameter definition here is a placeholder; the definitions of typed queries\nwill use constant values for their `requestProfileId` parameter.\n\nOrigin: Beacon v2+",
+            "description": "The `requestProfile` parameter here allows beacons to check the type of query\nbeing performed and to compare the provided request parameters for conformity\nwith the expected query profile.\nThe parameter definition here is a placeholder; the definitions of typed queries\nwill use constant values for their `requestProfile` parameter.\n\nOrigin: Beacon v2+",
             "type": "string",
             "versions": [
                 "VQS"
@@ -336,5 +336,5 @@
         }
     },
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "description": "Component definitions for `requestProfiles`. The definition of each parameter\nas a component allows for reuse across multiple request patterns but also for\ne.g. easy referencing in OpenAPI endpoints."
+    "description": "Component definitions for `requestProfiles`. The definition of each parameter as a component allows for reuse across multiple request patterns but also for e.g. easy referencing in OpenAPI endpoints."
 }

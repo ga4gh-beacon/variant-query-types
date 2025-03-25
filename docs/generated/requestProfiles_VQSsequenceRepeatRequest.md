@@ -33,7 +33,7 @@ TODO: Limit location to first exon?
 #### Request 
 
     
-* `requestProfileId`: `VQSsequenceRepeatRequest`    
+* `requestProfile`: `VQSsequenceRepeatRequest`    
 
 
     
@@ -66,7 +66,7 @@ TODO: Limit location to first exon?
 
 ##### GET query string
 ```
-?requestProfileId=VQSsequenceRepeatRequest&referenceAccession=refseq:NC_000004.12&start=3074681&end=3243960&repeatSubunitLength=3&sequenceLength=105,750&vrsType=ReferenceLengthExpression
+?requestProfile=VQSsequenceRepeatRequest&referenceAccession=refseq:NC_000004.12&start=3074681&end=3243960&repeatSubunitLength=3&sequenceLength=105,750&vrsType=ReferenceLengthExpression
 ```
 
 
@@ -77,7 +77,7 @@ TODO: Limit location to first exon?
     "end": 3243960,
     "referenceAccession": "refseq:NC_000004.12",
     "repeatSubunitLength": 3,
-    "requestProfileId": "VQSsequenceRepeatRequest",
+    "requestProfile": "VQSsequenceRepeatRequest",
     "sequenceLength": [
         105,
         750
@@ -98,7 +98,7 @@ Here instead of the position simply the gene symbol is being used.
 #### Request 
 
     
-* `requestProfileId`: `VQSsequenceRepeatRequest`    
+* `requestProfile`: `VQSsequenceRepeatRequest`    
 
 
     
@@ -123,7 +123,7 @@ Here instead of the position simply the gene symbol is being used.
 
 ##### GET query string
 ```
-?requestProfileId=VQSsequenceRepeatRequest&geneId=HTT&repeatSubunitLength=3&sequenceLength=105,750&vrsType=ReferenceLengthExpression
+?requestProfile=VQSsequenceRepeatRequest&geneId=HTT&repeatSubunitLength=3&sequenceLength=105,750&vrsType=ReferenceLengthExpression
 ```
 
 
@@ -133,7 +133,7 @@ Here instead of the position simply the gene symbol is being used.
 {
     "geneId": "HTT",
     "repeatSubunitLength": 3,
-    "requestProfileId": "VQSsequenceRepeatRequest",
+    "requestProfile": "VQSsequenceRepeatRequest",
     "sequenceLength": [
         105,
         750
@@ -156,7 +156,7 @@ and a range of sequence lengths is used to match against a `ReferenceLengthExpre
 #### Request 
 
     
-* `requestProfileId`: `VQSsequenceRepeatRequest`    
+* `requestProfile`: `VQSsequenceRepeatRequest`    
 
 
     
@@ -181,7 +181,7 @@ and a range of sequence lengths is used to match against a `ReferenceLengthExpre
 
 ##### GET query string
 ```
-?requestProfileId=VQSsequenceRepeatRequest&geneId=FMR1&repeatSubunitLength=3&sequenceLength=130,600&vrsType=ReferenceLengthExpression
+?requestProfile=VQSsequenceRepeatRequest&geneId=FMR1&repeatSubunitLength=3&sequenceLength=130,600&vrsType=ReferenceLengthExpression
 ```
 
 
@@ -191,7 +191,7 @@ and a range of sequence lengths is used to match against a `ReferenceLengthExpre
 {
     "geneId": "FMR1",
     "repeatSubunitLength": 3,
-    "requestProfileId": "VQSsequenceRepeatRequest",
+    "requestProfile": "VQSsequenceRepeatRequest",
     "sequenceLength": [
         130,
         600

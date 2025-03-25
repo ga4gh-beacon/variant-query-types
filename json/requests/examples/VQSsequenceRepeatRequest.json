@@ -5,7 +5,7 @@
             "request": {
                 "geneId": "HTT",
                 "repeatSubunitLength": 3,
-                "requestProfileId": "VQSsequenceRepeatRequest",
+                "requestProfile": "VQSsequenceRepeatRequest",
                 "sequenceLength": [
                     105,
                     750
@@ -18,7 +18,7 @@
             "request": {
                 "geneId": "FMR1",
                 "repeatSubunitLength": 3,
-                "requestProfileId": "VQSsequenceRepeatRequest",
+                "requestProfile": "VQSsequenceRepeatRequest",
                 "sequenceLength": [
                     130,
                     600
@@ -32,7 +32,7 @@
                 "end": 3243960,
                 "referenceAccession": "refseq:NC_000004.12",
                 "repeatSubunitLength": 3,
-                "requestProfileId": "VQSsequenceRepeatRequest",
+                "requestProfile": "VQSsequenceRepeatRequest",
                 "sequenceLength": [
                     105,
                     750

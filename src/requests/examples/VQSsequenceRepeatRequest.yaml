@@ -33,7 +33,7 @@ examples:
       TODO: Limit location to first exon?
 
     request:
-      requestProfileId: VQSsequenceRepeatRequest
+      requestProfile: VQSsequenceRepeatRequest
       referenceAccession: refseq:NC_000004.12
       start: 3074681
       end: 3243960
@@ -56,7 +56,7 @@ examples:
       Here instead of the position simply the gene symbol is being used.
 
     request:
-      requestProfileId: VQSsequenceRepeatRequest
+      requestProfile: VQSsequenceRepeatRequest
       geneId: HTT
       repeatSubunitLength: 3
       sequenceLength:
@@ -80,7 +80,7 @@ examples:
       and a range of sequence lengths is used to match against a `ReferenceLengthExpression`.
 
     request:
-      requestProfileId: VQSsequenceRepeatRequest
+      requestProfile: VQSsequenceRepeatRequest
       geneId: FMR1
       repeatSubunitLength: 3
       sequenceLength:

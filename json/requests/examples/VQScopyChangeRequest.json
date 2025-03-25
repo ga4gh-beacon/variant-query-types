@@ -9,7 +9,7 @@
                     242193529
                 ],
                 "referenceAccession": "refseq:NC_000002.12",
-                "requestProfileId": "VQScopyChangeRequest",
+                "requestProfile": "VQScopyChangeRequest",
                 "start": [
                     0,
                     54700000
@@ -26,7 +26,7 @@
                     23000000
                 ],
                 "referenceAccession": "refseq:NC_000002.12",
-                "requestProfileId": "VQScopyChangeRequest",
+                "requestProfile": "VQScopyChangeRequest",
                 "start": [
                     21000001,
                     21975098

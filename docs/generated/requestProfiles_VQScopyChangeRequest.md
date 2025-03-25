@@ -20,7 +20,7 @@ The example uses `"copyChange": "EFO:0030070"` for `copy number gain` as specifi
 #### Request 
 
     
-* `requestProfileId`: `VQScopyChangeRequest`    
+* `requestProfile`: `VQScopyChangeRequest`    
 
 
     
@@ -51,7 +51,7 @@ The example uses `"copyChange": "EFO:0030070"` for `copy number gain` as specifi
 
 ##### GET query string
 ```
-?requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&copyChange=EFO:0030070&vrsType=CopyNumberCount
+?requestProfile=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&copyChange=EFO:0030070&vrsType=CopyNumberCount
 ```
 
 
@@ -65,7 +65,7 @@ The example uses `"copyChange": "EFO:0030070"` for `copy number gain` as specifi
         242193529
     ],
     "referenceAccession": "refseq:NC_000002.12",
-    "requestProfileId": "VQScopyChangeRequest",
+    "requestProfile": "VQScopyChangeRequest",
     "start": [
         0,
         54700000
@@ -92,7 +92,7 @@ With hierarchical expansion of this term explicit complete genomic deletions
 #### Request 
 
     
-* `requestProfileId`: `VQScopyChangeRequest`    
+* `requestProfile`: `VQScopyChangeRequest`    
 
 
     
@@ -123,7 +123,7 @@ With hierarchical expansion of this term explicit complete genomic deletions
 
 ##### GET query string
 ```
-?requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=21000001,21975098&end=21967753,23000000&copyChange=EFO:0020073&vrsType=CopyNumberCount
+?requestProfile=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=21000001,21975098&end=21967753,23000000&copyChange=EFO:0020073&vrsType=CopyNumberCount
 ```
 
 
@@ -137,7 +137,7 @@ With hierarchical expansion of this term explicit complete genomic deletions
         23000000
     ],
     "referenceAccession": "refseq:NC_000002.12",
-    "requestProfileId": "VQScopyChangeRequest",
+    "requestProfile": "VQScopyChangeRequest",
     "start": [
         21000001,
         21975098

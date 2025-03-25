@@ -8,7 +8,7 @@
                 "adjacencyStart": 89300000,
                 "end": 145138636,
                 "referenceAccession": "refseq:NC_000008.11",
-                "requestProfileId": "VQSadjacencyRequest",
+                "requestProfile": "VQSadjacencyRequest",
                 "start": 116700000,
                 "vrsType": "Adjacency"
             }

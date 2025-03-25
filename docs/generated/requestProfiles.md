@@ -41,7 +41,7 @@ applications (`geneId`, `sequenceLength`)
     
 * `type`: `object`    
 * `properties`:    
-    - `requestProfileId`: `'$ref': './requestParameterComponents.yaml#/$defs/RequestProfileId'`      
+    - `requestProfile`: `'$ref': './requestParameterComponents.yaml#/$defs/RequestProfileId'`      
     - `referenceAccession`: `'$ref': './requestParameterComponents.yaml#/$defs/RefgetAccession'`      
     - `start`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceStart'`      
     - `end`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceEnd'`      
@@ -70,7 +70,7 @@ This request is used to retrieve a specific variant by its identifier.
     
 * `type`: `object`    
 * `properties`:    
-    - `requestProfileId`: `'const': 'BV2variantIdRequest'`      
+    - `requestProfile`: `'const': 'BV2variantIdRequest'`      
     - `variantId`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantId'`    
 
 ## `aminoacidChangeRequest` 
@@ -84,7 +84,7 @@ may be restricted by additionally providing the gene ID.
     
 * `type`: `object`    
 * `properties`:    
-    - `requestProfileId`: `'const': 'BV2aminoacidChangeRequest'`      
+    - `requestProfile`: `'const': 'BV2aminoacidChangeRequest'`      
     - `aminoacidChange`: `'$ref': './requestParameterComponents.yaml#/$defs/AminoacidChange'`      
     - `geneId`: `'$ref': './requestParameterComponents.yaml#/$defs/GeneId'`    
     
@@ -110,7 +110,7 @@ TODO: Evaluate to split into more basic `GeneIdRequest` and specialized
     
 * `type`: `object`    
 * `properties`:    
-    - `requestProfileId`: `'const': 'BV2geneIdRequest'`      
+    - `requestProfile`: `'const': 'BV2geneIdRequest'`      
     - `geneId`: `'$ref': './requestParameterComponents.yaml#/$defs/GeneId'`      
     - `variantType`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantType'`      
     - `variantMinLength`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantMinLength'`      
@@ -123,7 +123,7 @@ TODO: Evaluate to split into more basic `GeneIdRequest` and specialized
     
 * `type`: `object`    
 * `properties`:    
-    - `requestProfileId`: `'description': 'Note: The `requestProfile` parameter had not been defined for Beacon v2.0\nand therefore in _senso stricto_ is not part of requests only relying\non v2 parameters.', 'const': 'BV2alleleRequest'`      
+    - `requestProfile`: `'description': 'Note: The `requestProfile` parameter had not been defined for Beacon v2.0\nand therefore in _senso stricto_ is not part of requests only relying\non v2 parameters.', 'const': 'BV2alleleRequest'`      
     - `assemblyId`: `'$ref': './requestParameterComponents.yaml#/$defs/Assembly'`      
     - `referenceName`: `'$ref': './requestParameterComponents.yaml#/$defs/RefSeqId'`      
     - `start`: `'$ref': './requestParameterComponents.yaml#/$defs/Start'`      
@@ -152,7 +152,7 @@ no `sequence` parameter should be used.
     
 * `type`: `object`    
 * `properties`:    
-    - `requestProfileId`: `'const': 'BV2bracketRequest'`      
+    - `requestProfile`: `'const': 'BV2bracketRequest'`      
     - `assemblyId`: `'$ref': './requestParameterComponents.yaml#/$defs/Assembly'`      
     - `referenceName`: `'$ref': './requestParameterComponents.yaml#/$defs/RefSeqId'`      
     - `start`: `'$ref': './requestParameterComponents.yaml#/$defs/Start'`      
@@ -182,7 +182,7 @@ _i.e._ a subset of the `start` and `end` specifications.
     
 * `type`: `object`    
 * `properties`:    
-    - `requestProfileId`: `'const': 'BV2rangeRequest'`      
+    - `requestProfile`: `'const': 'BV2rangeRequest'`      
     - `assemblyId`: `'$ref': './requestParameterComponents.yaml#/$defs/Assembly'`      
     - `referenceName`: `'$ref': './requestParameterComponents.yaml#/$defs/RefSeqId'`      
     - `start`: `'type': 'array', 'items': 'type': 'integer', 'minItems': 1, 'maxItems': 1`      
@@ -206,7 +206,7 @@ allele requests but replaces the original parameters with VRS v2 concepts.
     
 * `type`: `object`    
 * `properties`:    
-    - `requestProfileId`: `'const': 'VQSalleleRequest'`      
+    - `requestProfile`: `'const': 'VQSalleleRequest'`      
     - `referenceAccession`: `'$ref': './requestParameterComponents.yaml#/$defs/RefgetAccession'`      
     - `start`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceStart'`      
     - `end`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceEnd'`      
@@ -230,7 +230,7 @@ genomic copy number (pls. refer to the class definition.)
     
 * `type`: `object`    
 * `properties`:    
-    - `requestProfileId`: `'const': 'VQScopyChangeRequest'`      
+    - `requestProfile`: `'const': 'VQScopyChangeRequest'`      
     - `referenceAccession`: `'$ref': './requestParameterComponents.yaml#/$defs/RefgetAccession'`      
     - `start`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceStart'`      
     - `end`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceEnd'`      
@@ -267,7 +267,7 @@ _i.e._ a subset of the `start` and `end` specifications. However,
     
 * `type`: `object`    
 * `properties`:    
-    - `requestProfileId`: `'const': 'VQSrangeRequest'`      
+    - `requestProfile`: `'const': 'VQSrangeRequest'`      
     - `referenceAccession`: `'$ref': './requestParameterComponents.yaml#/$defs/RefSeqId'`      
     - `start`: `'type': 'integer'`      
     - `end`: `'type': 'integer'`      
@@ -296,7 +296,7 @@ clarification (e.g. use of integer `start` and `end`, `adjacencyStart` and
     
 * `type`: `object`    
 * `properties`:    
-    - `requestProfileId`: `'const': 'VQSadjacencyRequest'`      
+    - `requestProfile`: `'const': 'VQSadjacencyRequest'`      
     - `referenceAccession`: `'$ref': './requestParameterComponents.yaml#/$defs/RefgetAccession'`      
     - `start`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceStart'`      
     - `end`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceEnd'`      
@@ -315,7 +315,7 @@ retrieval of tandem repeat expansions or other sequence repeat events.
     
 * `type`: `object`    
 * `properties`:    
-    - `requestProfileId`: `'const': 'VQSsequenceRepeatRequest'`      
+    - `requestProfile`: `'const': 'VQSsequenceRepeatRequest'`      
     - `referenceAccession`: `'$ref': './requestParameterComponents.yaml#/$defs/RefgetAccession'`      
     - `start`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceStart'`      
     - `end`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceEnd'`      
@@ -336,7 +336,7 @@ TODO: Evaluate to split into more basic `GeneIdRequest` and specialized
     
 * `type`: `object`    
 * `properties`:    
-    - `requestProfileId`: `'const': 'VQSgeneIdRequest'`      
+    - `requestProfile`: `'const': 'VQSgeneIdRequest'`      
     - `geneId`: `'$ref': './requestParameterComponents.yaml#/$defs/GeneId'`      
     - `copyChange`: `'$ref': './requestParameterComponents.yaml#/$defs/CopyChange'`      
     - `sequenceLength`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceLength'`      
@@ -359,7 +359,7 @@ Status: Proposed for evaluation for Beacon v2.n or v3.0 (but potentially
     
 * `type`: `object`    
 * `properties`:    
-    - `requestProfileId`: `'const': 'BV2multivarsRequest'`      
+    - `requestProfile`: `'const': 'BV2multivarsRequest'`      
     - `variantLogic`: `'description': 'The logic to apply to the set of variants in the query. The default is\nto apply the AND logic, meaning that all **samples** (i.e. biosamples,\nindividuals or analyses) must fulfil the query criteria:\n* with a (default) AND logic and "biosamples" as requested entity \n  `biosample_id` values from the individual variant query responses\n  will be intersected\n* with an OR logic and "analyses" as requested entity `analysis_id`\n  values from the individual variant query responses will be concatenated\nNote: The `variantLogic` parameter is not defined in the current\n      `requestParameterComponents.yaml` file yet due to the very experimental\n      and tentative nature of this proposal.', 'type': 'string', 'enum': ['AND', 'OR'], 'default': 'AND'`      
     - `queries`: `'type': 'array', 'items': '$ref': '#/$defs/g_variant'`    
 
@@ -374,6 +374,6 @@ Status: Proposed for evaluation for Beacon v2.n or v3.0
     
 * `type`: `object`    
 * `properties`:    
-    - `requestProfileId`: `'const': 'VQSmultivarRequest'`      
+    - `requestProfile`: `'const': 'VQSmultivarRequest'`      
     - `variantLogic`: `'type': 'string', 'enum': ['AND', 'OR'], 'default': 'AND'`      
     - `queries`: `'type': 'array', 'items': 'anyOf': ['$ref': '#/$defs/VQSalleleRequest', '$ref': '#/$defs/VQScopyChangeRequest', '$ref': '#/$defs/VQSadjacencyRequest', '$ref': '#/$defs/VQSgeneIdRequest', '$ref': '#/$defs/BV2variantIdRequest', '$ref': '#/$defs/BV2aminoacidChangeRequest', '$ref': '#/$defs/BV2genomicAlleleShortFormRequest']`    

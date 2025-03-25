@@ -15,7 +15,7 @@ For the parameter definitions please see the [`requestParameterComponents` page.
 
     
 
-#### `requestProfileId`: [./requestParameterComponents.yaml#/$defs/RequestProfileId](../requestParameterComponents#requestprofileid)    
+#### `requestProfile`: [./requestParameterComponents.yaml#/$defs/RequestProfileId](../requestParameterComponents#requestprofileid)    
     
 
 #### `referenceAccession`: [./requestParameterComponents.yaml#/$defs/RefgetAccession](../requestParameterComponents#refgetaccession)    
@@ -87,7 +87,7 @@ The example uses `"copyChange": "EFO:0030070"` for `copy number gain` as specifi
 #### Request 
 
     
-* `requestProfileId`: `VQScopyChangeRequest`    
+* `requestProfile`: `VQScopyChangeRequest`    
 
 
     
@@ -118,7 +118,7 @@ The example uses `"copyChange": "EFO:0030070"` for `copy number gain` as specifi
 
 ##### GET query string
 ```
-?requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&copyChange=EFO:0030070&vrsType=CopyNumberCount
+?requestProfile=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&copyChange=EFO:0030070&vrsType=CopyNumberCount
 ```
 
 
@@ -132,7 +132,7 @@ The example uses `"copyChange": "EFO:0030070"` for `copy number gain` as specifi
         242193529
     ],
     "referenceAccession": "refseq:NC_000002.12",
-    "requestProfileId": "VQScopyChangeRequest",
+    "requestProfile": "VQScopyChangeRequest",
     "start": [
         0,
         54700000
@@ -159,7 +159,7 @@ With hierarchical expansion of this term explicit complete genomic deletions
 #### Request 
 
     
-* `requestProfileId`: `VQScopyChangeRequest`    
+* `requestProfile`: `VQScopyChangeRequest`    
 
 
     
@@ -190,7 +190,7 @@ With hierarchical expansion of this term explicit complete genomic deletions
 
 ##### GET query string
 ```
-?requestProfileId=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=21000001,21975098&end=21967753,23000000&copyChange=EFO:0020073&vrsType=CopyNumberCount
+?requestProfile=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=21000001,21975098&end=21967753,23000000&copyChange=EFO:0020073&vrsType=CopyNumberCount
 ```
 
 
@@ -204,7 +204,7 @@ With hierarchical expansion of this term explicit complete genomic deletions
         23000000
     ],
     "referenceAccession": "refseq:NC_000002.12",
-    "requestProfileId": "VQScopyChangeRequest",
+    "requestProfile": "VQScopyChangeRequest",
     "start": [
         21000001,
         21975098
@@ -233,7 +233,7 @@ representational model, here:
 #### Request 
 
     
-* `requestProfileId`: `VQSadjacencyRequest`    
+* `requestProfile`: `VQSadjacencyRequest`    
 
 
     
@@ -268,7 +268,7 @@ representational model, here:
 
 ##### GET query string
 ```
-?requestProfileId=VQSadjacencyRequest&referenceAccession=refseq:NC_000008.11&start=116700000&end=145138636&adjacencyAccession=refseq:NC_000014.9&adjacencyStart=89300000&adjacencyEnd=107043718&vrsType=Adjacency
+?requestProfile=VQSadjacencyRequest&referenceAccession=refseq:NC_000008.11&start=116700000&end=145138636&adjacencyAccession=refseq:NC_000014.9&adjacencyStart=89300000&adjacencyEnd=107043718&vrsType=Adjacency
 ```
 
 
@@ -281,7 +281,7 @@ representational model, here:
     "adjacencyStart": 89300000,
     "end": 145138636,
     "referenceAccession": "refseq:NC_000008.11",
-    "requestProfileId": "VQSadjacencyRequest",
+    "requestProfile": "VQSadjacencyRequest",
     "start": 116700000,
     "vrsType": "Adjacency"
 }
@@ -318,7 +318,7 @@ TODO: Limit location to first exon?
 #### Request 
 
     
-* `requestProfileId`: `VQSsequenceRepeatRequest`    
+* `requestProfile`: `VQSsequenceRepeatRequest`    
 
 
     
@@ -351,7 +351,7 @@ TODO: Limit location to first exon?
 
 ##### GET query string
 ```
-?requestProfileId=VQSsequenceRepeatRequest&referenceAccession=refseq:NC_000004.12&start=3074681&end=3243960&repeatSubunitLength=3&sequenceLength=105,750&vrsType=ReferenceLengthExpression
+?requestProfile=VQSsequenceRepeatRequest&referenceAccession=refseq:NC_000004.12&start=3074681&end=3243960&repeatSubunitLength=3&sequenceLength=105,750&vrsType=ReferenceLengthExpression
 ```
 
 
@@ -362,7 +362,7 @@ TODO: Limit location to first exon?
     "end": 3243960,
     "referenceAccession": "refseq:NC_000004.12",
     "repeatSubunitLength": 3,
-    "requestProfileId": "VQSsequenceRepeatRequest",
+    "requestProfile": "VQSsequenceRepeatRequest",
     "sequenceLength": [
         105,
         750
@@ -383,7 +383,7 @@ Here instead of the position simply the gene symbol is being used.
 #### Request 
 
     
-* `requestProfileId`: `VQSsequenceRepeatRequest`    
+* `requestProfile`: `VQSsequenceRepeatRequest`    
 
 
     
@@ -408,7 +408,7 @@ Here instead of the position simply the gene symbol is being used.
 
 ##### GET query string
 ```
-?requestProfileId=VQSsequenceRepeatRequest&geneId=HTT&repeatSubunitLength=3&sequenceLength=105,750&vrsType=ReferenceLengthExpression
+?requestProfile=VQSsequenceRepeatRequest&geneId=HTT&repeatSubunitLength=3&sequenceLength=105,750&vrsType=ReferenceLengthExpression
 ```
 
 
@@ -418,7 +418,7 @@ Here instead of the position simply the gene symbol is being used.
 {
     "geneId": "HTT",
     "repeatSubunitLength": 3,
-    "requestProfileId": "VQSsequenceRepeatRequest",
+    "requestProfile": "VQSsequenceRepeatRequest",
     "sequenceLength": [
         105,
         750
@@ -441,7 +441,7 @@ and a range of sequence lengths is used to match against a `ReferenceLengthExpre
 #### Request 
 
     
-* `requestProfileId`: `VQSsequenceRepeatRequest`    
+* `requestProfile`: `VQSsequenceRepeatRequest`    
 
 
     
@@ -466,7 +466,7 @@ and a range of sequence lengths is used to match against a `ReferenceLengthExpre
 
 ##### GET query string
 ```
-?requestProfileId=VQSsequenceRepeatRequest&geneId=FMR1&repeatSubunitLength=3&sequenceLength=130,600&vrsType=ReferenceLengthExpression
+?requestProfile=VQSsequenceRepeatRequest&geneId=FMR1&repeatSubunitLength=3&sequenceLength=130,600&vrsType=ReferenceLengthExpression
 ```
 
 
@@ -476,7 +476,7 @@ and a range of sequence lengths is used to match against a `ReferenceLengthExpre
 {
     "geneId": "FMR1",
     "repeatSubunitLength": 3,
-    "requestProfileId": "VQSsequenceRepeatRequest",
+    "requestProfile": "VQSsequenceRepeatRequest",
     "sequenceLength": [
         130,
         600

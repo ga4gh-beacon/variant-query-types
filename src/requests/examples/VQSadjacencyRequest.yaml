@@ -19,7 +19,7 @@ examples:
         the storage system might not encode this or all options could be of interest    
 
     request:
-      requestProfileId: VQSadjacencyRequest
+      requestProfile: VQSadjacencyRequest
       referenceAccession: refseq:NC_000008.11
       start: 116700000
       end: 145138636

@@ -28,7 +28,7 @@ representational model, here:
 #### Request 
 
     
-* `requestProfileId`: `VQSadjacencyRequest`    
+* `requestProfile`: `VQSadjacencyRequest`    
 
 
     
@@ -63,7 +63,7 @@ representational model, here:
 
 ##### GET query string
 ```
-?requestProfileId=VQSadjacencyRequest&referenceAccession=refseq:NC_000008.11&start=116700000&end=145138636&adjacencyAccession=refseq:NC_000014.9&adjacencyStart=89300000&adjacencyEnd=107043718&vrsType=Adjacency
+?requestProfile=VQSadjacencyRequest&referenceAccession=refseq:NC_000008.11&start=116700000&end=145138636&adjacencyAccession=refseq:NC_000014.9&adjacencyStart=89300000&adjacencyEnd=107043718&vrsType=Adjacency
 ```
 
 
@@ -76,7 +76,7 @@ representational model, here:
     "adjacencyStart": 89300000,
     "end": 145138636,
     "referenceAccession": "refseq:NC_000008.11",
-    "requestProfileId": "VQSadjacencyRequest",
+    "requestProfile": "VQSadjacencyRequest",
     "start": 116700000,
     "vrsType": "Adjacency"
 }

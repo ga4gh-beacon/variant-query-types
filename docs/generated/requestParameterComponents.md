@@ -217,11 +217,11 @@ Origin: VRS v2
 ## `RequestProfileId` 
 
 #### Description
-The `requestProfileId` parameter here allows beacons to check the type of query  
+The `requestProfile` parameter here allows beacons to check the type of query  
 being performed and to compare the provided request parameters for conformity  
 with the expected query profile.  
 The parameter definition here is a placeholder; the definitions of typed queries  
-will use constant values for their `requestProfileId` parameter.  
+will use constant values for their `requestProfile` parameter.  
   
 Origin: Beacon v2+    
 
