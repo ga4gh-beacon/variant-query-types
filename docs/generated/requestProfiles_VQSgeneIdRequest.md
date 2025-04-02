@@ -38,14 +38,14 @@ of 3Mb (to avoid large chromosomal deletions).
 
 
     
-* `vrsType`: `CopyNumberCount`    
+* `vrsType`: `CopyNumberChange`    
 
 
 
 
 ##### GET query string
 ```
-?requestType=VQSgeneIdRequest&geneId=TP53&copyChange=EFO:0030067&sequenceLength=1000,3000000&vrsType=CopyNumberCount
+?requestType=VQSgeneIdRequest&geneId=TP53&copyChange=EFO:0030067&sequenceLength=1000,3000000&vrsType=CopyNumberChange
 ```
 
 
@@ -60,6 +60,6 @@ of 3Mb (to avoid large chromosomal deletions).
         1000,
         3000000
     ],
-    "vrsType": "CopyNumberCount"
+    "vrsType": "CopyNumberChange"
 }
 ```

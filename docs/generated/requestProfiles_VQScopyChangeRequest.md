@@ -44,14 +44,14 @@ The example uses `"copyChange": "EFO:0030070"` for `copy number gain` as specifi
 
 
     
-* `vrsType`: `CopyNumberCount`    
+* `vrsType`: `CopyNumberChange`    
 
 
 
 
 ##### GET query string
 ```
-?requestProfile=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&copyChange=EFO:0030070&vrsType=CopyNumberCount
+?requestProfile=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=0,54700000&end=63900000,242193529&copyChange=EFO:0030070&vrsType=CopyNumberChange
 ```
 
 
@@ -70,7 +70,7 @@ The example uses `"copyChange": "EFO:0030070"` for `copy number gain` as specifi
         0,
         54700000
     ],
-    "vrsType": "CopyNumberCount"
+    "vrsType": "CopyNumberChange"
 }
 ```
 
@@ -116,14 +116,14 @@ With hierarchical expansion of this term explicit complete genomic deletions
 
 
     
-* `vrsType`: `CopyNumberCount`    
+* `vrsType`: `CopyNumberChange`    
 
 
 
 
 ##### GET query string
 ```
-?requestProfile=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=21000001,21975098&end=21967753,23000000&copyChange=EFO:0020073&vrsType=CopyNumberCount
+?requestProfile=VQScopyChangeRequest&referenceAccession=refseq:NC_000002.12&start=21000001,21975098&end=21967753,23000000&copyChange=EFO:0020073&vrsType=CopyNumberChange
 ```
 
 
@@ -142,6 +142,6 @@ With hierarchical expansion of this term explicit complete genomic deletions
         21000001,
         21975098
     ],
-    "vrsType": "CopyNumberCount"
+    "vrsType": "CopyNumberChange"
 }
 ```

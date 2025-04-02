@@ -1,0 +1,31 @@
+examples:
+  VQScopyCount_01:
+    description: |-
+      ### Copy number gains involving the _whole_ locus _chr2:54,700,000-63,900,000_
+
+      #### Solution for `VQSrequest` using `start` and `end` ranges (`VQScopyCountRequest`)
+
+      The query has to indicate the involved genomic region by positions as well as the
+      type of change. Here, matched duplication events start 5\` of the region and end 3\`
+      of it. For capturing any event upt to the complete chromosome duplication this
+      requires knowledge about the maximum value (_i.e._ chromosome base length; using a
+      random very large number might fail depending on the implementation).
+
+      The example uses `"copyCount": [2,4]` for low level copy number gains on a
+      diploid genotype (_i.e._ more than 2, up to 4 copies).
+
+    request:
+      requestProfile: VQScopyChangeRequest
+      referenceAccession: refseq:NC_000002.12
+      start:
+        - 0
+        - 54700000
+      end:
+        - 63900000
+        - 242193529
+      copyCount:
+        - 3
+        - 4
+      vrsType: CopyNumberCount
+
+

@@ -20,4 +20,4 @@ examples:
       sequenceLength:
         - 1000
         - 3000000
-      vrsType: CopyNumberCount
+      vrsType: CopyNumberChange
