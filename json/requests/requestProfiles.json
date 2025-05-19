@@ -135,7 +135,7 @@
             "type": "object"
         },
         "VQSadjacencyRequest": {
-            "description": "A typical Beacon v2.n request for sequence adjacency queries, e.g. for the\nretrieval of chromosomal translocation events or sequence fusions.\n\nTODO: In VRS v2 there is an implicit sequence directionality from the use\nof either start or end parameters for either side of the adjacency. This might\nbe problematic on the query side where in many instances just the approximate\nposition of the (fused) breakpoints maight be of interest.\n\nThis might need additional clarification (e.g. use of `startRange` or `endRange`,\n`adjacencyStartRange` and `adjecencyEndRange` parameters to indicate direction dependent matching).",
+            "description": "A typical Beacon v2.n request for sequence adjacency queries, e.g. for\nthe retrieval of chromosomal translocation events or sequence fusions.\n\nTODO: In VRS v2 there is an implicit sequence directionality from the use\nof either start or end parameters for either side of the adjacency. This\nmight be problematic on the query side where in many instances just the\napproximate position of the (fused) breakpoints maight be of interest.\n\nThis might need additional clarification (e.g. use of `startRange` or\n`endRange`, `adjacencyStartRange` and `adjecencyEndRange` parameters to\nindicate direction dependent matching).",
             "properties": {
                 "adjacencyAccession": {
                     "$ref": "./requestParameterComponents.json#/$defs/AdjacencyAccession"
