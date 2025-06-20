@@ -43,13 +43,14 @@ applications (`geneId`, `sequenceLength`)
 * `properties`:    
     - `requestProfile`: `'$ref': './requestParameterComponents.yaml#/$defs/RequestProfileId'`      
     - `referenceAccession`: `'$ref': './requestParameterComponents.yaml#/$defs/RefgetAccession'`      
-    - `start`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceStart'`      
-    - `end`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceEnd'`      
+    - `startPos`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceStart'`      
+    - `endPos`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceEnd'`      
+    - `startRange`: `'$ref': './requestParameterComponents.yaml#/$defs/Range'`      
+    - `endRange`: `'$ref': './requestParameterComponents.yaml#/$defs/Range'`      
     - `sequence`: `'$ref': './requestParameterComponents.yaml#/$defs/Sequence'`      
     - `copyChange`: `'$ref': './requestParameterComponents.yaml#/$defs/CopyChange'`      
     - `adjacencyAccession`: `'$ref': './requestParameterComponents.yaml#/$defs/AdjacencyAccession'`      
-    - `adjacencyStart`: `'$ref': './requestParameterComponents.yaml#/$defs/AdjacencyStart'`      
-    - `adjacencyEnd`: `'$ref': './requestParameterComponents.yaml#/$defs/AdjacencyEnd'`      
+    - `adjacencyRange`: `'$ref': './requestParameterComponents.yaml#/$defs/Range'`      
     - `repeatSubunitCount`: `'$ref': './requestParameterComponents.yaml#/$defs/RepeatSubunitCount'`      
     - `repeatSubunitLength`: `'$ref': './requestParameterComponents.yaml#/$defs/RepeatSubunitLength'`      
     - `geneId`: `'$ref': './requestParameterComponents.yaml#/$defs/GeneId'`      
@@ -57,8 +58,9 @@ applications (`geneId`, `sequenceLength`)
     - `genomicAlleleShortForm`: `'$ref': './requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm'`      
     - `sequenceLength`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceLength'`      
     - `vrsType`: `'$ref': './requestParameterComponents.yaml#/$defs/VRStype'`      
-    - `genomicFeatures`: `'$ref': './requestParameterComponents.yaml#/$defs/GenomicFeature'`      
-    - `phenoClinicEffects`: `'$ref': './requestParameterComponents.yaml#/$defs/PhenoClinicEffect'`    
+    - `genomicFeature`: `'$ref': './requestParameterComponents.yaml#/$defs/GenomicFeature'`      
+    - `molecularEffect`: `'$ref': './requestParameterComponents.yaml#/$defs/MolecularEffect'`      
+    - `phenoClinicEffect`: `'$ref': './requestParameterComponents.yaml#/$defs/PhenoClinicEffect'`    
 
 ## `variantIdRequest` 
 
@@ -104,15 +106,15 @@ A typical Beacon v2.n request for gene queries, e.g. for the retrieval of
 all variants in a gene or variants restricted by additional parameters  
 such `variantType` or length of the affected sequence.  
 TODO: Evaluate to split into more basic `GeneIdRequest` and specialized  
-      requests requiring an effect component.    
+      requests requiring an effect component. There is already a type for  
+      a `molecularEffectRequest` - see also notes there.    
 
 #### Definitions
     
 * `type`: `object`    
 * `properties`:    
-    - `requestProfile`: `'const': 'BV2geneIdRequest'`      
+    - `requestProfile`: `'const': 'geneIdRequest'`      
     - `geneId`: `'$ref': './requestParameterComponents.yaml#/$defs/GeneId'`      
-    - `variantType`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantType'`      
     - `variantMinLength`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantMinLength'`      
     - `variantMaxLength`: `'$ref': './requestParameterComponents.yaml#/$defs/VariantMaxLength'`    
     
@@ -232,17 +234,61 @@ genomic copy number (pls. refer to the class definition.)
 * `properties`:    
     - `requestProfile`: `'const': 'VQScopyChangeRequest'`      
     - `referenceAccession`: `'$ref': './requestParameterComponents.yaml#/$defs/RefgetAccession'`      
-    - `start`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceStart'`      
-    - `end`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceEnd'`      
+    - `startRange`: `'$ref': './requestParameterComponents.yaml#/$defs/Range'`      
+    - `endRange`: `'$ref': './requestParameterComponents.yaml#/$defs/Range'`      
     - `copyChange`: `'$ref': './requestParameterComponents.yaml#/$defs/CopyChange'`      
     - `sequenceLength`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceLength'`      
     - `vrsType`: `'const': 'CopyNumberChange'`    
     
 * `required`:     
+    - `requestProfile`    
     - `referenceAccession`    
-    - `start`    
-    - `end`    
+    - `startRange`    
+    - `endRange`    
     - `copyChange`        
+
+## `VQSgeneMolecularEffectRequest` 
+
+#### Description
+A request for the variation consequence, e.g. for the _molecular_ changes  
+caused by the variant.  
+  
+
+##### TODO  
+  
+* Define a clear structure for how request types are constructed with a  
+  primacy of *where* the variant is located or *what* happens.     
+
+#### Definitions
+    
+* `type`: `object`    
+* `properties`:    
+    - `requestProfile`: `'const': 'VQSgeneMolecularEffectRequest'`      
+    - `molecularEffect`: `'$ref': './requestParameterComponents.yaml#/$defs/MolecularEffect'`      
+    - `geneId`: `'$ref': './requestParameterComponents.yaml#/$defs/GeneId'`    
+    
+* `required`:     
+    - `requestProfile`    
+    - `molecularEffect`        
+
+## `VQSlocationMolecularEffectRequest` 
+
+#### Description
+A request for the variation consequence, e.g. for the _molecular_ changes  
+caused by the variant, at a genomic location defined through coordinates.    
+
+#### Definitions
+    
+* `type`: `object`    
+* `properties`:    
+    - `requestProfile`: `'const': 'VQSlocationMolecularEffectRequest'`      
+    - `molecularEffect`: `'$ref': './requestParameterComponents.yaml#/$defs/MolecularEffect'`      
+    - `referenceAccession`: `'$ref': './requestParameterComponents.yaml#/$defs/RefSeqId'`      
+    - `sequenceRange`: `'$ref': './requestParameterComponents.yaml#/$defs/Range'`    
+    
+* `required`:     
+    - `requestProfile`    
+    - `referenceAccession`        
 
 ## `VQSrangeRequest` 
 
@@ -269,28 +315,29 @@ _i.e._ a subset of the `start` and `end` specifications. However,
 * `properties`:    
     - `requestProfile`: `'const': 'VQSrangeRequest'`      
     - `referenceAccession`: `'$ref': './requestParameterComponents.yaml#/$defs/RefSeqId'`      
-    - `start`: `'type': 'integer'`      
-    - `end`: `'type': 'integer'`      
+    - `sequenceRange`: `'$ref': './requestParameterComponents.yaml#/$defs/Range'`      
     - `sequenceLength`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceLength'`      
     - `vrsType`: `'$ref': './requestParameterComponents.yaml#/$defs/VRStype'`    
     
 * `required`:     
+    - `requestProfile`    
     - `referenceAccession`    
-    - `start`    
-    - `end`    
-    - `vrsType`        
+    - `sequenceRange`        
 
 ## `VQSadjacencyRequest` 
 
 #### Description
-A typical Beacon v2.n request for sequence adjacency queries, e.g. for the  
-retrieval of chromosomal translocation events or sequence fusions.  
+A typical Beacon v2.n request for sequence adjacency queries, e.g. for  
+the retrieval of chromosomal translocation events or sequence fusions.  
+  
 TODO: In VRS v2 there is an implicit sequence directionality from the use  
-of either start or end parameters for either side of the adjacency. This might  
-be problematic on the query side where in many instances just the approximate  
-position of the (fused) breakpoints maight be of interest. This needs additional  
-clarification (e.g. use of integer `start` and `end`, `adjacencyStart` and   
-`adjecencyEnd` parameters to indicate direction independent matching).    
+of either start or end parameters for either side of the adjacency. This  
+might be problematic on the query side where in many instances just the  
+approximate position of the (fused) breakpoints maight be of interest.  
+  
+This might need additional clarification (e.g. use of `startRange` or  
+`endRange`, `adjacencyStartRange` and `adjecencyEndRange` parameters to  
+indicate direction dependent matching).    
 
 #### Definitions
     
@@ -298,12 +345,43 @@ clarification (e.g. use of integer `start` and `end`, `adjacencyStart` and
 * `properties`:    
     - `requestProfile`: `'const': 'VQSadjacencyRequest'`      
     - `referenceAccession`: `'$ref': './requestParameterComponents.yaml#/$defs/RefgetAccession'`      
-    - `start`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceStart'`      
-    - `end`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceEnd'`      
+    - `sequenceRange`: `'$ref': './requestParameterComponents.yaml#/$defs/Range'`      
     - `adjacencyAccession`: `'$ref': './requestParameterComponents.yaml#/$defs/AdjacencyAccession'`      
-    - `adjacencyStart`: `'$ref': './requestParameterComponents.yaml#/$defs/AdjacencyStart'`      
-    - `adjacencyEnd`: `'$ref': './requestParameterComponents.yaml#/$defs/AdjacencyEnd'`      
+    - `adjacencyRange`: `'$ref': './requestParameterComponents.yaml#/$defs/Range'`      
     - `vrsType`: `'const': 'Adjacency'`    
+    
+* `required`:     
+    - `requestProfile`    
+    - `referenceAccession`    
+    - `sequenceRange`    
+    - `adjacencyAccession`    
+    - `adjacencyRange`    
+    - `vrsType`        
+
+## `VQSterminusRequest` 
+
+#### Description
+A Beacon v2.n request for a sequence terminus, _i.e._ the end of a sequence.  
+An example would be the match of chromosomal breakpoints terminating the  
+derived chromosome w/o resulting sequence fusion.  
+  
+TODO: As in adjacency requests one could use `startRange` or `endRange`  
+to limit the side of the breakpoint.    
+
+#### Definitions
+    
+* `type`: `object`    
+* `properties`:    
+    - `requestProfile`: `'const': 'VQSterminusRequest'`      
+    - `referenceAccession`: `'$ref': './requestParameterComponents.yaml#/$defs/RefgetAccession'`      
+    - `sequenceRange`: `'$ref': './requestParameterComponents.yaml#/$defs/Range'`      
+    - `vrsType`: `'const': 'Terminus'`    
+    
+* `required`:     
+    - `requestProfile`    
+    - `referenceAccession`    
+    - `sequenceRange`    
+    - `vrsType`        
 
 ## `VQSsequenceRepeatRequest` 
 
@@ -317,11 +395,16 @@ retrieval of tandem repeat expansions or other sequence repeat events.
 * `properties`:    
     - `requestProfile`: `'const': 'VQSsequenceRepeatRequest'`      
     - `referenceAccession`: `'$ref': './requestParameterComponents.yaml#/$defs/RefgetAccession'`      
-    - `start`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceStart'`      
-    - `end`: `'$ref': './requestParameterComponents.yaml#/$defs/SequenceEnd'`      
+    - `sequenceRange`: `'$ref': './requestParameterComponents.yaml#/$defs/Range'`      
     - `repeatSubunitLength`: `'$ref': './requestParameterComponents.yaml#/$defs/RepeatSubunitLength'`      
     - `repeatSubunitCount`: `'$ref': './requestParameterComponents.yaml#/$defs/RepeatSubunitCount'`      
     - `vrsType`: `'const': 'SequenceRepeat'`    
+    
+* `required`:     
+    - `requestProfile`    
+    - `referenceAccession`    
+    - `sequenceRange`    
+    - `vrsType`        
 
 ## `VQSgeneIdRequest` 
 

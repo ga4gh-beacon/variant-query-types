@@ -21,10 +21,16 @@ For the parameter definitions please see the [`requestParameterComponents` page.
 #### `referenceAccession`: [./requestParameterComponents.yaml#/$defs/RefgetAccession](../requestParameterComponents#refgetaccession)    
     
 
-#### `start`: [./requestParameterComponents.yaml#/$defs/SequenceStart](../requestParameterComponents#sequencestart)    
+#### `startPos`: [./requestParameterComponents.yaml#/$defs/SequenceStart](../requestParameterComponents#sequencestart)    
     
 
-#### `end`: [./requestParameterComponents.yaml#/$defs/SequenceEnd](../requestParameterComponents#sequenceend)    
+#### `endPos`: [./requestParameterComponents.yaml#/$defs/SequenceEnd](../requestParameterComponents#sequenceend)    
+    
+
+#### `startRange`: [./requestParameterComponents.yaml#/$defs/Range](../requestParameterComponents#range)    
+    
+
+#### `endRange`: [./requestParameterComponents.yaml#/$defs/Range](../requestParameterComponents#range)    
     
 
 #### `sequence`: [./requestParameterComponents.yaml#/$defs/Sequence](../requestParameterComponents#sequence)    
@@ -36,10 +42,7 @@ For the parameter definitions please see the [`requestParameterComponents` page.
 #### `adjacencyAccession`: [./requestParameterComponents.yaml#/$defs/AdjacencyAccession](../requestParameterComponents#adjacencyaccession)    
     
 
-#### `adjacencyStart`: [./requestParameterComponents.yaml#/$defs/AdjacencyStart](../requestParameterComponents#adjacencystart)    
-    
-
-#### `adjacencyEnd`: [./requestParameterComponents.yaml#/$defs/AdjacencyEnd](../requestParameterComponents#adjacencyend)    
+#### `adjacencyRange`: [./requestParameterComponents.yaml#/$defs/Range](../requestParameterComponents#range)    
     
 
 #### `repeatSubunitCount`: [./requestParameterComponents.yaml#/$defs/RepeatSubunitCount](../requestParameterComponents#repeatsubunitcount)    
@@ -63,10 +66,13 @@ For the parameter definitions please see the [`requestParameterComponents` page.
 #### `vrsType`: [./requestParameterComponents.yaml#/$defs/VRStype](../requestParameterComponents#vrstype)    
     
 
-#### `genomicFeatures`: [./requestParameterComponents.yaml#/$defs/GenomicFeature](../requestParameterComponents#genomicfeature)    
+#### `genomicFeature`: [./requestParameterComponents.yaml#/$defs/GenomicFeature](../requestParameterComponents#genomicfeature)    
     
 
-#### `phenoClinicEffects`: [./requestParameterComponents.yaml#/$defs/PhenoClinicEffect](../requestParameterComponents#phenocliniceffect)    
+#### `molecularEffect`: [./requestParameterComponents.yaml#/$defs/MolecularEffect](../requestParameterComponents#moleculareffect)    
+    
+
+#### `phenoClinicEffect`: [./requestParameterComponents.yaml#/$defs/PhenoClinicEffect](../requestParameterComponents#phenocliniceffect)    
 
 ## Beacon v2+/VQS "VRSified" Request Examples
 
@@ -210,6 +216,46 @@ With hierarchical expansion of this term explicit complete genomic deletions
         21975098
     ],
     "vrsType": "CopyNumberChange"
+}
+```
+
+
+### Query for a missense variant in DMD
+
+#### Using `VQSgeneMolecularEffectRequest` with `geneId` and `molecularEffect`
+
+Query for a missense mutation involving TP53 by using the HUGO name to specify the
+gene and the Sequence Ontology id to match missense mutations. This request
+requires that the server has indexed variants with molecular effects.
+#### Request 
+
+    
+* `requestType`: `VQSgeneMolecularEffectRequest`    
+
+
+    
+* `geneId`: `DMD`    
+
+
+    
+* `molecularEffect`: `SO:0001583`    
+
+
+
+
+##### GET query string
+```
+?requestType=VQSgeneMolecularEffectRequest&geneId=DMD&molecularEffect=SO:0001583
+```
+
+
+
+##### POST query component 
+```json
+{
+    "geneId": "DMD",
+    "molecularEffect": "SO:0001583",
+    "requestType": "VQSgeneMolecularEffectRequest"
 }
 ```
 

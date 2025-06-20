@@ -259,6 +259,47 @@
             ],
             "type": "object"
         },
+        "VQSgeneMolecularEffectRequest": {
+            "description": "A request for the variation consequence, e.g. for the _molecular_ changes\ncaused by the variant.\n\n##### TODO\n\n* Define a clear structure for how request types are constructed with a\n  primacy of *where* the variant is located or *what* happens. ",
+            "properties": {
+                "geneId": {
+                    "$ref": "./requestParameterComponents.json#/$defs/GeneId"
+                },
+                "molecularEffect": {
+                    "$ref": "./requestParameterComponents.json#/$defs/MolecularEffect"
+                },
+                "requestProfile": {
+                    "const": "VQSgeneMolecularEffectRequest"
+                }
+            },
+            "required": [
+                "requestProfile",
+                "molecularEffect"
+            ],
+            "type": "object"
+        },
+        "VQSlocationMolecularEffectRequest": {
+            "description": "A request for the variation consequence, e.g. for the _molecular_ changes\ncaused by the variant, at a genomic location defined through coordinates.",
+            "properties": {
+                "molecularEffect": {
+                    "$ref": "./requestParameterComponents.json#/$defs/MolecularEffect"
+                },
+                "referenceAccession": {
+                    "$ref": "./requestParameterComponents.json#/$defs/RefSeqId"
+                },
+                "requestProfile": {
+                    "const": "VQSlocationMolecularEffectRequest"
+                },
+                "sequenceRange": {
+                    "$ref": "./requestParameterComponents.json#/$defs/Range"
+                }
+            },
+            "required": [
+                "requestProfile",
+                "referenceAccession"
+            ],
+            "type": "object"
+        },
         "VQSmultivarRequest": {
             "description": "This multi variant query is a collection of individual variant queries\nbased on the Beacon v2+ \"VQS\" query patterns.\nStatus: Proposed for evaluation for Beacon v2.n or v3.0",
             "properties": {
@@ -357,10 +398,13 @@
                 "genomicAlleleShortForm": {
                     "$ref": "./requestParameterComponents.json#/$defs/GenomicAlleleShortForm"
                 },
-                "genomicFeatures": {
+                "genomicFeature": {
                     "$ref": "./requestParameterComponents.json#/$defs/GenomicFeature"
                 },
-                "phenoClinicEffects": {
+                "molecularEffect": {
+                    "$ref": "./requestParameterComponents.json#/$defs/MolecularEffect"
+                },
+                "phenoClinicEffect": {
                     "$ref": "./requestParameterComponents.json#/$defs/PhenoClinicEffect"
                 },
                 "referenceAccession": {
@@ -511,22 +555,19 @@
             "type": "object"
         },
         "geneIdRequest": {
-            "description": "A typical Beacon v2.n request for gene queries, e.g. for the retrieval of\nall variants in a gene or variants restricted by additional parameters\nsuch `variantType` or length of the affected sequence.\nTODO: Evaluate to split into more basic `GeneIdRequest` and specialized\n      requests requiring an effect component.",
+            "description": "A typical Beacon v2.n request for gene queries, e.g. for the retrieval of\nall variants in a gene or variants restricted by additional parameters\nsuch `variantType` or length of the affected sequence.\nTODO: Evaluate to split into more basic `GeneIdRequest` and specialized\n      requests requiring an effect component. There is already a type for\n      a `molecularEffectRequest` - see also notes there.",
             "properties": {
                 "geneId": {
                     "$ref": "./requestParameterComponents.json#/$defs/GeneId"
                 },
                 "requestProfile": {
-                    "const": "BV2geneIdRequest"
+                    "const": "geneIdRequest"
                 },
                 "variantMaxLength": {
                     "$ref": "./requestParameterComponents.json#/$defs/VariantMaxLength"
                 },
                 "variantMinLength": {
                     "$ref": "./requestParameterComponents.json#/$defs/VariantMinLength"
-                },
-                "variantType": {
-                    "$ref": "./requestParameterComponents.json#/$defs/VariantType"
                 }
             },
             "required": [

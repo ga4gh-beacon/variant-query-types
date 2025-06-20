@@ -88,13 +88,15 @@ $defs:
         $ref: "./requestParameterComponents.yaml#/$defs/SequenceLength"
       vrsType:
         $ref: "./requestParameterComponents.yaml#/$defs/VRStype"
-      genomicFeatures:
+      genomicFeature:
         $ref: "./requestParameterComponents.yaml#/$defs/GenomicFeature"
-      phenoClinicEffects:
+      molecularEffect:
+        $ref: "./requestParameterComponents.yaml#/$defs/MolecularEffect"
+      phenoClinicEffect:
         $ref: "./requestParameterComponents.yaml#/$defs/PhenoClinicEffect"
 
 ################################################################################
-# Generic query types supported both in v2 and VQS
+# Generic query types
 ################################################################################
 
   variantIdRequest:
@@ -140,15 +142,14 @@ $defs:
       all variants in a gene or variants restricted by additional parameters
       such `variantType` or length of the affected sequence.
       TODO: Evaluate to split into more basic `GeneIdRequest` and specialized
-            requests requiring an effect component.
+            requests requiring an effect component. There is already a type for
+            a `molecularEffectRequest` - see also notes there.
     type: object
     properties:
       requestProfile:
-        const: BV2geneIdRequest
+        const: geneIdRequest
       geneId:
         $ref: "./requestParameterComponents.yaml#/$defs/GeneId"
-      variantType:
-        $ref: "./requestParameterComponents.yaml#/$defs/VariantType"
       variantMinLength:
         $ref: "./requestParameterComponents.yaml#/$defs/VariantMinLength"
       variantMaxLength:
@@ -322,6 +323,50 @@ $defs:
       - startRange
       - endRange
       - copyChange
+
+  # <------------------------------------------------------------------------> #
+
+  VQSgeneMolecularEffectRequest:
+    description: |-
+      A request for the variation consequence, e.g. for the _molecular_ changes
+      caused by the variant.
+      
+      ##### TODO
+
+      * Define a clear structure for how request types are constructed with a
+        primacy of *where* the variant is located or *what* happens. 
+
+    type: object
+    properties:
+      requestProfile:
+        const: VQSgeneMolecularEffectRequest
+      molecularEffect:
+        $ref: "./requestParameterComponents.yaml#/$defs/MolecularEffect"
+      geneId:
+        $ref: "./requestParameterComponents.yaml#/$defs/GeneId"
+    required:
+      - requestProfile
+      - molecularEffect
+
+  # <------------------------------------------------------------------------> #
+
+  VQSlocationMolecularEffectRequest:
+    description: |-
+      A request for the variation consequence, e.g. for the _molecular_ changes
+      caused by the variant, at a genomic location defined through coordinates.
+    type: object
+    properties:
+      requestProfile:
+        const: VQSlocationMolecularEffectRequest
+      molecularEffect:
+        $ref: "./requestParameterComponents.yaml#/$defs/MolecularEffect"
+      referenceAccession:
+        $ref: "./requestParameterComponents.yaml#/$defs/RefSeqId"
+      sequenceRange:
+        $ref: "./requestParameterComponents.yaml#/$defs/Range"
+    required:
+      - requestProfile
+      - referenceAccession
 
   # <------------------------------------------------------------------------> #
 

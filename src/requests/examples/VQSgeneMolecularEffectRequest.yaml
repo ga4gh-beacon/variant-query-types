@@ -1,0 +1,15 @@
+examples:
+  VQSgeneMolecularEffectRequest_01:
+    description: |-
+      ### Query for a missense variant in DMD
+      
+      #### Using `VQSgeneMolecularEffectRequest` with `geneId` and `molecularEffect`
+
+      Query for a missense mutation involving TP53 by using the HUGO name to specify the
+      gene and the Sequence Ontology id to match missense mutations. This request
+      requires that the server has indexed variants with molecular effects.
+
+    request:
+      requestType: VQSgeneMolecularEffectRequest
+      geneId: DMD
+      molecularEffect: SO:0001583
