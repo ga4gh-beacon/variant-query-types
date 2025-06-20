@@ -1,0 +1,1224 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Development Site of the GA4GH Beacon community">
+      
+      
+        <meta name="author" content="Michael Baudis">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../img/ga4gh_circle.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Request Profile Definitions - GA4GH Beacon Genomic Variation Query Standards</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20384%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M0%2024C0%2010.7%2010.7%200%2024%200h336c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-8v19c0%2040.3-16%2079-44.5%20107.5L225.9%20256l81.5%2081.5C336%20366%20352%20404.7%20352%20445v19h8c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024H24c-13.3%200-24-10.7-24-24s10.7-24%2024-24h8v-19c0-40.3%2016-79%2044.5-107.5l81.6-81.5-81.6-81.5C48%20146%2032%20107.3%2032%2067V48h-8C10.7%2048%200%2037.3%200%2024m110.5%20347.5c-3.9%203.9-7.5%208.1-10.7%2012.5h184.4c-3.2-4.4-6.8-8.6-10.7-12.5L192%20289.9l-81.5%2081.5zM284.2%20128C297%20110.4%20304%2089%20304%2067V48H80v19c0%2022.1%207%2043.4%2019.8%2061z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/theme_overrides.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#g_variant" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="GA4GH Beacon Genomic Variation Query Standards" class="md-header__button md-logo" aria-label="GA4GH Beacon Genomic Variation Query Standards" data-md-component="logo">
+      
+  <img src="../../img/GA-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GA4GH Beacon Genomic Variation Query Standards
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Request Profile Definitions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ga4gh-beacon/variant-query-types" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="GA4GH Beacon Genomic Variation Query Standards" class="md-nav__button md-logo" aria-label="GA4GH Beacon Genomic Variation Query Standards" data-md-component="logo">
+      
+  <img src="../../img/GA-logo.png" alt="logo">
+
+    </a>
+    GA4GH Beacon Genomic Variation Query Standards
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ga4gh-beacon/variant-query-types" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../variant-scouts-home" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requestProfiles_g_variant" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Beacon v2 Query Solutions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requestProfiles_VQSrequest" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Beacon v2+ VQS Proposals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requestParameterComponents" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Query Parameter Definitions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../variant-types" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variation Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../genomic-coordinates-mappings" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Genomic Coordinates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../terms-and-values" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recommended Terms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ga4gh-beacon/variant-query-types/tree/main/src/requests" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Query Schema Source Files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#g_variant" class="md-nav__link">
+    <span class="md-ellipsis">
+      g_variant
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vqsrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      VQSrequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variantidrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      variantIdRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aminoacidchangerequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      aminoacidChangeRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#genomicalleleshortformrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      genomicAlleleShortFormRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geneidrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      geneIdRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bv2allelerequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      BV2alleleRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bv2bracketrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      BV2bracketRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bv2rangerequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      BV2rangeRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vqsallelerequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      VQSalleleRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vqscopychangerequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      VQScopyChangeRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vqsgenemoleculareffectrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      VQSgeneMolecularEffectRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vqslocationmoleculareffectrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      VQSlocationMolecularEffectRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vqsrangerequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      VQSrangeRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vqsadjacencyrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      VQSadjacencyRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vqsterminusrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      VQSterminusRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vqssequencerepeatrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      VQSsequenceRepeatRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vqsgeneidrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      VQSgeneIdRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bv2multivarsrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      BV2multivarsRequest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vqsmultivarrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      VQSmultivarRequest
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="request-profile-definitions">Request Profile Definitions<a class="headerlink" href="#request-profile-definitions" title="Permanent link">&para;</a></h1>
+<h2 id="g_variant"><code>g_variant</code><a class="headerlink" href="#g_variant" title="Permanent link">&para;</a></h2>
+<h4 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h4>
+<p>This represents the generic collection of variant parameters allowed in<br />
+Beacon v2 requests.    </p>
+<h4 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code>: <code>object</code>    </li>
+<li><code>properties</code>:    <ul>
+<li><code>assemblyId</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/Assembly'</code>      </li>
+<li><code>referenceName</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/RefSeqId'</code>      </li>
+<li><code>referenceBases</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/ReferenceBases'</code>      </li>
+<li><code>alternateBases</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/AlternateBases'</code>      </li>
+<li><code>variantType</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/VariantType'</code>      </li>
+<li><code>start</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/Start'</code>      </li>
+<li><code>end</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/End'</code>      </li>
+<li><code>geneId</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/GeneId'</code>      </li>
+<li><code>aminoacidChange</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/AminoacidChange'</code>      </li>
+<li><code>genomicAlleleShortForm</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm'</code>      </li>
+<li><code>variantMinLength</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/VariantMinLength'</code>      </li>
+<li><code>variantMaxLength</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/VariantMaxLength'</code>    </li>
+</ul>
+</li>
+</ul>
+<h4 id="examples-examplesg_variantyamlexamples"><code>examples</code>: <a href="../examples/g_variant.yaml#/examples">../examples/g_variant.yaml#/examples</a><a class="headerlink" href="#examples-examplesg_variantyamlexamples" title="Permanent link">&para;</a></h4>
+<h2 id="vqsrequest"><code>VQSrequest</code><a class="headerlink" href="#vqsrequest" title="Permanent link">&para;</a></h2>
+<h4 id="description_1">Description<a class="headerlink" href="#description_1" title="Permanent link">&para;</a></h4>
+<p>The <code>VQSrequest</code> type represents the generic collection of variant parameters<br />
+supported in Beacon v2+ requests. These include parameters with close alignment<br />
+to VRS v2 concepts and replacing some Beacon v1/v2 generics with tighter<br />
+definitions (e.g. <code>referenceAccession</code> instead of <code>referenceName</code> and <code>accession</code><br />
+or <code>copyChange</code> for a specific subset of former <code>variantType</code> values) but also<br />
+keep some conceptsm beyond VRS scope or specifically geared towards query<br />
+applications (<code>geneId</code>, <code>sequenceLength</code>)    </p>
+<h4 id="definitions_1">Definitions<a class="headerlink" href="#definitions_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code>: <code>object</code>    </li>
+<li><code>properties</code>:    <ul>
+<li><code>requestProfile</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/RequestProfileId'</code>      </li>
+<li><code>referenceAccession</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/RefgetAccession'</code>      </li>
+<li><code>startPos</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/SequenceStart'</code>      </li>
+<li><code>endPos</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/SequenceEnd'</code>      </li>
+<li><code>startRange</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/Range'</code>      </li>
+<li><code>endRange</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/Range'</code>      </li>
+<li><code>sequence</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/Sequence'</code>      </li>
+<li><code>copyChange</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/CopyChange'</code>      </li>
+<li><code>adjacencyAccession</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/AdjacencyAccession'</code>      </li>
+<li><code>adjacencyRange</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/Range'</code>      </li>
+<li><code>repeatSubunitCount</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/RepeatSubunitCount'</code>      </li>
+<li><code>repeatSubunitLength</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/RepeatSubunitLength'</code>      </li>
+<li><code>geneId</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/GeneId'</code>      </li>
+<li><code>aminoacidChange</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/AminoacidChange'</code>      </li>
+<li><code>genomicAlleleShortForm</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm'</code>      </li>
+<li><code>sequenceLength</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/SequenceLength'</code>      </li>
+<li><code>vrsType</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/VRStype'</code>      </li>
+<li><code>genomicFeature</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/GenomicFeature'</code>      </li>
+<li><code>molecularEffect</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/MolecularEffect'</code>      </li>
+<li><code>phenoClinicEffect</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/PhenoClinicEffect'</code>    </li>
+</ul>
+</li>
+</ul>
+<h2 id="variantidrequest"><code>variantIdRequest</code><a class="headerlink" href="#variantidrequest" title="Permanent link">&para;</a></h2>
+<h4 id="description_2">Description<a class="headerlink" href="#description_2" title="Permanent link">&para;</a></h4>
+<p>A typical Beacon v2 request for matching variations by their <code>variantId</code>.<br />
+This request is used to retrieve a specific variant by its identifier.    </p>
+<h4 id="definitions_2">Definitions<a class="headerlink" href="#definitions_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code>: <code>object</code>    </li>
+<li><code>properties</code>:    <ul>
+<li><code>requestProfile</code>: <code>'const': 'BV2variantIdRequest'</code>      </li>
+<li><code>variantId</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/VariantId'</code>    </li>
+</ul>
+</li>
+</ul>
+<h2 id="aminoacidchangerequest"><code>aminoacidChangeRequest</code><a class="headerlink" href="#aminoacidchangerequest" title="Permanent link">&para;</a></h2>
+<h4 id="description_3">Description<a class="headerlink" href="#description_3" title="Permanent link">&para;</a></h4>
+<p>A Beacon v2 request for amino acid change queries, e.g. for the<br />
+retrieval of all variants leading to specific amino acid change. The request<br />
+may be restricted by additionally providing the gene ID.    </p>
+<h4 id="definitions_3">Definitions<a class="headerlink" href="#definitions_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code>: <code>object</code>    </li>
+<li>
+<p><code>properties</code>:    </p>
+<ul>
+<li><code>requestProfile</code>: <code>'const': 'BV2aminoacidChangeRequest'</code>      </li>
+<li><code>aminoacidChange</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/AminoacidChange'</code>      </li>
+<li><code>geneId</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/GeneId'</code>    </li>
+</ul>
+</li>
+<li>
+<p><code>required</code>:     </p>
+<ul>
+<li><code>aminoacidChange</code>        </li>
+</ul>
+</li>
+</ul>
+<h2 id="genomicalleleshortformrequest"><code>genomicAlleleShortFormRequest</code><a class="headerlink" href="#genomicalleleshortformrequest" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>type</code>: <code>object</code>    </li>
+<li><code>properties</code>:    <ul>
+<li><code>genomicAlleleShortForm</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/GenomicAlleleShortForm'</code>    </li>
+</ul>
+</li>
+</ul>
+<h2 id="geneidrequest"><code>geneIdRequest</code><a class="headerlink" href="#geneidrequest" title="Permanent link">&para;</a></h2>
+<h4 id="description_4">Description<a class="headerlink" href="#description_4" title="Permanent link">&para;</a></h4>
+<p>A typical Beacon v2.n request for gene queries, e.g. for the retrieval of<br />
+all variants in a gene or variants restricted by additional parameters<br />
+such <code>variantType</code> or length of the affected sequence.<br />
+TODO: Evaluate to split into more basic <code>GeneIdRequest</code> and specialized<br />
+      requests requiring an effect component. There is already a type for<br />
+      a <code>molecularEffectRequest</code> - see also notes there.    </p>
+<h4 id="definitions_4">Definitions<a class="headerlink" href="#definitions_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code>: <code>object</code>    </li>
+<li>
+<p><code>properties</code>:    </p>
+<ul>
+<li><code>requestProfile</code>: <code>'const': 'geneIdRequest'</code>      </li>
+<li><code>geneId</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/GeneId'</code>      </li>
+<li><code>variantMinLength</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/VariantMinLength'</code>      </li>
+<li><code>variantMaxLength</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/VariantMaxLength'</code>    </li>
+</ul>
+</li>
+<li>
+<p><code>required</code>:     </p>
+<ul>
+<li><code>geneId</code>        </li>
+</ul>
+</li>
+</ul>
+<h2 id="bv2allelerequest"><code>BV2alleleRequest</code><a class="headerlink" href="#bv2allelerequest" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>type</code>: <code>object</code>    </li>
+<li>
+<p><code>properties</code>:    </p>
+<ul>
+<li><code>requestProfile</code>: <code>'description': 'Note: The</code>requestProfile<code>parameter had not been defined for Beacon v2.0\nand therefore in _senso stricto_ is not part of requests only relying\non v2 parameters.', 'const': 'BV2alleleRequest'</code>      </li>
+<li><code>assemblyId</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/Assembly'</code>      </li>
+<li><code>referenceName</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/RefSeqId'</code>      </li>
+<li><code>start</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/Start'</code>      </li>
+<li><code>referenceBases</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/ReferenceBases'</code>      </li>
+<li><code>alternateBases</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/AlternateBases'</code>    </li>
+</ul>
+</li>
+<li>
+<p><code>required</code>:     </p>
+<ul>
+<li><code>referenceName</code>    </li>
+<li><code>start</code>    </li>
+<li><code>alternateBases</code>        </li>
+</ul>
+</li>
+</ul>
+<h2 id="bv2bracketrequest"><code>BV2bracketRequest</code><a class="headerlink" href="#bv2bracketrequest" title="Permanent link">&para;</a></h2>
+<h4 id="description_5">Description<a class="headerlink" href="#description_5" title="Permanent link">&para;</a></h4>
+<p>A typical Beacon v2 request for matching variations where start and end<br />
+fall in a genomic range. Here, the approximate or varying positions for<br />
+variation start and end are queried through brackets, <em>i.e.</em> by using 2<br />
+values for <code>start</code> and <code>end</code> each. This is a typical scenario in querying<br />
+for CNVs where the <code>variantType</code> parameter indicates the relative change in<br />
+genomic copy number through either VCF derived string parameters<br />
+or, preferably, EFO terms (pls. refer to the class definition.)<br />
+Since a bracket request is a positional query for varying sequence extend<br />
+no <code>sequence</code> parameter should be used.    </p>
+<h4 id="definitions_5">Definitions<a class="headerlink" href="#definitions_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code>: <code>object</code>    </li>
+<li>
+<p><code>properties</code>:    </p>
+<ul>
+<li><code>requestProfile</code>: <code>'const': 'BV2bracketRequest'</code>      </li>
+<li><code>assemblyId</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/Assembly'</code>      </li>
+<li><code>referenceName</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/RefSeqId'</code>      </li>
+<li><code>start</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/Start'</code>      </li>
+<li><code>end</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/End'</code>      </li>
+<li><code>variantType</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/VariantType'</code>      </li>
+<li><code>variantMinLength</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/VariantMinLength'</code>      </li>
+<li><code>variantMaxLength</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/VariantMaxLength'</code>    </li>
+</ul>
+</li>
+<li>
+<p><code>required</code>:     </p>
+<ul>
+<li><code>referenceName</code>    </li>
+<li><code>start</code>    </li>
+<li><code>end</code>    </li>
+<li><code>variantType</code>        </li>
+</ul>
+</li>
+</ul>
+<h2 id="bv2rangerequest"><code>BV2rangeRequest</code><a class="headerlink" href="#bv2rangerequest" title="Permanent link">&para;</a></h2>
+<h4 id="description_6">Description<a class="headerlink" href="#description_6" title="Permanent link">&para;</a></h4>
+<p>Beacon Range Queries are supposed to return matches of any variant with at<br />
+least partial overlap of the sequence range specified by <code>referenceName</code>,<br />
+<code>start</code> and end <code>parameters</code>. Additional qualifiers such as <code>variantType</code><br />
+or length of the affected sequence can be used to further restrict the<br />
+returned results.<br />
+For this request type <code>start</code> and <code>end</code> with a single position are used,<br />
+<em>i.e.</em> a subset of the <code>start</code> and <code>end</code> specifications.    </p>
+<h4 id="definitions_6">Definitions<a class="headerlink" href="#definitions_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code>: <code>object</code>    </li>
+<li>
+<p><code>properties</code>:    </p>
+<ul>
+<li><code>requestProfile</code>: <code>'const': 'BV2rangeRequest'</code>      </li>
+<li><code>assemblyId</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/Assembly'</code>      </li>
+<li><code>referenceName</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/RefSeqId'</code>      </li>
+<li><code>start</code>: <code>'type': 'array', 'items': 'type': 'integer', 'minItems': 1, 'maxItems': 1</code>      </li>
+<li><code>end</code>: <code>'type': 'array', 'items': 'type': 'integer', 'minItems': 1, 'maxItems': 1</code>      </li>
+<li><code>variantType</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/VariantType'</code>      </li>
+<li><code>variantMinLength</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/VariantMinLength'</code>      </li>
+<li><code>variantMaxLength</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/VariantMaxLength'</code>    </li>
+</ul>
+</li>
+<li>
+<p><code>required</code>:     </p>
+<ul>
+<li><code>referenceName</code>    </li>
+<li><code>start</code>    </li>
+<li><code>end</code>        </li>
+</ul>
+</li>
+</ul>
+<h2 id="vqsallelerequest"><code>VQSalleleRequest</code><a class="headerlink" href="#vqsallelerequest" title="Permanent link">&para;</a></h2>
+<h4 id="description_7">Description<a class="headerlink" href="#description_7" title="Permanent link">&para;</a></h4>
+<p>A Beacon v2+ sequence query. It is in its scope similar to the Beacon v1/v2<br />
+allele requests but replaces the original parameters with VRS v2 concepts.    </p>
+<h4 id="definitions_7">Definitions<a class="headerlink" href="#definitions_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code>: <code>object</code>    </li>
+<li>
+<p><code>properties</code>:    </p>
+<ul>
+<li><code>requestProfile</code>: <code>'const': 'VQSalleleRequest'</code>      </li>
+<li><code>referenceAccession</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/RefgetAccession'</code>      </li>
+<li><code>start</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/SequenceStart'</code>      </li>
+<li><code>end</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/SequenceEnd'</code>      </li>
+<li><code>sequence</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/Sequence'</code>      </li>
+<li><code>vrsType</code>: <code>'const': 'Allele'</code>    </li>
+</ul>
+</li>
+<li>
+<p><code>required</code>:     </p>
+<ul>
+<li><code>referenceAccession</code>    </li>
+<li><code>start</code>    </li>
+<li><code>sequence</code>        </li>
+</ul>
+</li>
+</ul>
+<h2 id="vqscopychangerequest"><code>VQScopyChangeRequest</code><a class="headerlink" href="#vqscopychangerequest" title="Permanent link">&para;</a></h2>
+<h4 id="description_8">Description<a class="headerlink" href="#description_8" title="Permanent link">&para;</a></h4>
+<p>A typical Beacon v2.n request for copy number variations (CNVs) queries<br />
+approximate positions for CNV start and end regions through use of the<br />
+<code>Range</code> type. The <code>copyChange</code> parameter indicates the relative change in<br />
+genomic copy number (pls. refer to the class definition.)    </p>
+<h4 id="definitions_8">Definitions<a class="headerlink" href="#definitions_8" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code>: <code>object</code>    </li>
+<li>
+<p><code>properties</code>:    </p>
+<ul>
+<li><code>requestProfile</code>: <code>'const': 'VQScopyChangeRequest'</code>      </li>
+<li><code>referenceAccession</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/RefgetAccession'</code>      </li>
+<li><code>startRange</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/Range'</code>      </li>
+<li><code>endRange</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/Range'</code>      </li>
+<li><code>copyChange</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/CopyChange'</code>      </li>
+<li><code>sequenceLength</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/SequenceLength'</code>      </li>
+<li><code>vrsType</code>: <code>'const': 'CopyNumberChange'</code>    </li>
+</ul>
+</li>
+<li>
+<p><code>required</code>:     </p>
+<ul>
+<li><code>requestProfile</code>    </li>
+<li><code>referenceAccession</code>    </li>
+<li><code>startRange</code>    </li>
+<li><code>endRange</code>    </li>
+<li><code>copyChange</code>        </li>
+</ul>
+</li>
+</ul>
+<h2 id="vqsgenemoleculareffectrequest"><code>VQSgeneMolecularEffectRequest</code><a class="headerlink" href="#vqsgenemoleculareffectrequest" title="Permanent link">&para;</a></h2>
+<h4 id="description_9">Description<a class="headerlink" href="#description_9" title="Permanent link">&para;</a></h4>
+<p>A request for the variation consequence, e.g. for the <em>molecular</em> changes<br />
+caused by the variant.  </p>
+<h5 id="todo">TODO<a class="headerlink" href="#todo" title="Permanent link">&para;</a></h5>
+<ul>
+<li>Define a clear structure for how request types are constructed with a<br />
+  primacy of <em>where</em> the variant is located or <em>what</em> happens.     </li>
+</ul>
+<h4 id="definitions_9">Definitions<a class="headerlink" href="#definitions_9" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code>: <code>object</code>    </li>
+<li>
+<p><code>properties</code>:    </p>
+<ul>
+<li><code>requestProfile</code>: <code>'const': 'VQSgeneMolecularEffectRequest'</code>      </li>
+<li><code>molecularEffect</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/MolecularEffect'</code>      </li>
+<li><code>geneId</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/GeneId'</code>    </li>
+</ul>
+</li>
+<li>
+<p><code>required</code>:     </p>
+<ul>
+<li><code>requestProfile</code>    </li>
+<li><code>molecularEffect</code>        </li>
+</ul>
+</li>
+</ul>
+<h2 id="vqslocationmoleculareffectrequest"><code>VQSlocationMolecularEffectRequest</code><a class="headerlink" href="#vqslocationmoleculareffectrequest" title="Permanent link">&para;</a></h2>
+<h4 id="description_10">Description<a class="headerlink" href="#description_10" title="Permanent link">&para;</a></h4>
+<p>A request for the variation consequence, e.g. for the <em>molecular</em> changes<br />
+caused by the variant, at a genomic location defined through coordinates.    </p>
+<h4 id="definitions_10">Definitions<a class="headerlink" href="#definitions_10" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code>: <code>object</code>    </li>
+<li>
+<p><code>properties</code>:    </p>
+<ul>
+<li><code>requestProfile</code>: <code>'const': 'VQSlocationMolecularEffectRequest'</code>      </li>
+<li><code>molecularEffect</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/MolecularEffect'</code>      </li>
+<li><code>referenceAccession</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/RefSeqId'</code>      </li>
+<li><code>sequenceRange</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/Range'</code>    </li>
+</ul>
+</li>
+<li>
+<p><code>required</code>:     </p>
+<ul>
+<li><code>requestProfile</code>    </li>
+<li><code>referenceAccession</code>        </li>
+</ul>
+</li>
+</ul>
+<h2 id="vqsrangerequest"><code>VQSrangeRequest</code><a class="headerlink" href="#vqsrangerequest" title="Permanent link">&para;</a></h2>
+<h4 id="description_11">Description<a class="headerlink" href="#description_11" title="Permanent link">&para;</a></h4>
+<p>Beacon Range Queries are supposed to return matches of any variant with at<br />
+least partial overlap of the sequence range specified by <code>referenceAccession</code>,<br />
+<code>start</code> and <code>end</code> parameters. Additional qualifiers such as <code>copyChange</code><br />
+or length of the affected sequence can be used to further restrict the<br />
+returned results.<br />
+For this request type usually <code>start</code> and <code>end</code> with a single position are used,<br />
+<em>i.e.</em> a subset of the <code>start</code> and <code>end</code> specifications. However,   </p>
+<h5 id="todo_1">TODO<a class="headerlink" href="#todo_1" title="Permanent link">&para;</a></h5>
+<ul>
+<li>Evaluate to split into more basic <code>RangeRequest</code> and specialized<br />
+  requests requiring an effect component  </li>
+<li>Review current VRS v2 and upcoming versions for optoions to express<br />
+  types of variants beyond the <code>copyChange</code> parameter    </li>
+</ul>
+<h4 id="definitions_11">Definitions<a class="headerlink" href="#definitions_11" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code>: <code>object</code>    </li>
+<li>
+<p><code>properties</code>:    </p>
+<ul>
+<li><code>requestProfile</code>: <code>'const': 'VQSrangeRequest'</code>      </li>
+<li><code>referenceAccession</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/RefSeqId'</code>      </li>
+<li><code>sequenceRange</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/Range'</code>      </li>
+<li><code>sequenceLength</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/SequenceLength'</code>      </li>
+<li><code>vrsType</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/VRStype'</code>    </li>
+</ul>
+</li>
+<li>
+<p><code>required</code>:     </p>
+<ul>
+<li><code>requestProfile</code>    </li>
+<li><code>referenceAccession</code>    </li>
+<li><code>sequenceRange</code>        </li>
+</ul>
+</li>
+</ul>
+<h2 id="vqsadjacencyrequest"><code>VQSadjacencyRequest</code><a class="headerlink" href="#vqsadjacencyrequest" title="Permanent link">&para;</a></h2>
+<h4 id="description_12">Description<a class="headerlink" href="#description_12" title="Permanent link">&para;</a></h4>
+<p>A typical Beacon v2.n request for sequence adjacency queries, e.g. for<br />
+the retrieval of chromosomal translocation events or sequence fusions.  </p>
+<p>TODO: In VRS v2 there is an implicit sequence directionality from the use<br />
+of either start or end parameters for either side of the adjacency. This<br />
+might be problematic on the query side where in many instances just the<br />
+approximate position of the (fused) breakpoints maight be of interest.  </p>
+<p>This might need additional clarification (e.g. use of <code>startRange</code> or<br />
+<code>endRange</code>, <code>adjacencyStartRange</code> and <code>adjecencyEndRange</code> parameters to<br />
+indicate direction dependent matching).    </p>
+<h4 id="definitions_12">Definitions<a class="headerlink" href="#definitions_12" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code>: <code>object</code>    </li>
+<li>
+<p><code>properties</code>:    </p>
+<ul>
+<li><code>requestProfile</code>: <code>'const': 'VQSadjacencyRequest'</code>      </li>
+<li><code>referenceAccession</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/RefgetAccession'</code>      </li>
+<li><code>sequenceRange</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/Range'</code>      </li>
+<li><code>adjacencyAccession</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/AdjacencyAccession'</code>      </li>
+<li><code>adjacencyRange</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/Range'</code>      </li>
+<li><code>vrsType</code>: <code>'const': 'Adjacency'</code>    </li>
+</ul>
+</li>
+<li>
+<p><code>required</code>:     </p>
+<ul>
+<li><code>requestProfile</code>    </li>
+<li><code>referenceAccession</code>    </li>
+<li><code>sequenceRange</code>    </li>
+<li><code>adjacencyAccession</code>    </li>
+<li><code>adjacencyRange</code>    </li>
+<li><code>vrsType</code>        </li>
+</ul>
+</li>
+</ul>
+<h2 id="vqsterminusrequest"><code>VQSterminusRequest</code><a class="headerlink" href="#vqsterminusrequest" title="Permanent link">&para;</a></h2>
+<h4 id="description_13">Description<a class="headerlink" href="#description_13" title="Permanent link">&para;</a></h4>
+<p>A Beacon v2.n request for a sequence terminus, <em>i.e.</em> the end of a sequence.<br />
+An example would be the match of chromosomal breakpoints terminating the<br />
+derived chromosome w/o resulting sequence fusion.  </p>
+<p>TODO: As in adjacency requests one could use <code>startRange</code> or <code>endRange</code><br />
+to limit the side of the breakpoint.    </p>
+<h4 id="definitions_13">Definitions<a class="headerlink" href="#definitions_13" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code>: <code>object</code>    </li>
+<li>
+<p><code>properties</code>:    </p>
+<ul>
+<li><code>requestProfile</code>: <code>'const': 'VQSterminusRequest'</code>      </li>
+<li><code>referenceAccession</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/RefgetAccession'</code>      </li>
+<li><code>sequenceRange</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/Range'</code>      </li>
+<li><code>vrsType</code>: <code>'const': 'Terminus'</code>    </li>
+</ul>
+</li>
+<li>
+<p><code>required</code>:     </p>
+<ul>
+<li><code>requestProfile</code>    </li>
+<li><code>referenceAccession</code>    </li>
+<li><code>sequenceRange</code>    </li>
+<li><code>vrsType</code>        </li>
+</ul>
+</li>
+</ul>
+<h2 id="vqssequencerepeatrequest"><code>VQSsequenceRepeatRequest</code><a class="headerlink" href="#vqssequencerepeatrequest" title="Permanent link">&para;</a></h2>
+<h4 id="description_14">Description<a class="headerlink" href="#description_14" title="Permanent link">&para;</a></h4>
+<p>A Beacon v2.n request for sequence repeat queries, e.g. for the<br />
+retrieval of tandem repeat expansions or other sequence repeat events.    </p>
+<h4 id="definitions_14">Definitions<a class="headerlink" href="#definitions_14" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code>: <code>object</code>    </li>
+<li>
+<p><code>properties</code>:    </p>
+<ul>
+<li><code>requestProfile</code>: <code>'const': 'VQSsequenceRepeatRequest'</code>      </li>
+<li><code>referenceAccession</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/RefgetAccession'</code>      </li>
+<li><code>sequenceRange</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/Range'</code>      </li>
+<li><code>repeatSubunitLength</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/RepeatSubunitLength'</code>      </li>
+<li><code>repeatSubunitCount</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/RepeatSubunitCount'</code>      </li>
+<li><code>vrsType</code>: <code>'const': 'SequenceRepeat'</code>    </li>
+</ul>
+</li>
+<li>
+<p><code>required</code>:     </p>
+<ul>
+<li><code>requestProfile</code>    </li>
+<li><code>referenceAccession</code>    </li>
+<li><code>sequenceRange</code>    </li>
+<li><code>vrsType</code>        </li>
+</ul>
+</li>
+</ul>
+<h2 id="vqsgeneidrequest"><code>VQSgeneIdRequest</code><a class="headerlink" href="#vqsgeneidrequest" title="Permanent link">&para;</a></h2>
+<h4 id="description_15">Description<a class="headerlink" href="#description_15" title="Permanent link">&para;</a></h4>
+<p>A typical Beacon v2.n request for gene queries, e.g. for the retrieval of<br />
+all variants in a gene or variants restricted by additional parameters<br />
+such as CNV type (<code>copyChange</code>) or length of the affected sequence.<br />
+TODO: Evaluate to split into more basic <code>GeneIdRequest</code> and specialized<br />
+      requests requiring an effect component.    </p>
+<h4 id="definitions_15">Definitions<a class="headerlink" href="#definitions_15" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code>: <code>object</code>    </li>
+<li>
+<p><code>properties</code>:    </p>
+<ul>
+<li><code>requestProfile</code>: <code>'const': 'VQSgeneIdRequest'</code>      </li>
+<li><code>geneId</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/GeneId'</code>      </li>
+<li><code>copyChange</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/CopyChange'</code>      </li>
+<li><code>sequenceLength</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/SequenceLength'</code>      </li>
+<li><code>molecularEffect</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/molecularEffect'</code>      </li>
+<li><code>clinicalRelevance</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/clinicalRelevance'</code>      </li>
+<li><code>vrsType</code>: <code>'$ref': './requestParameterComponents.yaml#/$defs/VRStype'</code>    </li>
+</ul>
+</li>
+<li>
+<p><code>required</code>:     </p>
+<ul>
+<li><code>geneId</code>        </li>
+</ul>
+</li>
+</ul>
+<h2 id="bv2multivarsrequest"><code>BV2multivarsRequest</code><a class="headerlink" href="#bv2multivarsrequest" title="Permanent link">&para;</a></h2>
+<h4 id="description_16">Description<a class="headerlink" href="#description_16" title="Permanent link">&para;</a></h4>
+<p>This multi variant query is a collection of individual variant queries<br />
+based on the Beacon v2 parameters (<code>g_variant</code>).<br />
+Status: Proposed for evaluation for Beacon v2.n or v3.0 (but potentially<br />
+        skipped in favor of the <code>VQSmultivarRequest</code> queries).    </p>
+<h4 id="definitions_16">Definitions<a class="headerlink" href="#definitions_16" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code>: <code>object</code>    </li>
+<li><code>properties</code>:    <ul>
+<li><code>requestProfile</code>: <code>'const': 'BV2multivarsRequest'</code>      </li>
+<li><code>variantLogic</code>: <code>'description': 'The logic to apply to the set of variants in the query. The default is\nto apply the AND logic, meaning that all **samples** (i.e. biosamples,\nindividuals or analyses) must fulfil the query criteria:\n* with a (default) AND logic and "biosamples" as requested entity \n</code>biosample_id<code>values from the individual variant query responses\n  will be intersected\n* with an OR logic and "analyses" as requested entity</code>analysis_id<code>\n  values from the individual variant query responses will be concatenated\nNote: The</code>variantLogic<code>parameter is not defined in the current\n</code>requestParameterComponents.yaml<code>file yet due to the very experimental\n      and tentative nature of this proposal.', 'type': 'string', 'enum': ['AND', 'OR'], 'default': 'AND'</code>      </li>
+<li><code>queries</code>: <code>'type': 'array', 'items': '$ref': '#/$defs/g_variant'</code>    </li>
+</ul>
+</li>
+</ul>
+<h2 id="vqsmultivarrequest"><code>VQSmultivarRequest</code><a class="headerlink" href="#vqsmultivarrequest" title="Permanent link">&para;</a></h2>
+<h4 id="description_17">Description<a class="headerlink" href="#description_17" title="Permanent link">&para;</a></h4>
+<p>This multi variant query is a collection of individual variant queries<br />
+based on the Beacon v2+ "VQS" query patterns.<br />
+Status: Proposed for evaluation for Beacon v2.n or v3.0    </p>
+<h4 id="definitions_17">Definitions<a class="headerlink" href="#definitions_17" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>type</code>: <code>object</code>    </li>
+<li><code>properties</code>:    <ul>
+<li><code>requestProfile</code>: <code>'const': 'VQSmultivarRequest'</code>      </li>
+<li><code>variantLogic</code>: <code>'type': 'string', 'enum': ['AND', 'OR'], 'default': 'AND'</code>      </li>
+<li><code>queries</code>: <code>'type': 'array', 'items': 'anyOf': ['$ref': '#/$defs/VQSalleleRequest', '$ref': '#/$defs/VQScopyChangeRequest', '$ref': '#/$defs/VQSadjacencyRequest', '$ref': '#/$defs/VQSgeneIdRequest', '$ref': '#/$defs/BV2variantIdRequest', '$ref': '#/$defs/BV2aminoacidChangeRequest', '$ref': '#/$defs/BV2genomicAlleleShortFormRequest']</code>    </li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; Copyright 2024-2025 GA4GH and Beacon Contributors
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "search.highlight", "search.share", "navigation.instant", "navigation.tracking", "navigation.sections"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
