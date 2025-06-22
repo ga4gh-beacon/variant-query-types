@@ -78,6 +78,65 @@ For the parameter definitions please see the [`requestParameterComponents` page.
 
 
 
+### Query for a focal deletion involving TP53
+
+#### Solution using `VQSgeneIdRequest` with `geneId`
+
+Query for a deletion involving TP53 by using the HUGO name to specify the
+gene. This request does not provide coordinates so on the server side matching
+has to be performed from annotated variants or by retrieving the gene's
+coordinates and creating internally a type of range request. Here we're also 
+limiting the size of the CNV to a typical "focal deletion" with a lower minimum
+size of 1kb (to avoid noise and non-structural variants) and an upper limit
+of 3Mb (to avoid large chromosomal deletions).
+#### Request 
+
+    
+* `requestType`: `VQSgeneIdRequest`    
+
+
+    
+* `geneId`: `TP53`    
+
+
+    
+* `copyChange`: `EFO:0030067`    
+
+
+    
+* `sequenceLength`:     
+    - `1000`    
+    - `3000000`        
+
+
+    
+* `vrsType`: `CopyNumberChange`    
+
+
+
+
+##### GET query string
+```
+?requestType=VQSgeneIdRequest&geneId=TP53&copyChange=EFO:0030067&sequenceLength=1000,3000000&vrsType=CopyNumberChange
+```
+
+
+
+##### POST query component 
+```json
+{
+    "copyChange": "EFO:0030067",
+    "geneId": "TP53",
+    "requestType": "VQSgeneIdRequest",
+    "sequenceLength": [
+        1000,
+        3000000
+    ],
+    "vrsType": "CopyNumberChange"
+}
+```
+
+
 ### Copy number gains involving the _whole_ locus _chr2:54,700,000-63,900,000_
 
 #### Solution for `VQSrequest` using `start` and `end` ranges (`VQScopyChangeRequest`)
@@ -528,64 +587,5 @@ and a range of sequence lengths is used to match against a `ReferenceLengthExpre
         600
     ],
     "vrsType": "ReferenceLengthExpression"
-}
-```
-
-
-### Query for a focal deletion involving TP53
-
-#### Solution using `VQSgeneIdRequest` with `geneId`
-
-Query for a deletion involving TP53 by using the HUGO name to specify the
-gene. This request does not provide coordinates so on the server side matching
-has to be performed from annotated variants or by retrieving the gene's
-coordinates and creating internally a type of range request. Here we're also 
-limiting the size of the CNV to a typical "focal deletion" with a lower minimum
-size of 1kb (to avoid noise and non-structural variants) and an upper limit
-of 3Mb (to avoid large chromosomal deletions).
-#### Request 
-
-    
-* `requestType`: `VQSgeneIdRequest`    
-
-
-    
-* `geneId`: `TP53`    
-
-
-    
-* `copyChange`: `EFO:0030067`    
-
-
-    
-* `sequenceLength`:     
-    - `1000`    
-    - `3000000`        
-
-
-    
-* `vrsType`: `CopyNumberChange`    
-
-
-
-
-##### GET query string
-```
-?requestType=VQSgeneIdRequest&geneId=TP53&copyChange=EFO:0030067&sequenceLength=1000,3000000&vrsType=CopyNumberChange
-```
-
-
-
-##### POST query component 
-```json
-{
-    "copyChange": "EFO:0030067",
-    "geneId": "TP53",
-    "requestType": "VQSgeneIdRequest",
-    "sequenceLength": [
-        1000,
-        3000000
-    ],
-    "vrsType": "CopyNumberChange"
 }
 ```

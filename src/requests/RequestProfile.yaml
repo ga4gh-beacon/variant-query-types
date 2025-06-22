@@ -1,0 +1,7 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+
+name: RequestProfile
+type: object
+oneOf:
+  - "./RequestProfileV2.yaml"
+  - "./RequestProfileVQS.yaml"
