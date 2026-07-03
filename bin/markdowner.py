@@ -8,7 +8,7 @@ from json_ref_dict import RefDict, materialize
 dir_path = path.dirname( path.abspath(__file__) )
 
 from bycon import * #BYC, read_schema_file
-import byconServices
+import byconservices
 
 ################################################################################
 
