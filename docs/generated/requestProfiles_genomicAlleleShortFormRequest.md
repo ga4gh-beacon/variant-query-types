@@ -1,2 +1,2 @@
-# Request Profile: `genomicAlleleShortFormRequest`
+# Request Profile: `GenomicAlleleShortFormRequest`
 

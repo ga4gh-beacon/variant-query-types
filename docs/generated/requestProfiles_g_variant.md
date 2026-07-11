@@ -7,9 +7,10 @@ Beacon v2 requests.
 For the parameter definitions please see the [`requestParameterComponents` page.](../requestParameterComponents/)
 
 
-Please note that the properties here - while identical to the parameters of the v2 query parameter definitions - have all been
-re-written as individual, referenced definitions for better re-use and readability
-(e.g. `alternateBases` is defined through `AlternateBases` which again references `Sequence`.
+Please note that the properties here - while identical to the parameters of the
+v2 query parameter definitions - have been re-written as individual, referenced
+definitions for better re-use and readability (e.g. `alternateBases` is defined
+through `AlternateBases` which again references `Sequence`.
 ## g_variant Parameters
 
     
