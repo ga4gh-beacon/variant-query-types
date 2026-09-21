@@ -1,4 +1,4 @@
-# Request Profile: `geneIdRequest`
+# Request Profile: `GeneIdRequest`
 
 A typical Beacon v2.n request for gene queries, e.g. for the retrieval of
 all variants in a gene or variants restricted by additional parameters

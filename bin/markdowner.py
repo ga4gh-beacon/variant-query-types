@@ -31,7 +31,11 @@ def main():
             "headline": "Request Parameter Definitions",
             "root": "$defs"
         },
-        "requestProfiles": {
+        "RequestProfileV2": {
+            "headline": "Request Profile Definitions",
+            "root": "$defs"
+        },
+        "RequestProfileVQS": {
             "headline": "Request Profile Definitions",
             "root": "$defs"
         }
@@ -57,7 +61,7 @@ def main():
         for pk, pi in pp.items():
 
             # very special
-            if d_k == "requestProfiles":
+            if d_k.startswith("RequestProfile"):
                 request_pattern_ids.update({pk: pi.get("description", "")})
 
             ls.append(f'## `{pk}` \n')
@@ -77,14 +81,15 @@ def main():
     gv_fh.write(f'\nFor the parameter definitions please see the [`requestParameterComponents` page.](../requestParameterComponents/)\n\n')
 
     gv_fh.write("""
-Please note that the properties here - while identical to the parameters of the v2 query parameter definitions - have all been
-re-written as individual, referenced definitions for better re-use and readability
-(e.g. `alternateBases` is defined through `AlternateBases` which again references `Sequence`.
+Please note that the properties here - while identical to the parameters of the
+v2 query parameter definitions - have been re-written as individual, referenced
+definitions for better re-use and readability (e.g. `alternateBases` is defined
+through `AlternateBases` which again references `Sequence`.
 """)
 
     gv_fh.write(f'## {ph} Parameters\n\n')
     ls = []
-    ls = __add_md_def_lines(ls, schemas["requestProfiles"]["$defs"][ph]["properties"])
+    ls = __add_md_def_lines(ls, schemas["RequestProfileV2"]["$defs"][ph]["properties"])
     gv_fh.write("\n".join(ls).replace("\n#", "\n\n#"))
     gv_fh.write(f'\n\n## Beacon v2 Request Examples\n\n')
     skips.append(ph)
@@ -96,7 +101,7 @@ re-written as individual, referenced definitions for better re-use and readabili
     vqs_fh.write(f'\nFor the parameter definitions please see the [`requestParameterComponents` page.](../requestParameterComponents/)\n\n')
     vqs_fh.write(f'## {ph} Parameters\n\n')
     ls = []
-    ls = __add_md_def_lines(ls, schemas["requestProfiles"]["$defs"][ph]["properties"])
+    ls = __add_md_def_lines(ls, schemas["RequestProfileVQS"]["$defs"][ph]["properties"])
     vqs_fh.write("\n".join(ls).replace("\n#", "\n\n#"))
     vqs_fh.write(f'\n\n## Beacon v2+/VQS "VRSified" Request Examples\n\n')
     skips.append(ph)

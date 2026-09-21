@@ -46,7 +46,7 @@ examples:
 
     request:
       requestProfile: VQScopyChangeRequest
-      referenceAccession: refseq:NC_000002.12
+      referenceAccession: refseq:NC_000009.12
       start:
         - 21000001
         - 21975098
